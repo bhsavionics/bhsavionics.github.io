@@ -1792,7 +1792,7 @@ input, select, textarea {
 		font-weight: 700;
 		text-transform: uppercase;
 		text-decoration: none;
-		background: #b1ddab;
+		background: var(--accent);
 		color: #fff;
 		border: 0;
 		line-height: 1em;
@@ -1814,7 +1814,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: #c1edbb;
+			background: var(--light-accent);
 		}
 
 		input[type="button"]:active,
@@ -1822,7 +1822,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background: #a1cd9b;
+			background: var(--dark-accent);
 		}
 
 		input[type="button"].alt,
@@ -2412,7 +2412,7 @@ input, select, textarea {
 			}
 
 			#nav li.current a {
-				background: #b1ddab;
+				background: var(--accent);
 				color: #fff;
 			}
 
@@ -2540,7 +2540,7 @@ input, select, textarea {
 
 	#main {
 		background: #fff;
-		border-top: solid 5px #b1ddab;
+		border-top: solid 5px var(--accent);
 		border-bottom: solid 5px #c1cac5;
 		border-top-width: 35px;
 		border-bottom-width: 10px;
