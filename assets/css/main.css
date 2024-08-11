@@ -2479,9 +2479,9 @@ input, select, textarea {
 	#banner {
 		position: relative;
 		background-image: url("../../images/spacex1.jpg");
-		background-position: top left, top left, center center;
-		background-repeat: repeat, repeat, no-repeat;
-		background-size: auto, auto, cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
 		z-index: 1;
 		padding: 11em 0;
 	}
