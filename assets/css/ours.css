@@ -1,5 +1,10 @@
 * {
-    --accent: #9665c4;
+    --accent: #9e75c5;
     --dark-accent: #7b06e8;
     --light-accent: #cba1f1;
+    --button-background: #f4f0f8;
+}
+
+body {
+    padding-top: 0em;
 }
