@@ -8,3 +8,11 @@
 body {
     padding-top: 0em;
 }
+
+.box.feature {
+    padding: 20px; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Optional border for visibility */
+    border-radius: 8px; /* Rounded corners */
+    width: auto; /* Make it adaptable */
+    max-width: 300px; /* Optional: limit width for better layout */
+}
