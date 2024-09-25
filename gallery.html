@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Good ol' Arial for readability */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .photo {
+            background: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .description {
+            padding: 15px;
+            color: #333;
+        }
+        .date {
+            font-size: 0.85em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Example photo entry -->
+        <div class="photo">
+            <img src="images\gallery\interestmeeting2.jpg" alt="Awesome Photo">
+            <div class="description">
+                <p>Love the amount of people who showed interest!! 🌄 - Burak</p>
+                <p class="date">September 12, 2024</p>
+            </div>
+        </div>
+
+        <!-- Add more photo entries below -->
+        <div class="photo">
+            <img src="images\gallery\interestmeeting3.jpg" alt="Another Cool Photo">
+            <div class="description">
+                <p>Really loved the collaboration! ✨ - Burak</p>
+                <p class="date">September 12, 2024</p>
+            </div>
+        </div>
+
+        <div class="photo">
+            <img src="images\gallery\interestmeeting4.jpg" alt="Another Cool Photo">
+            <div class="description">
+                <p>Congrats to our Presenters! ✨ - Burak</p>
+                <p class="date">September 12, 2024</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
