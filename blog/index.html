@@ -33,58 +33,11 @@
 
 									<!-- Content -->
 
-									<article class="box page-content">
-										<header>
+									<article>
 											<h2>Latest Newsletter</h2>
-											<p>2024 BAAP Interest Meeting</p>
-											<ul class="meta">
-												<li class="icon fa-clock">9/12/24</li>
-											</ul>
-										</header>
-									
-										<section>
-											<span class="image featured"><img src="../images/InterestMeeting.jpg" alt="We loved seeing you all at the interest meeting!" /></span>
-											<h3>Key Notes</h3>
-											<p>
-												We had an exciting kickoff for the 2024 BAAP year, with students showing tremendous enthusiasm for all things aviation!
-												Whether you're new to the program or a returning participant, we're thrilled to see so many eager minds ready to explore the world of aeronautics.
-											</p>
-										</section>
-									
-										<section>
-											<h3>More intriguing information</h3>
-											<p>
-												The Battlefield Aeronautics and Aviation Program (BAAP) focuses on providing hands-on experiences and technical knowledge in the fields of aeronautics and aviation. 
-												This year, we have a range of exciting activities planned, including small scale rockets and rocketry competitions. 
-											</p>
-											<p>
-												At our next meeting, we will be diving into rocketry! Students will have the opportunity to design, build, and launch small-scale rockets. This fun and interactive workshop will introduce the fundamental principles of propulsion and aerodynamics.
-											</p>
-										</section>
-									
-										<section>
-											<h3>Upcoming Rocket-Building Workshop</h3>
-											<p>
-												<strong>Date:</strong> 09/26/2024 <span style="display:inline-block; width: 50px;"></span>
-												<strong>Location:  </strong> Room Number: 2203
-									
-											<ul>
-												<strong>What to Expect:</strong>
-												<li>Learn about the physics behind rocket launches, including thrust, lift, and drag</li>
-												<li>Build your own small rocket using kits provided</li>
-												<li>Test your designs with a launch, and see who can get the highest altitude!</li>
-											</ul>
-										<p>
-											
-										</section>
-									
-										<section>
-											<h3>So in conclusion ...</h3>
-											<p>
-												BAAP is more than just an extracurricular activity. It offers students the chance to develop real-world skills, explore exciting careers in aviation, and prepare for college-level programs.
-												Whether you’re aiming to be a programmer, an engineer, or simply curious about the science of flight, BAAP offers a path to elevate your future.
-											</p>
-										</section>
+										
+										<div id="postContent"></div>
+
 									</article>
 									
 
@@ -117,9 +70,9 @@
 													</li>
 													<li></li>
 														<article class="box post-summary">
-															<h3><a href="/blog/Posts/FirstMeeting.html">First Meeting</a></h3>
+															<h3><a href="/blog/Posts/FirstMeeting.html">Rocket Building Meeting</a></h3>
 															<ul class="meta">
-																<li class="icon fa-clock">4/19/24</li>
+																<li class="icon fa-clock">09/26/24</li>
 															</ul>
 														</article>
 													</li>
@@ -230,3 +183,31 @@
 
 	</body>
 </html>
+<script>
+	// Function to dynamically load content
+	function loadPost(postUrl) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.open('GET', postUrl, true);
+	  xhr.onreadystatechange = function () {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+		  document.getElementById('postContent').innerHTML = xhr.responseText;
+
+          // Targeting both buttons using querySelectorAll
+          const buttons = document.querySelectorAll('footer p a.button');
+          buttons.forEach(button => {
+              button.style.display = 'none'; // Hides each button
+          });
+		}
+	  };
+	  
+	  xhr.send();
+	}
+  
+	// Optionally, load a default post when the page loads
+	window.onload = function () {
+	  loadPost('Posts/FirstMeeting.html');
+	};
+</script>
+
+
+  

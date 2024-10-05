@@ -1731,6 +1731,20 @@ input, select, textarea {
 		}
 
 /* Image */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* space between the images */
+    margin-top: 20px;
+}
+
+.image-item img {
+    width: 100%;
+    height: 300px; /* set a uniform height */
+    object-fit: cover; /* ensure the images fit without distortion */
+    border-radius: 5px; /* optional: rounded corners */
+}
+
 
 	.image {
 		position: relative;
