@@ -123,66 +123,58 @@
 												<button class="prev" type="button" onclick="plusSlides(-1)">&#10094;</button>
 												<button class="next" type="button" onclick="plusSlides(1)">&#10095;</button>
 											</div>
-											<section>
-												<h2 class="major"><span>Inspiration</span></h2>
-												<div class="myQuotes"></div>
-												<a class="image featured"><img src="../images/TheovonKarman.jpg" alt="Picture of Dr. Theodore von Kármán via the NASA JPL website." /></a>
-												<div class="text">
-												<p>
-													<i>"Scientists study the world as it is, engineers create the world that never has been."</i>
-												</p>
-												<p>
-													-Theodore von Karman
-												</p>
-												<a href="https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-theodore-von-karman-1881-1963/" class="button alt" target="_blank">Learn more</a>
-												</div>
-											</section>
 											<div class="slideshow-container">
+												<!-- Slide 1: Fun Fact -->
 												<section>
 													<h2 class="major"><span>Inspiration</span></h2>
-													<div class="myQuotes"></div>
-													<a class="image featured"><img src="../images/TheovonKarman.jpg" alt="Picture of Dr. Theodore von Kármán via the NASA JPL website." /></a>
-													<div class="text">
-													<p>
-														<i>"Scientists study the world as it is, engineers create the world that never has been."</i>
-													</p>
-													<p>
-														-Theodore von Karman
-													</p>
-													<a href="https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-theodore-von-karman-1881-1963/" class="button alt" target="_blank">Learn more</a>
+													<div class="myQuotes">
+														<a class="image featured">
+															<img src="../images/TheovonKarman.jpg" alt="Picture of Dr. Theodore von Kármán via the NASA JPL website." />
+														</a>
+														<p>
+															<i>"Scientists study the world as it is, engineers create the world that never has been."</i>
+														</p>
+														<p>-Theodore von Karman</p>
+														<a href="https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-theodore-von-karman-1881-1963/" class="button alt" target="_blank">Learn more</a>
 													</div>
 												</section>
+											
+												<!-- Slide 2: Fun Fact -->
 												<section>
-													<div class="myQuotes"></div>
-													<a class="image featured"><img src="../images/henry-ford.jpg" alt="Picture of Henry Ford via thehenryford.org." /></a>
-													<div class="text">
-													<p>
-														<i>“Whether you think you can, or you think you can't - you're right.”</i>
-													</p>
-													<p>
-														-Henry Ford
-													</p>
-													<a href="https://en.wikipedia.org/wiki/Henry_Ford" class="button alt" target="_blank">Learn more</a>
+													<div class="myQuotes">
+														<a class="image featured">
+															<img src="../images/henry-ford.jpg" alt="Picture of Henry Ford via thehenryford.org." />
+														</a>
+														<p>
+															<i>“Whether you think you can, or you think you can't - you're right.”</i>
+														</p>
+														<p>-Henry Ford</p>
+														<a href="https://en.wikipedia.org/wiki/Henry_Ford" class="button alt" target="_blank">Learn more</a>
 													</div>
 												</section>
+											
+												<!-- Slide 3: Fun Fact -->
 												<section>
-													<div class="myQuotes"></div>
-
-													<a class="image featured"><img src="../images/Thomas_Edison.jpg" alt="Picture of Thomas Edison via the United States Library of Congress's Prints and Photographs division." /></a>
-													<div class="text">
-													<p>
-														<i>“I have not failed. I've just found 10,000 ways that won't work.”</i>
-													</p>
-													<p>
-														-Thomas Edison
-													</p>
-													<a href="https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/biography/life-of-thomas-alva-edison" class="button alt" target="_blank">Learn more</a>
+													<div class="myQuotes">
+														<a class="image featured">
+															<img src="../images/Thomas_Edison.jpg" alt="Picture of Thomas Edison via the United States Library of Congress's Prints and Photographs division." />
+														</a>
+														<p>
+															<i>“I have not failed. I've just found 10,000 ways that won't work.”</i>
+														</p>
+														<p>-Thomas Edison</p>
+														<a href="https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/biography/life-of-thomas-alva-edison" class="button alt" target="_blank">Learn more</a>
 													</div>
 												</section>
+											
+												<!-- Next and previous buttons -->
 												<button class="prev" type="button" onclick="plusSlides(-1)">&#10094;</button>
 												<button class="next" type="button" onclick="plusSlides(1)">&#10095;</button>
 											</div>
-									</div>
+											
+									
+									
+										</div>
 								</div>
 							<div class="col-12">
 
@@ -300,17 +292,13 @@
 	function showSlides(n) {
 	  let i;
 	  let slides = document.getElementsByClassName("myFacts");
-	  let dots = document.getElementsByClassName("dot");
 	  if (n > slides.length) {slideIndex = 1}
 	  if (n < 1) {slideIndex = slides.length}
 	  for (i = 0; i < slides.length; i++) {
 		slides[i].style.display = "none";
 	  }
-	  for (i = 0; i < dots.length; i++) {
-		dots[i].className = dots[i].className.replace(" active", "");
-	  }
+	  
 	  slides[slideIndex-1].style.display = "block";
-	  dots[slideIndex-1].className += " active";
 	}
 	</script>
 	<script>
