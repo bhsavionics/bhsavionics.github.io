@@ -29,6 +29,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+	#postContent {
+		cursor: none; /* Hide cursor in the loaded content */
+	}
 body {
 	line-height: 1;
 }
