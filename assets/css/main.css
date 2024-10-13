@@ -33,27 +33,28 @@ body {
 	line-height: 1;
 }
 .custom-cursor {
+    position: absolute;
     width: 30px;
     height: 30px;
-    border: 2px solid #000;
     border-radius: 50%;
-    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
     pointer-events: none;
-    transition: transform 0.15s ease-out, opacity 0.25s ease-out;
-    z-index: 10000;
-    transform: translate(-50%, -50%); /* Center the cursor */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    transition: transform 0.1s ease;
 }
 
 .inner-dot {
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     background-color: #000;
     border-radius: 50%;
-    position: absolute;
+    position: relative;
+    margin: auto;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
 }
+
 
 /* Hide the default system cursor everywhere */
 body {

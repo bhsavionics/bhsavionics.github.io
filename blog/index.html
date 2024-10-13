@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/ours.css">
-    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/ours.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <title>Blog</title>
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
+        <div class="custom-cursor">
+            <div class="inner-dot"></div>
+        </div>
+
         <!-- Nav -->
         <nav id="nav">
             <ul>
@@ -50,7 +54,7 @@
                                         <article class="box post-summary">
                                             <h3><a href="/blog/Posts/InterestMeeting.html">2024 Interest Meeting</a></h3>
                                             <ul class="meta">
-                                                <li class="icon fa-clock">9/12/24</li>
+                                                <li class="icon fa-clock">09/12/24</li>
                                             </ul>
                                         </article>
                                     </li>
@@ -71,17 +75,17 @@
                                 <h2 class="major"><span>Aerospace Fun Facts</span></h2>
                                 <div class="slideshow-container">
                                     <div class="myFacts">
-                                        <a class="image featured"><img src="/images/blog/Blackbird_SR-71.jpg" alt="Picture of the fastest plane in the world, the Lockheed Martin SR-71 Blackbird."></a>
+                                        <a class="image featured"><img src="../images/blog/Blackbird_SR-71.jpg" alt="Picture of the fastest plane in the world, the Lockheed Martin SR-71 Blackbird."></a>
                                         <p>Did you know? The SR-71 Blackbird holds the record for the fastest air-breathing manned aircraft at over 2,000 mph.</p>
                                         <a href="https://www.nasa.gov/wp-content/uploads/2021/09/495839main_fs-030_sr-71.pdf?emrc=0612db" class="button alt" target="_blank">Learn more</a>
                                     </div>
                                     <div class="myFacts">
-                                        <a class="image featured"><img src="/images/blog/sputnik1.jpg" alt="Picture of the first satellite, Sputnik 1."></a>
+                                        <a class="image featured"><img src="../images/blog/sputnik1.jpg" alt="Picture of the first satellite, Sputnik 1."></a>
                                         <p>The Soviet Union launched the first artificial satellite, Sputnik 1, on October 4, 1957. It orbited Earth for three months before falling back into the atmosphere.</p>
                                         <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1957-001B" class="button alt" target="_blank">Learn more</a>
                                     </div>
                                     <div class="myFacts">
-                                        <a class="image featured"><img src="/images/blog/voyager1.jpg" alt="Picture of the furthest space probe, Voyager 1."></a>
+                                        <a class="image featured"><img src="../images/blog/voyager1.jpg" alt="Picture of the furthest space probe, Voyager 1."></a>
                                         <p>Launched in 1977, NASA’s Voyager 1 spacecraft is the most distant human-made object from Earth, now in interstellar space, over 14 billion miles away!</p>
                                         <a href="https://science.nasa.gov/mission/voyager/voyager-1/" class="button alt" target="_blank">Learn more</a>
                                     </div>
@@ -148,168 +152,33 @@
                     <div class="col-12">
                         <!-- Contact -->
                         <section>
-							<h2 class="major"><span>Get in touch</span></h2>
-							<ul class="contact">
-								<li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-								<br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-
-							</ul>
-						</section>
-
+                            <h2 class="major"><span>Get in touch</span></h2>
+                            <ul class="contact">
+                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
+                                <br><a href="https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+                            </ul>
+                        </section>
                     </div>
                 </div>
 
                 <!-- Copyright -->
                 <div id="copyright">
-                    <ul class="menu">
-                        <li>&copy; BHS AAP. All rights reserved.</li>
+                    <ul class="links">
+                        <li>&copy; Battlefield Aeronautics and Avionics Program. All rights reserved.</li>
                     </ul>
                 </div>
             </div>
         </footer>
     </div>
 
-    <!-- Scripts -->
+    <!-- JS Scripts -->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/jquery.dropotron.min.js"></script>
     <script src="../assets/js/browser.min.js"></script>
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/ours.js"></script>
+    <script src="../assets/js/cursor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
-<!-- Your existing HTML structure -->
-<div class="custom-cursor">
-    <div class="inner-dot"></div>
-</div>
-
-
-<script>
-	// Function to dynamically load content
-	function loadPost(postUrl) {
-	  var xhr = new XMLHttpRequest();
-	  xhr.open('GET', postUrl, true);
-	  xhr.onreadystatechange = function () {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-		  document.getElementById('postContent').innerHTML = xhr.responseText;
-
-          // Targeting both buttons using querySelectorAll
-          const buttons = document.querySelectorAll('footer p a.button');
-          buttons.forEach(button => {
-              button.style.display = 'none'; // Hides each button
-          });
-		}
-	  };
-	  
-	  xhr.send();
-	}
-  
-	// Optionally, load a default post when the page loads
-	window.onload = function () {
-	  loadPost('Posts/FirstMeeting.html');
-	};
-</script>
-<!-- JavaScript to handle the slideshow functionality -->
-<script>
-	let slideIndex = 1;
-	showSlides(slideIndex);
-	
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
-	
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
-	
-	function showSlides(n) {
-	  let i;
-	  let slides = document.getElementsByClassName("myFacts");
-	  if (n > slides.length) {slideIndex = 1}
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";
-	  }
-	  
-	  slides[slideIndex-1].style.display = "block";
-	}
-	</script>
-	<script>
-		let slideIndexQuotes = 1;
-		showSlidesQuotes(slideIndexQuotes);
-		
-		function plusSlidesQuotes(n) {
-		  showSlidesQuotes(slideIndexQuotes += n);
-		}
-		
-		function currentSlideQuotes(n) {
-		  showSlidesQuotes(slideIndexQuotes = n);
-		}
-		
-	function showSlidesQuotes(n) {
-		let i;
-		let slides = document.getElementsByClassName("myQuotes");
-		if (n > slides.length) {slideIndexQuotes = 1}
-		if (n < 1) {slideIndexQuotes = slides.length}
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
-		}
-		slides[slideIndexQuotes-1].style.display = "block";
-	}
-</script>
-
-<script>
-    const customCursor = document.querySelector('.custom-cursor');
-    let cursorX = 0, cursorY = 0;
-
-    // Track mouse position
-    document.addEventListener('mousemove', (e) => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-    });
-
-    // Update cursor position
-    function updateCursorPosition() {
-        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        customCursor.style.left = `${cursorX + scrollX}px`;
-        customCursor.style.top = `${cursorY + scrollY}px`;
-        requestAnimationFrame(updateCursorPosition);
-    }
-
-    updateCursorPosition();
-
-    // Handle mouse down and mouse up events for visual effects
-    document.addEventListener('mousedown', () => {
-        customCursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
-    });
-
-    document.addEventListener('mouseup', () => {
-        customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    });
-
-    // Enlarge the custom cursor when hovering over clickable elements using event delegation
-    document.body.addEventListener('mouseover', (e) => {
-        if (e.target.matches('a, button')) {
-            customCursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        }
-    });
-
-    document.body.addEventListener('mouseout', (e) => {
-        if (e.target.matches('a, button')) {
-            customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
-        }
-    });
-
-    // Update cursor position on scroll
-    window.addEventListener('scroll', () => {
-        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        customCursor.style.left = `${cursorX + scrollX}px`;
-        customCursor.style.top = `${cursorY + scrollY}px`;
-    });
-</script>
-
-
-
-
-  
+</html>
