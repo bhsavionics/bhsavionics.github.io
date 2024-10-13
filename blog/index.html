@@ -177,7 +177,11 @@
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
 </body>
-</html>
+<!-- Your existing HTML structure -->
+<div class="custom-cursor">
+    <div class="inner-dot"></div>
+</div>
+
 
 <script>
 	// Function to dynamically load content
@@ -252,6 +256,59 @@
 		slides[slideIndexQuotes-1].style.display = "block";
 	}
 </script>
+
+<script>
+    const customCursor = document.querySelector('.custom-cursor');
+    let cursorX = 0, cursorY = 0;
+
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+    });
+
+    // Update cursor position
+    function updateCursorPosition() {
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        customCursor.style.left = `${cursorX + scrollX}px`;
+        customCursor.style.top = `${cursorY + scrollY}px`;
+        requestAnimationFrame(updateCursorPosition);
+    }
+
+    updateCursorPosition();
+
+    // Handle mouse down and mouse up events for visual effects
+    document.addEventListener('mousedown', () => {
+        customCursor.style.transform = 'translate(-50%, -50%) scale(0.8)';
+    });
+
+    document.addEventListener('mouseup', () => {
+        customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+
+    // Enlarge the custom cursor when hovering over clickable elements using event delegation
+    document.body.addEventListener('mouseover', (e) => {
+        if (e.target.matches('a, button')) {
+            customCursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        }
+    });
+
+    document.body.addEventListener('mouseout', (e) => {
+        if (e.target.matches('a, button')) {
+            customCursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        }
+    });
+
+    // Update cursor position on scroll
+    window.addEventListener('scroll', () => {
+        const scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        customCursor.style.left = `${cursorX + scrollX}px`;
+        customCursor.style.top = `${cursorY + scrollY}px`;
+    });
+</script>
+
 
 
 

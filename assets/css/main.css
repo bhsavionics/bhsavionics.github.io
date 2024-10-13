@@ -32,10 +32,48 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-
-ol, ul {
-	list-style: none;
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.15s ease-out, opacity 0.25s ease-out;
+    z-index: 10000;
+    transform: translate(-50%, -50%); /* Center the cursor */
 }
+
+.inner-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hide the default system cursor everywhere */
+body {
+    cursor: none;
+}
+
+/* Make the custom cursor larger on hover over clickable elements */
+a:hover ~ .custom-cursor, button:hover ~ .custom-cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+a, button {
+    cursor: none; /* Forcefully hide the system cursor on links and buttons */
+}
+
+a:hover, button:hover {
+    cursor: none; /* Keep the system cursor hidden on hover */
+}
+
+
 .site-nav {
 	position: fixed;
 	top: 0;
