@@ -155,7 +155,7 @@
                             <h2 class="major"><span>Get in touch</span></h2>
                             <ul class="contact">
                                 <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-                                <br><a href="https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+                                <br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
                             </ul>
                         </section>
                     </div>
@@ -163,8 +163,8 @@
 
                 <!-- Copyright -->
                 <div id="copyright">
-                    <ul class="links">
-                        <li>&copy; Battlefield Aeronautics and Avionics Program. All rights reserved.</li>
+                    <ul class="menu">
+                        <li>Battlefield Aeronautics and Avionics Program. All rights reserved.</li>
                     </ul>
                 </div>
             </div>
@@ -182,3 +182,78 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
+
+<script>
+	// Function to dynamically load content
+	function loadPost(postUrl) {
+	  var xhr = new XMLHttpRequest();
+	  xhr.open('GET', postUrl, true);
+	  xhr.onreadystatechange = function () {
+		if (xhr.readyState == 4 && xhr.status == 200) {
+		  document.getElementById('postContent').innerHTML = xhr.responseText;
+
+          // Targeting both buttons using querySelectorAll
+          const buttons = document.querySelectorAll('footer p a.button');
+          buttons.forEach(button => {
+              button.style.display = 'none'; // Hides each button
+          });
+		}
+	  };
+	  
+	  xhr.send();
+	}
+  
+	// Optionally, load a default post when the page loads
+	window.onload = function () {
+	  loadPost('Posts/FirstMeeting.html');
+	};
+</script>
+<!-- JavaScript to handle the slideshow functionality -->
+<script>
+	let slideIndex = 1;
+	showSlides(slideIndex);
+	
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+	
+	function currentSlide(n) {
+	  showSlides(slideIndex = n);
+	}
+	
+	function showSlides(n) {
+	  let i;
+	  let slides = document.getElementsByClassName("myFacts");
+	  if (n > slides.length) {slideIndex = 1}
+	  if (n < 1) {slideIndex = slides.length}
+	  for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";
+	  }
+	  
+	  slides[slideIndex-1].style.display = "block";
+	}
+	</script>
+	<script>
+		let slideIndexQuotes = 1;
+		showSlidesQuotes(slideIndexQuotes);
+		
+		function plusSlidesQuotes(n) {
+		  showSlidesQuotes(slideIndexQuotes += n);
+		}
+		
+		function currentSlideQuotes(n) {
+		  showSlidesQuotes(slideIndexQuotes = n);
+		}
+		
+	function showSlidesQuotes(n) {
+		let i;
+		let slides = document.getElementsByClassName("myQuotes");
+		if (n > slides.length) {slideIndexQuotes = 1}
+		if (n < 1) {slideIndexQuotes = slides.length}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		}
+		slides[slideIndexQuotes-1].style.display = "block";
+	}
+</script>
+

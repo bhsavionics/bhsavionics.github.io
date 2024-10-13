@@ -32,6 +32,17 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+a {
+    text-decoration: none;
+    color: inherit; /* Keep the color same as parent */
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline text on hover */
+    color: #3498db; /* Change the text color to blue on hover */
+}
+
 .custom-cursor {
     position: absolute;
     width: 30px;
