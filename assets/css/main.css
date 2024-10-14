@@ -29,13 +29,66 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+	#postContent {
+		cursor: none; /* Hide cursor in the loaded content */
+	}
 body {
 	line-height: 1;
 }
-
-ol, ul {
-	list-style: none;
+a {
+    text-decoration: none;
+    color: inherit; /* Keep the color same as parent */
+    cursor: pointer;
 }
+
+a:hover {
+    text-decoration: underline; /* Underline text on hover */
+    color: #3498db; /* Change the text color to blue on hover */
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    transition: transform 0.1s ease;
+}
+
+.inner-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* Hide the default system cursor everywhere */
+body {
+    cursor: none;
+}
+
+/* Make the custom cursor larger on hover over clickable elements */
+a:hover ~ .custom-cursor, button:hover ~ .custom-cursor {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+a, button {
+    cursor: none; /* Forcefully hide the system cursor on links and buttons */
+}
+
+a:hover, button:hover {
+    cursor: none; /* Keep the system cursor hidden on hover */
+}
+
+
 .site-nav {
 	position: fixed;
 	top: 0;
