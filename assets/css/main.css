@@ -87,6 +87,12 @@ a, button {
 a:hover, button:hover {
     cursor: none; /* Keep the system cursor hidden on hover */
 }
+/* Hide custom cursor on mobile devices */
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none; /* Hide custom cursor on mobile */
+    }
+}
 
 
 .site-nav {
@@ -2549,6 +2555,76 @@ input, select, textarea {
 				background: var(--accent);
 				color: #fff;
 			}
+/* Mobile Navigation Styles */
+#mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5em 1em;
+}
+
+/* Hide mobile nav on larger screens */
+@media (min-width: 768px) {
+    #mobile-nav {
+        display: none; /* Hide mobile nav on desktop */
+    }
+}
+
+.nav-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2em;
+}
+
+.nav-toggle span {
+    width: 2em;
+    height: 0.25em;
+    background: rgb(112, 76, 110);
+    margin: 0.2em 0;
+    transition: all 0.3s ease;
+}
+
+#mobile-menu {
+    display: none; /* Initially hide the mobile menu */
+    flex-direction: column;
+    position: absolute;
+    top: 3.25em; /* Just below the nav */
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1em 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#mobile-menu.open {
+    display: flex; /* Show the menu when toggled */
+}
+
+#mobile-menu li {
+    margin: 0.5em 0;
+    text-align: center;
+}
+
+#mobile-menu a {
+    text-decoration: none;
+    color: rgb(112, 76, 110);
+    padding: 0.5em 0;
+    display: block;
+    transition: background 0.2s, color 0.2s;
+}
+
+#mobile-menu a:hover {
+    background-color: var(--light-accent);
+    color: #fff;
+}
 
 	.dropotron {
 		list-style: none;
