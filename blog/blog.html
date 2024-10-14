@@ -8,8 +8,11 @@
     <link rel="icon" type="image/png" href="../images/logo.png">
     <title>Blog</title>
 </head>
+
 <body class="is-preload">
     <div id="page-wrapper">
+      <!-- custom cursor is loaded with page yippie!-->
+
         <!-- Nav -->
         <nav id="nav">
             <ul>
@@ -56,7 +59,7 @@
                                     </li>
                                     <li>
                                         <article class="box post-summary">
-                                            <h3><a href="/blog/Posts/FirstMeeting.html">Rocket Building Meeting</a></h3>
+                                            <h3><a href="/blog/Posts/RocketBuilding.html">Rocket Building Meeting</a></h3>
                                             <ul class="meta">
                                                 <li class="icon fa-clock">09/26/24</li>
                                             </ul>
@@ -176,82 +179,50 @@
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/cursor.js"></script>
+    <script src="../assets/js/slideshow.js"></script>
+    <script src="../assets/js/quoteSlideshow.js"></script>
 </body>
 </html>
 
 <script>
 	// Function to dynamically load content
-	function loadPost(postUrl) {
-	  var xhr = new XMLHttpRequest();
-	  xhr.open('GET', postUrl, true);
-	  xhr.onreadystatechange = function () {
-		if (xhr.readyState == 4 && xhr.status == 200) {
-		  document.getElementById('postContent').innerHTML = xhr.responseText;
+function loadPost(postUrl) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', postUrl, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById('postContent').innerHTML = xhr.responseText;
 
-          // Targeting both buttons using querySelectorAll
-          const buttons = document.querySelectorAll('footer p a.button');
-          buttons.forEach(button => {
-              button.style.display = 'none'; // Hides each button
-          });
-		}
-	  };
-	  
-	  xhr.send();
-	}
-  
-	// Optionally, load a default post when the page loads
-	window.onload = function () {
-	  loadPost('Posts/FirstMeeting.html');
-	};
+            // Reset the custom cursor
+            const customCursor = document.querySelector('.custom-cursor');
+            customCursor.style.display = 'block'; // Show the custom cursor
+            document.body.style.cursor = 'none'; // Ensure the default cursor is hidden
+            
+            // Reset the position of the custom cursor
+            document.addEventListener('mousemove', function(e) {
+                customCursor.style.left = e.pageX + 'px';
+                customCursor.style.top = e.pageY + 'px';
+            });
+
+            // Targeting both buttons using querySelectorAll
+            const buttons = document.querySelectorAll('footer p a.button');
+            buttons.forEach(button => {
+                button.style.display = 'none'; // Hides each button
+            });
+        }
+    };
+
+    xhr.send();
+}
+
+// Optionally, load a default post when the page loads
+window.onload = function () {
+    loadPost('Posts/RocketBuilding.html');
+};
+
 </script>
-<!-- JavaScript to handle the slideshow functionality -->
-<script>
-	let slideIndex = 1;
-	showSlides(slideIndex);
-	
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
-	
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
-	
-	function showSlides(n) {
-	  let i;
-	  let slides = document.getElementsByClassName("myFacts");
-	  if (n > slides.length) {slideIndex = 1}
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";
-	  }
-	  
-	  slides[slideIndex-1].style.display = "block";
-	}
-	</script>
-	<script>
-		let slideIndexQuotes = 1;
-		showSlidesQuotes(slideIndexQuotes);
-		
-		function plusSlidesQuotes(n) {
-		  showSlidesQuotes(slideIndexQuotes += n);
-		}
-		
-		function currentSlideQuotes(n) {
-		  showSlidesQuotes(slideIndexQuotes = n);
-		}
-		
-	function showSlidesQuotes(n) {
-		let i;
-		let slides = document.getElementsByClassName("myQuotes");
-		if (n > slides.length) {slideIndexQuotes = 1}
-		if (n < 1) {slideIndexQuotes = slides.length}
-		for (i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
-		}
-		slides[slideIndexQuotes-1].style.display = "block";
-	}
-</script>
+
 
 
 
