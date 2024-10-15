@@ -12,7 +12,13 @@
 <body class="is-preload">
     <div id="page-wrapper">
       <!-- custom cursor is loaded with page yippie!-->
-
+      <div class="custom-cursor">
+        <div class="inner-dot"></div>
+    </div>
+    <script>
+        const customCursor = document.querySelector('.custom-cursor');
+        customCursor.style.display = 'block';
+    </script>
         <!-- Nav -->
         <nav id="nav">
             <ul>
@@ -194,21 +200,21 @@ function loadPost(postUrl) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById('postContent').innerHTML = xhr.responseText;
 
-            // Reset the custom cursor
-            const customCursor = document.querySelector('.custom-cursor');
-            customCursor.style.display = 'block'; // Show the custom cursor
-            document.body.style.cursor = 'none'; // Ensure the default cursor is hidden
-            
-            // Reset the position of the custom cursor
+            // Show the custom cursor and hide the default cursor
+            const customCursor = document.querySelector('.inner-dot');
+            customCursor.body.style.display = 'none'; // Show custom cursor
+            document.style.cursor = 'none'; // Hide default cursor
+
+            // Update the position of the custom cursor based on mouse movement
             document.addEventListener('mousemove', function(e) {
                 customCursor.style.left = e.pageX + 'px';
                 customCursor.style.top = e.pageY + 'px';
             });
 
-            // Targeting both buttons using querySelectorAll
+            // Optionally hide buttons (as per your original logic)
             const buttons = document.querySelectorAll('footer p a.button');
             buttons.forEach(button => {
-                button.style.display = 'none'; // Hides each button
+                button.style.display = 'none'; // Hide each button
             });
         }
     };
@@ -220,6 +226,7 @@ function loadPost(postUrl) {
 window.onload = function () {
     loadPost('Posts/RocketBuilding.html');
 };
+
 
 </script>
 
