@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/ours.css" />
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .photo {
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 200px; /* Set width of each image container */
+        }
+        .photo img {
+            width: 100%; /* Responsive image */
+            height: auto;
+        }
+        .date {
+            font-size: 0.8em;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-cursor">
+        <div class="inner-dot"></div>
+    </div>
+    <nav id="nav">
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/blog/blog.html">Blog</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li class="current"><a href="/gallery/gallery.html">Our Gallery</a></li>
+        </ul>
+    </nav>
+    <nav id="mobile-nav">
+        <div class="nav-toggle" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="mobile-menu">
+            <li class="current"><a href="/index.html">Home</a></li>
+            <li><a href="/blog/blog.html">Blog</a></li>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/gallery/gallery.html">Our Gallery</a></li>
+        </ul>
+    </nav>
+
+    <div class="gallery">
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6790.jpg" alt="Image 6809" loading="lazy">
+        </div>
+        
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6792.jpg" alt="Image 6811" loading="lazy">
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6794.jpg" alt="Image 6812" loading="lazy"> 
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6800.jpg" alt="Image 1" loading="lazy">
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6806.jpg" alt="Image 3" loading="lazy">
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6810.jpg" alt="Image 4" loading="lazy">
+           
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6813.jpg" alt="Image 5" loading="lazy" >
+            
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6816.jpg" alt="Image 6" loading="lazy">
+            
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6826.jpg" alt="Image 12" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6831.jpg" alt="Image 14" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6838.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6839.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6843.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6847.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6855.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6857.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6866.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/InterestMeeting/IMG_6867.jpg" alt="Image 6824" loading="lazy">
+
+        </div>
+    </div>
+    <script src="/assets/js/jquery.min.js" defer></script>
+<script src="/assets/js/browser.min.js" defer></script>
+<script src="/assets/js/breakpoints.min.js" defer></script>
+<script src="/assets/js/util.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/cursor.js" defer></script>
+<script src="/assets/js/mobile-nav.js" defer></script>
+
+</body>
+</html>
