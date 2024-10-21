@@ -3316,3 +3316,17 @@ input, select, textarea {
 			}
 
 	}
+	.flexbox-container {
+		display: flex; /* Makes the container a flexbox */
+		flex-wrap: wrap; /* Allows items to wrap onto the next line */
+		gap: 20px; /* Adds space between the boxes */
+		justify-content: space-between; /* Distributes the boxes evenly */
+	}
+	
+	.flex-box {
+		background-color: #fff;
+		padding: 20px;
+		flex: 0 1 calc(50% - 20px); /* Each box takes 50% of the row minus the gap */
+		border-radius: 15px; /* This makes the corners rounded */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+	}
