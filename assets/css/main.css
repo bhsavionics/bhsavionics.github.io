@@ -1436,3 +1436,24 @@ body {
     height: 250px;
     object-fit: cover;
 }
+.post-box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.post-box h3 a {
+    color: #333;
+    text-decoration: none;
+}
+.post-box p.date {
+    font-size: 0.85em;
+    color: #666;
+}
+.post-box p.preview {
+    font-size: 1em;
+    color: #444;
+}
