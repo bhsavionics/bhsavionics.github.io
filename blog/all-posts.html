@@ -10,10 +10,9 @@
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
-    <!-- custom cursor is loaded with page yippie!-->
-    <div class="custom-cursor">
-    <div class="inner-dot"></div>
-    </div>
+        <div class="custom-cursor">
+            <div class="inner-dot"></div>
+        </div>
 
         <!-- Navigation -->
         <nav id="nav">
@@ -46,12 +45,35 @@
                 <div class="row">
                     <div class="col-12">
                         <h2>All Blog Posts</h2>
-                        <ul class="divided">
-                            <li><a href="Posts/StemNight.html">Mountain View STEM Night</a></li>
-                            <li><a href="Posts/InterestMeeting.html">2024 Interest Meeting</a></li>
-                            <li><a href="Posts/RocketBuilding.html">Rocket Building Meeting</a></li>
-                            <!-- Additional posts can be added here as needed -->
-                        </ul>
+                        <div id="post-container" class="post-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                            <!-- Blog posts will be inserted here by JavaScript -->
+                            <!-- Custom Script for Sorting and Displaying Posts -->
+                            <script>
+                                // Blog post data
+                                const posts = [
+                                    { title: "Mountain View STEM Night", date: "2024-03-13", link: "Posts/StemNight.html", preview: "A look into our STEM Night event..." },
+                                    { title: "2024 Interest Meeting", date: "2024-09-12", link: "Posts/InterestMeeting.html", preview: "Kickstarting the year with an interest meeting..." },
+                                    { title: "Rocket Building Meeting", date: "2024-09-26", link: "Posts/RocketBuilding.html", preview: "Our journey in building rockets..." }
+                                    // Add additional posts here
+                                ];
+
+                                // Sort posts by date (newest first)
+                                posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                                // Display posts in boxes
+                                const postContainer = document.getElementById('post-container');
+                                posts.forEach(post => {
+                                    const postBox = document.createElement('div');
+                                    postBox.classList.add('post-box');  // Apply the CSS class here
+                                    postBox.innerHTML = `
+                                        <h3><a href="${post.link}">${post.title}</a></h3>
+                                        <p class="date">${new Date(post.date).toLocaleDateString()}</p>
+                                        <p class="preview">${post.preview}</p>
+                                    `;
+                                    postContainer.appendChild(postBox);
+                                });
+                            </script>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -73,17 +95,14 @@
                     <div class="col-12">
                         <!-- Contact -->
                         <section>
-							<h2 class="major"><span>Get in touch</span></h2>
-							<ul class="contact">
-								<li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-								<br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-
-							</ul>
-						</section>
-
+                            <h2 class="major"><span>Get in touch</span></h2>
+                            <ul class="contact">
+                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
+                                <br><a href="mailto:ayyorgbt25@pwcs-edu.org">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+                            </ul>
+                        </section>
                     </div>
                 </div>
-
                 <!-- Copyright -->
                 <div id="copyright">
                     <ul class="menu">
