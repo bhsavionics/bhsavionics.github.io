@@ -1,113 +1,185 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		<title>About Us</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/ours.css" />
-		<link rel="icon" type="image/png" href="images/logo.png" />
-	</head>
-	<body class="is-preload"></body>
-		<div id="page-wrapper">
-			<div class="custom-cursor">
-				<div class="inner-dot"></div>
+<head>
+    <title>About Us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/ours.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+</head>
+<body class="is-preload">
+    <div id="page-wrapper">
+        <div class="custom-cursor">
+            <div class="inner-dot"></div>
+        </div>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog/blog.html">Blog</a></li>
+                <li class="current"><a href="about.html">About Us</a></li>
+                <li><a href="/gallery/gallery.html">Our Gallery</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+            </ul>
+        </nav>
+		<nav id="mobile-nav">
+			<div class="nav-toggle" onclick="toggleNav()">
+				<span></span>
+				<span></span>
+				<span></span>
 			</div>
+			<ul id="mobile-menu">
+				<li class="current"><a href="/index.html">Home</a></li>
+				<li><a href="/blog/blog.html">Blog</a></li>
+				<li><a href="/about.html">About Us</a></li>
+				<li><a href="//gallery/gallery.html">Our Gallery</a></li>
+				<li><a href="/resources.html">Resources</a></li>
+			</ul>
+		</nav>
 
-	<!-- Nav -->
-	<nav id="nav">
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="blog/blog.html">Blog</a></li>
-			<li class = "current"><a href="about.html">About Us</a></li>
-			<li><a href="/gallery/gallery.html">Our Gallery</a></li>
-			<li><a href="/resources.html">Resources</a></li>
-		</ul>
-	</nav>
-	<nav id="mobile-nav">
-		<div class="nav-toggle" onclick="toggleNav()">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-		<ul id="mobile-menu">
-			<li class="current"><a href="/index.html">Home</a></li>
-			<li><a href="/blog/blog.html">Blog</a></li>
-			<li><a href="/about.html">About Us</a></li>
-			<li><a href="//gallery/gallery.html">Our Gallery</a></li>
-			<li><a href="/resources.html">Resources</a></li>
-		</ul>
-	</nav>
+		<style>
+			.officer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+            justify-items: center;
+            text-align: center;
+        }
+        .officer-grid-three {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            justify-items: center;
+            text-align: center;
+        }
+        .officer-box {
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            transition: box-shadow 0.3s;
+        }
+        .officer-box:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .officer-box img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+        }
+    
+		</style>
 
-	<!-- Main -->
-	<section id="main">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="content">
-<!-- Features -->
-<section class="box features">
-    <h2 class="major"><span>Meet Our Officers!</span></h2>
-    <div class="row">
-        <!-- Burrak -->
-        <div class="col-4 col-6-medium col-12-small">
-            <section class="box feature">
-                <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="image featured">
-                    <img src="images/officers/burrak.jpeg" alt="Burrak" style="width: 200px; height: 250px; object-fit: cover;" loading="lazy"/>
-                </a>
-                <h3><a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/">President: Burak Ayyorgun</a></h3>
-                <p>Founder, President, and Lead Project Manager of BAAP.</p>
-            </section>
-        </div>
+        <!-- Main -->
+        <section id="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="content">
 
-        <!-- Andrew -->
-        <div class="col-4 col-6-medium col-12-small">
-            <section class="box feature">
-                <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="image featured">
-                    <img src="images/officers/Andrew.jpg" alt="Andrew" style="width: 200px; height: 250px; object-fit: cover;" loading="lazy"/>
-                </a>
-                <h3><a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/">Vice President: Andrew Olson</a></h3>
-                <p>Vice President and Senior Coordination Manager at BAAP.</p>
-            </section>
-        </div>
+                            <!-- Officers Section -->
+                            <section class="box features">
+                                <h2 class="major"><span>Meet Our Officers!</span></h2>
+                                
+                                <div class="officer-grid">
+                                    <!-- Burak -->
+                                    <div class="officer-box">
+                                        <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="image featured">
+                                            <img src="images/officers/burrak.jpeg" alt="Burak" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/">President: Burak Ayyorgun</a></h3>
+                                        <p>Founder, President, and Lead Project Manager of BAAP.</p>
+                                    </div>
 
-        <!-- Branson -->
-        <div class="col-4 col-6-medium col-12-small">
-            <section class="box feature">
-                <a href="https://www.linkedin.com/in/bransonchi/" class="image featured">
-                    <img src="images/officers/Branson.jpeg" alt="Branson" style="width: 200px; height: 250px; object-fit: cover;" loading="lazy"/>
-                </a>
-                <h3><a href="https://www.linkedin.com/in/bransonchi/">Engineering Lead: Branson Chi</a></h3>
-                <p>Senior Engineering Team Lead at BAAP.</p>
-            </section>
-        </div>
+                                    <!-- Andrew -->
+                                    <div class="officer-box">
+                                        <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="image featured">
+                                            <img src="images/officers/Andrew.jpg" alt="Andrew" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/">Vice President: Andrew Olson</a></h3>
+                                        <p>Vice President and Senior Coordination Manager at BAAP.</p>
+                                    </div>
 
-        <!-- KJ -->
-        <div class="col-4 col-6-medium col-12-small">
-            <section class="box feature">
-                <a href="https://www.linkedin.com/in/kjkast/" class="image featured">
-                    <img src="images/officers/KJ.jpeg" alt="KJ" style="width: 200px; height: 250px; object-fit: cover;" loading="lazy"/>
-                </a>
-                <h3><a href="https://www.linkedin.com/in/kjkast/">CS Lead: KJ Kastning</a></h3>
-                <p>Senior Computer Science Team Lead at BAAP.</p>
-            </section>
-        </div>
+                                    <!-- Hanchae -->
+                                    <div class="officer-box">
+                                        <a href="#" class="image featured">
+                                            <img src="images/officers/Hanchae.jpg" alt="Hanchae" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="#">Secretary: Hanchae Cho</a></h3>
+                                        <p>Secretary and Documentation Lead at BAAP.</p>
+                                    </div>
 
-        <!-- Alex -->
-        <div class="col-4 col-6-medium col-12-small">
-            <section class="box feature">
-                <a href="#" class="image featured">
-                    <img src="images/officers/Alex.jpg" alt="Alex" style="width: 200px; height: 250px; object-fit: cover;" loading="lazy"/>
-                </a>
-                <h3><a href="#">Outreach Lead: Alex Diatchenko</a></h3>
-                <p>Senior Outreach and Volunteering Project Lead at BAAP.</p>
-            </section>
-        </div>
-    </div>
-</section>
+                                    <!-- Claire -->
+                                    <div class="officer-box">
+                                        <a href="#" class="image featured">
+                                            <img src="images/officers/Claire.jpg" alt="Claire" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="#">Treasurer: Claire Davidson</a></h3>
+                                        <p>Treasurer and Budget Coordinator Lead at BAAP.</p>
+                                    </div>
+                                </div>
 
-						<!-- Content -->
+                                <div class="officer-grid-three">
+                                    <!-- KJ -->
+                                    <div class="officer-box">
+                                        <a href="https://www.linkedin.com/in/kjkast/" class="image featured">
+                                            <img src="images/officers/KJ.jpeg" alt="KJ" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="https://www.linkedin.com/in/kjkast/">CS Lead: KJ Kastning</a></h3>
+                                        <p>Senior Computer Science Team Lead at BAAP.</p>
+                                    </div>
+
+                                    <!-- Alex -->
+                                    <div class="officer-box">
+                                        <a href="#" class="image featured">
+                                            <img src="images/officers/Alex.jpg" alt="Alex" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="#">Outreach Lead: Alex Diatchenko</a></h3>
+                                        <p>Senior Outreach and Volunteering Project Lead at BAAP.</p>
+                                    </div>
+
+                                    <!-- Branson -->
+                                    <div class="officer-box">
+                                        <a href="https://www.linkedin.com/in/bransonchi/" class="image featured">
+                                            <img src="images/officers/Branson.jpeg" alt="Branson" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="https://www.linkedin.com/in/bransonchi/">Engineering Lead: Branson Chi</a></h3>
+                                        <p>Senior Engineering Team Lead at BAAP.</p>
+                                    </div>
+                                </div>
+
+                                <div class="officer-grid-three">
+                                    <!-- Avi -->
+                                    <div class="officer-box">
+                                        <a href="#" class="image featured">
+                                            <img src="images/officers/Avi.jpg" alt="Avi" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="#">Engineering Lead: Avi Sharma</a></h3>
+                                        <p>Senior Engineering Team Lead at BAAP.</p>
+                                    </div>
+
+                                    <!-- Shaun -->
+                                    <div class="officer-box">
+                                        <a href="#" class="image featured">
+                                            <img src="images/officers/Shaun.jpeg" alt="Shaun" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="#">Engineering Lead: Shaun Kasa</a></h3>
+                                        <p>Senior Engineering Team Lead at BAAP.</p>
+                                    </div>
+
+                                    <!-- Tien -->
+                                    <div class="officer-box">
+                                        <a href="#" class="image featured">
+                                            <img src="images/officers/Tien.jpg" alt="Tien" loading="lazy"/>
+                                        </a>
+                                        <h3><a href="#">Engineering Lead: Tien Vu</a></h3>
+                                        <p>Senior Engineering Team Lead at BAAP.</p>
+                                    </div>
+                                </div>
+                            </section>
+							<!-- Content -->
 						<article class="box page-content">
 							<header>
 								<h2>About Us</h2>
@@ -153,9 +225,6 @@
 					</div>
 				</div>
 				<div class="col-12">
-
-					
-
 								<div class="col-12">
 									<ul class="actions">
 										<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" class="button large">Sign Up</a></li>
@@ -171,58 +240,43 @@
 		</div>
 	</section>
 
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="container">
-			<div class="row gtr-200">
-				<div class="col-12">
+		
 
-					<!-- About -->
-					<section>
-						<h2 class="major"><span>What's this about?</span></h2>
-						<p>
-							This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia!
-							We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to 
-							teach STEM topics at youth events.
-						</p>
-					</section>
-
-				</div>
-				<div class="col-12">
-
-					<!-- Contact -->
-					<section>
-						<h2 class="major"><span>Get in touch</span></h2>
-						<ul class="contact">
-							<li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-							<li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
-							<br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-
-							
-						</ul>
-					</section>
-
-				</div>
-			</div>
-
-			<!-- Copyright -->
-			<div id="copyright">
-				<ul class="menu">
-					<li>&copy; BHS AAP. All rights reserved.</li>
-				</ul>
-			</div>
-
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script src="assets/js/cursor.js"></script>
-	<script src="assets/js/mobile-nav.js"></script>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row gtr-200">
+                    <div class="col-12">
+                        <!-- About -->
+                        <section>
+                            <h2 class="major"><span>What's this about?</span></h2>
+                            <p>
+                                This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, from <strong>Battlefield High School</strong> in northern Virginia!
+                                We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our community and teach STEM topics at youth events.
+                            </p>
+                        </section>
+                    </div>
+                    <div class="col-12">
+                        <!-- Contact -->
+                        <section>
+                            <h2 class="major"><span>Get in touch</span></h2>
+                            <ul class="contact">
+                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
+                                <li><a class="icon solid fa-envelope" href="mailto: bhsavionics@gmail.com"><span class="label">Email</span></a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/cursor.js"></script>
+<script src="assets/js/mobile-nav.js"></script>
 </html>
