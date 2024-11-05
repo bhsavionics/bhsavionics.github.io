@@ -2611,13 +2611,20 @@ body {
 	object-fit: cover;
 }
 .post-box {
-	border: 1px solid #ddd;
-	padding: 15px;
-	width: 100%;
-	max-width: 300px;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 300px; /* Set a fixed width */
+    height: 200px; /* Set a fixed height */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+}
+.post-box:hover {
+	transform: translateY(-5px); /* Move the box up slightly */
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow */
 }
 .post-box h3 a {
 	color: #333;
@@ -2631,6 +2638,7 @@ body {
 	font-size: 1em;
 	color: #444;
 }
+
 body, html {
 	overflow-y: auto;
 }
