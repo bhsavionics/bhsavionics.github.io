@@ -2631,3 +2631,24 @@ body {
 	font-size: 1em;
 	color: #444;
 }
+body, html {
+	overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+	.officer-grid, .officer-grid-three {
+		grid-template-columns: repeat(2, 1fr); 
+	}
+
+	@media (max-width: 480px) {
+		.officer-grid, .officer-grid-three {
+			grid-template-columns: 1fr; 
+		}
+	}
+
+	.officer-box img {
+		width: 150px;
+		height: 200px;
+	}
+}
+
