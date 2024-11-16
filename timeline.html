@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timeline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/ours.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <style>
+      /* Timeline Line */
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: #ccc;
+        transform: translateX(-50%);
+      }
+
+      /* Timeline Item */
+      .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 20px;
+      }
+
+      .timeline-item.left {
+        text-align: right;
+      }
+
+      .timeline-item.right {
+        left: 50%;
+        text-align: left;
+      }
+
+      .timeline-box {
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+        <div class="custom-cursor">
+            <div class="inner-dot"></div>
+        </div>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/blog/blog.html">Blog</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/gallery/gallery.html">Our Gallery</a></li>
+          <li><a href="/resources.html">Resources</a></li>
+          <li class="current"><a href="timeline.html">Timeline</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main Section -->
+      <section id="main">
+        <div class="container">
+          <h2 class="major"><span>Timeline</span></h2>
+          <div style="position: relative;">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+
+            <!-- Timeline Items -->
+            <div class="timeline-item left">
+              <div class="timeline-box">
+                <div class="timeline-date">2023</div>
+                <h3>Project Launch</h3>
+                <p>Burak kidnaps all the weapons in the class of '25.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item right">
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>First Meeting</h3>
+                <p>Gave a summary of future plans for the club.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item left">
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>Rocket Building</h3>
+                <p>Broke club members into groups and built model rockets.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="footer">
+        <div class="container">
+          <h2 class="major"><span>What's this about?</span></h2>
+          <p>
+            This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia! We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to teach STEM topics at youth events.
+          </p>
+          <h2 class="major"><span>Get in touch</span></h2>
+          <ul class="contact">
+            <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
+            <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
+            <br />
+            <a href="https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+          </ul>
+          <div id="copyright">
+            <ul class="menu">
+              <li>&copy; BHS AAP. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/cursor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/mobile-nav.js"></script>
+  </body>
+</html>
