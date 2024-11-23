@@ -1,139 +1,216 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-  <head>
-    <title>Timeline</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/ours.css" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>BAAP Homepage</title>
+    <link rel="stylesheet" href="assets/css/main.css" >
+    <link rel="stylesheet" href="assets/css/ours.css" >
     <link rel="icon" type="image/png" href="images/logo.png" />
+    
     <style>
-      /* Timeline Line */
-      .timeline-line {
-        position: absolute;
-        left: 50%;
-        width: 4px;
-        height: 100%;
-        background: #ccc;
-        transform: translateX(-50%);
-      }
+        /* Timeline container */
+        #timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-      /* Timeline Item */
-      .timeline-item {
-        position: relative;
-        width: 50%;
-        padding: 20px;
-      }
+        /* Main timeline line */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #ddd;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
 
-      .timeline-item.left {
-        text-align: right;
-      }
+        /* Event container */
+        .timeline-event {
+            position: relative;
+            margin: 50px 0;
+            display: flex;
+            align-items: center;
+            opacity: 0; /* Start as invisible */
+            transform: translateY(100px); /* Slide from below */
+            transition: opacity 1s ease, transform 1s ease;
+        }
 
-      .timeline-item.right {
-        left: 50%;
-        text-align: left;
-      }
+        /* Left-side circle and event content */
+        .timeline-event .event-content {
+            width: 80%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
 
-      .timeline-box {
-        background-color: #f9f9f9;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-      }
+        /* Right-side circle and event content */
+        .timeline-event .event-content-right {
+            width: 80%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            margin-left: 50%;
+        }
 
-      .timeline-date {
-      font-weight: bold;
-      color: rgb(175, 140, 204);;
-      font-size: 1.2em;
-      margin-bottom: 10px;
-      }
+        /* Circle style */
+        .timeline-event .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #3498db;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+        }
 
+        /* Making it responsive */
+        @media (max-width: 600px) {
+            .timeline-event {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .timeline-event .event-content,
+            .timeline-event .event-content-right {
+                width: 90%;
+                margin-left: 0;
+            }
+        }
+
+        /* When an event is in view */
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
-  </head>
-  <body class="is-preload">
+</head>
+<body class="homepage is-preload">
     <div id="page-wrapper">
         <div class="custom-cursor">
             <div class="inner-dot"></div>
         </div>
-      <!-- Nav -->
-      <nav id="nav">
-        <ul>
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/blog/blog.html">Blog</a></li>
-          <li><a href="/about.html">About Us</a></li>
-          <li><a href="/gallery/gallery.html">Our Gallery</a></li>
-          <li><a href="/resources.html">Resources</a></li>
-          <li class="current"><a href="timeline.html">Timeline</a></li>
-        </ul>
-      </nav>
 
-      <!-- Main Section -->
-      <section id="main">
-        <div class="container">
-          <h2 class="major"><span>Timeline</span></h2>
-          <div style="position: relative;">
-            <!-- Timeline Line -->
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="blog/blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="/gallery/gallery.html">Our Gallery</a></li>
+                <li><a href="/resources.html">Resources</a></li>
+                <li><a href="/timeline.html">Timeline</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Timeline Section -->
+        <section id="timeline">
             <div class="timeline-line"></div>
 
-            <!-- Timeline Items -->
-            <div class="timeline-item left">
-              <div class="timeline-box">
-                <div class="timeline-date">2023</div>
-                <h3>Project Launch</h3>
-                <p>Burak kidnaps all the weapons in the class of '25.</p>
-              </div>
+            <!-- Event 1 -->
+            <div class="timeline-event">
+                <div class="circle"></div>
+                <div class="event-content">
+                    <h3>Event 1 Title</h3>
+                    <p>This is the description for Event 1. The event happened in 2024, and we achieved something significant!</p>
+                </div>
             </div>
 
-            <div class="timeline-item right">
-              <div class="timeline-box">
-                <div class="timeline-date">2024</div>
-                <h3>First Meeting</h3>
-                <p>Gave a summary of future plans for the club.</p>
-              </div>
+            <!-- Event 2 -->
+            <div class="timeline-event">
+                <div class="circle"></div>
+                <div class="event-content-right">
+                    <h3>Event 2 Title</h3>
+                    <p>This is the description for Event 2, another big milestone we reached in 2024!</p>
+                </div>
             </div>
 
-            <div class="timeline-item left">
-              <div class="timeline-box">
-                <div class="timeline-date">2024</div>
-                <h3>Rocket Building</h3>
-                <p>Broke club members into groups and built model rockets.</p>
-              </div>
+            <!-- Event 3 -->
+            <div class="timeline-event">
+                <div class="circle"></div>
+                <div class="event-content">
+                    <h3>Event 3 Title</h3>
+                    <p>This is the description for Event 3. Another great achievement in our timeline.</p>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <footer id="footer">
-        <div class="container">
-          <h2 class="major"><span>What's this about?</span></h2>
-          <p>
-            This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia! We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to teach STEM topics at youth events.
-          </p>
-          <h2 class="major"><span>Get in touch</span></h2>
-          <ul class="contact">
-            <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-            <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
-            <br />
-            <a href="https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-          </ul>
-          <div id="copyright">
-            <ul class="menu">
-              <li>&copy; BHS AAP. All rights reserved.</li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="container">
+                <div class="row gtr-200">
+                    <div class="col-12">
+                        <section>
+                            <h2 class="major"><span>What's this about?</span></h2>
+                            <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia! We are a group of students extremely interested in Computer Science, Physics, Engineering, and more...</p>
+                        </section>
+                    </div>
+
+                    <div class="col-12">
+                        <section>
+                            <h2 class="major"><span>Get in touch</span></h2>
+                            <ul class="contact">
+                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
+                                <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
+                                <br><a href="https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div id="copyright">
+                    <ul class="menu">
+                        <li>&copy; BHS AAP. All rights reserved.</li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery.scrolly.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/mobile-nav.js"></script>
-  </body>
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/js/jquery.scrolly.min.js"></script>
+    <script defer src="assets/js/browser.min.js"></script>
+    <script defer src="assets/js/breakpoints.min.js"></script>
+    <script defer src="assets/js/util.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+    <script>
+        // Function to detect if an event is in view
+        const events = document.querySelectorAll('.timeline-event');
+
+        function checkScroll() {
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            events.forEach((event) => {
+                const eventTop = event.offsetTop;
+                const eventBottom = eventTop + event.offsetHeight;
+
+                // If the event is within the viewport, add the 'visible' class
+                if (scrollPosition > eventTop && scrollPosition < eventBottom) {
+                    event.classList.add('visible');
+                } else {
+                    event.classList.remove('visible');
+                }
+            });
+        }
+
+        // Run the checkScroll function on both scroll and load events
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+
+        // Initial check when the page loads
+        checkScroll();
+    </script>
+</body>
 </html>
