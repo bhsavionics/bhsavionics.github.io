@@ -2017,6 +2017,26 @@ body {
 	background-color: var(--light-accent);
 	color: #fff;
 }
+#mobile-menu {
+    display: none;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+#mobile-menu.current {
+    display: block;
+    max-height: 500px; /* Adjust height based on menu content */
+}
+
+.nav-toggle {
+    cursor: pointer;
+}
+
+.nav-toggle.current span {
+    background-color: #000; /* Style for active toggle */
+}
+
 .dropotron {
 	list-style: none;
 	background: #6B7770;
