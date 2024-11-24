@@ -42,12 +42,13 @@
 
         /* Left-side circle and event content */
         .timeline-event .event-content {
-            width: 80%;
+          width: 80%;
             padding: 20px;
             background: #fff;
             border-radius: 6px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 2;
+            margin-left: 50%;
         }
 
         /* Right-side circle and event content */
@@ -58,7 +59,6 @@
             border-radius: 6px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 2;
-            margin-left: 50%;
         }
 
         /* Circle style */
@@ -116,35 +116,36 @@
         
         <!-- Timeline Section -->
         <section id="timeline">
-            <div class="timeline-line"></div>
-
-            <!-- Event 1 -->
-            <div class="timeline-event">
-                <div class="circle"></div>
-                <div class="event-content">
-                    <h3>Event 1 Title</h3>
-                    <p>This is the description for Event 1. The event happened in 2024, and we achieved something significant!</p>
-                </div>
-            </div>
-
-            <!-- Event 2 -->
-            <div class="timeline-event">
-                <div class="circle"></div>
-                <div class="event-content-right">
-                    <h3>Event 2 Title</h3>
-                    <p>This is the description for Event 2, another big milestone we reached in 2024!</p>
-                </div>
-            </div>
-
-            <!-- Event 3 -->
-            <div class="timeline-event">
-                <div class="circle"></div>
-                <div class="event-content">
-                    <h3>Event 3 Title</h3>
-                    <p>This is the description for Event 3. Another great achievement in our timeline.</p>
-                </div>
-            </div>
-        </section>
+          <div class="timeline-line"></div>
+      
+          <!-- Event 1 -->
+          <div class="timeline-event">
+              <div class="circle"></div>
+              <div class="event-content">
+                  <h3>Event 1 Title</h3>
+                  <p>This is the description for Event 1. The event happened in 2024, and we achieved something significant!</p>
+              </div>
+          </div>
+      
+          <!-- Event 2 -->
+          <div class="timeline-event">
+              <div class="circle"></div>
+              <div class="event-content">
+                  <h3>Event 2 Title</h3>
+                  <p>This is the description for Event 2, another big milestone we reached in 2024!</p>
+              </div>
+          </div>
+      
+          <!-- Event 3 -->
+          <div class="timeline-event">
+              <div class="circle"></div>
+              <div class="event-content">
+                  <h3>Event 3 Title</h3>
+                  <p>This is the description for Event 3. Another great achievement in our timeline.</p>
+              </div>
+          </div>
+      </section>
+      
 
         <!-- Footer -->
         <footer id="footer">
@@ -184,33 +185,31 @@
     <script defer src="assets/js/breakpoints.min.js"></script>
     <script defer src="assets/js/util.js"></script>
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/cursor.js"></script>
 
     <script>
-        // Function to detect if an event is in view
-        const events = document.querySelectorAll('.timeline-event');
+        // Select all timeline events
+// Select all timeline events
+const events = document.querySelectorAll('.timeline-event');
 
-        function checkScroll() {
-            const scrollPosition = window.scrollY + window.innerHeight;
-
-            events.forEach((event) => {
-                const eventTop = event.offsetTop;
-                const eventBottom = eventTop + event.offsetHeight;
-
-                // If the event is within the viewport, add the 'visible' class
-                if (scrollPosition > eventTop && scrollPosition < eventBottom) {
-                    event.classList.add('visible');
-                } else {
-                    event.classList.remove('visible');
-                }
-            });
+// Create a new IntersectionObserver
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        // Only add 'visible' class when the event comes into view from top to bottom
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Add the 'visible' class
+            observer.unobserve(entry.target); // Stop observing after it becomes visible
         }
+    });
+}, {
+    threshold: 0.5, // Trigger when 50% of the element is in view
+    rootMargin: '0px 0px -50% 0px' // Ensure the event triggers when it's closer to the viewport
+});
 
-        // Run the checkScroll function on both scroll and load events
-        window.addEventListener('scroll', checkScroll);
-        window.addEventListener('load', checkScroll);
+// Observe each timeline event
+events.forEach(event => observer.observe(event));
 
-        // Initial check when the page loads
-        checkScroll();
+
     </script>
 </body>
 </html>
