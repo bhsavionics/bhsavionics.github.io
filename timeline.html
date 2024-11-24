@@ -40,26 +40,27 @@
             transition: opacity 1s ease, transform 1s ease;
         }
 
-        /* Left-side circle and event content */
         .timeline-event .event-content {
-          width: 80%;
-            padding: 20px;
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 2;
-            margin-left: 50%;
-        }
+    width: 80%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    text-align: left; /* Ensure all text aligns to the left */
+}
 
-        /* Right-side circle and event content */
-        .timeline-event .event-content-right {
-            width: 80%;
-            padding: 20px;
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 2;
-        }
+/* Left-side events */
+.timeline-event.left .event-content {
+    margin-left: 0; /* Align content to the left of the line */
+    margin-right: 50%; /* Push content to the left side */
+}
+
+/* Right-side events */
+.timeline-event.right .event-content {
+    margin-left: 50%; /* Push content to the right side */
+    margin-right: 0; /* Align content to the right of the line */
+}
 
         /* Circle style */
         .timeline-event .circle {
@@ -75,6 +76,16 @@
             z-index: 2;
         }
 
+        /* Event content */
+        .timeline-event .event-content {
+            width: 80%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
         /* Making it responsive */
         @media (max-width: 600px) {
             .timeline-event {
@@ -82,10 +93,9 @@
                 align-items: center;
             }
 
-            .timeline-event .event-content,
-            .timeline-event .event-content-right {
+            .timeline-event .event-content {
                 width: 90%;
-                margin-left: 0;
+                margin: 0; /* Center content for smaller screens */
             }
         }
 
@@ -105,47 +115,46 @@
         <!-- Nav -->
         <nav id="nav">
             <ul>
-                <li class="current"><a href="index.html">Home</a></li>
+                <li ><a href="index.html">Home</a></li>
                 <li><a href="blog/blog.html">Blog</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="/gallery/gallery.html">Our Gallery</a></li>
                 <li><a href="/resources.html">Resources</a></li>
-                <li><a href="/timeline.html">Timeline</a></li>
+                <li class="current"><a href="/timeline.html">Timeline</a></li>
             </ul>
         </nav>
         
         <!-- Timeline Section -->
         <section id="timeline">
-          <div class="timeline-line"></div>
-      
-          <!-- Event 1 -->
-          <div class="timeline-event">
-              <div class="circle"></div>
-              <div class="event-content">
-                  <h3>Event 1 Title</h3>
-                  <p>This is the description for Event 1. The event happened in 2024, and we achieved something significant!</p>
-              </div>
-          </div>
-      
-          <!-- Event 2 -->
-          <div class="timeline-event">
-              <div class="circle"></div>
-              <div class="event-content">
-                  <h3>Event 2 Title</h3>
-                  <p>This is the description for Event 2, another big milestone we reached in 2024!</p>
-              </div>
-          </div>
-      
-          <!-- Event 3 -->
-          <div class="timeline-event">
-              <div class="circle"></div>
-              <div class="event-content">
-                  <h3>Event 3 Title</h3>
-                  <p>This is the description for Event 3. Another great achievement in our timeline.</p>
-              </div>
-          </div>
-      </section>
-      
+            <div class="timeline-line"></div>
+
+            <!-- Event 1 (Left) -->
+            <div class="timeline-event left">
+                <div class="circle"></div>
+                <div class="event-content">
+                    <h3>Event 1 Title</h3>
+                    <p>This is the description for Event 1. The event happened in 2024, and we achieved something significant!</p>
+                </div>
+            </div>
+
+            <!-- Event 2 (Right) -->
+            <div class="timeline-event right">
+                <div class="circle"></div>
+                <div class="event-content">
+                    <h3>Event 2 Title</h3>
+                    <p>This is the description for Event 2, another big milestone we reached in 2024!</p>
+                </div>
+            </div>
+
+            <!-- Event 3 (Left) -->
+            <div class="timeline-event left">
+                <div class="circle"></div>
+                <div class="event-content">
+                    <h3>Event 3 Title</h3>
+                    <p>This is the description for Event 3. Another great achievement in our timeline.</p>
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer id="footer">
@@ -177,8 +186,6 @@
             </div>
         </footer>
     </div>
-
-    <!-- Scripts -->
     <script defer src="assets/js/jquery.min.js"></script>
     <script defer src="assets/js/jquery.scrolly.min.js"></script>
     <script defer src="assets/js/browser.min.js"></script>
@@ -186,30 +193,26 @@
     <script defer src="assets/js/util.js"></script>
     <script defer src="assets/js/main.js"></script>
     <script defer src="assets/js/cursor.js"></script>
-
+    <!-- Scripts -->
     <script>
         // Select all timeline events
-// Select all timeline events
-const events = document.querySelectorAll('.timeline-event');
+        const events = document.querySelectorAll('.timeline-event');
 
-// Create a new IntersectionObserver
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        // Only add 'visible' class when the event comes into view from top to bottom
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible'); // Add the 'visible' class
-            observer.unobserve(entry.target); // Stop observing after it becomes visible
-        }
-    });
-}, {
-    threshold: 0.5, // Trigger when 50% of the element is in view
-    rootMargin: '0px 0px -50% 0px' // Ensure the event triggers when it's closer to the viewport
-});
+        // Create a new IntersectionObserver
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Add the 'visible' class
+                    observer.unobserve(entry.target); // Stop observing after it becomes visible
+                }
+            });
+        }, {
+            threshold: 0.5, // Trigger when 50% of the element is in view
+            rootMargin: '0px 0px -50% 0px'
+        });
 
-// Observe each timeline event
-events.forEach(event => observer.observe(event));
-
-
+        // Observe each timeline event
+        events.forEach(event => observer.observe(event));
     </script>
 </body>
 </html>

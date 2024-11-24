@@ -223,6 +223,10 @@
             if (customCursor) {
                 customCursor.remove();
             }
+            const navBar = doc.querySelector('nav');
+            if (navBar) {
+                navBar.remove();
+            }
 
             // Place the modified content into the target element
             document.getElementById('postContent').innerHTML = doc.body.innerHTML;
