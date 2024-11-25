@@ -62,23 +62,22 @@ function initializeNavigation() {
 
 // Function to highlight the current page
 function highlightCurrentPage() {
-    const currentPath = window.location.pathname;
+    const currentPath = window.location.pathname.replace(/\/$/, ''); // Remove trailing slash if it exists
     const allNavLinks = document.querySelectorAll('#nav a, #mobile-nav a');
 
     allNavLinks.forEach(link => {
-        const linkPath = new URL(link.href).pathname; // Get absolute path
+        const linkPath = new URL(link.href).pathname.replace(/\/$/, ''); // Remove trailing slash
         link.classList.remove('current'); // Clear previous highlights
 
         // Match exact path or nested paths
         if (
             currentPath === linkPath || 
-            currentPath.startsWith(linkPath) && linkPath !== '/'
+            (currentPath.startsWith(linkPath) && linkPath !== '/')
         ) {
             link.classList.add('current');
         }
     });
 }
-
 
 // Initialize when the DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeNavigation);
