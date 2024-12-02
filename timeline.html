@@ -35,10 +35,18 @@
       }
 
       .timeline-box {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         background-color: #f9f9f9;
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 20px;
+      }
+
+      .timeline-box.visible {
+        opacity: 1;
+        transform: translateY(0);
       }
 
       .timeline-date {
@@ -99,6 +107,30 @@
                 <p>Broke club members into groups and built model rockets.</p>
               </div>
             </div>
+
+            <div class="timeline-item right">
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>Test</h3>
+                <p>Test</p>
+              </div>
+            </div>
+
+            <div class="timeline-item left">
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>Test</h3>
+                <p>Test</p>
+              </div>
+            </div>
+
+            <div class="timeline-item right">
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>Test</h3>
+                <p>Test</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -135,5 +167,24 @@
     <script src="/assets/js/cursor.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/mobile-nav.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const timelineBoxes = document.querySelectorAll('.timeline-box');
+    
+        const handleScroll = () => {
+          const triggerBottom = window.innerHeight * 0.8; // Adjust for when boxes should start appearing
+          timelineBoxes.forEach((box) => {
+            const boxTop = box.getBoundingClientRect().top;
+            if (boxTop < triggerBottom) {
+              box.classList.add('visible');
+            }
+          });
+        };
+    
+        // Trigger on scroll and on page load
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+      });
+    </script>
   </body>
 </html>
