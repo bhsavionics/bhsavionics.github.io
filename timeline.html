@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Timeline</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/ours.css" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <style>
+      /* Timeline Line */
+      .timeline-line {
+        position: absolute;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: #ccc;
+        transform: translateX(-50%);
+      }
+
+      /* Timeline Item */
+      .timeline-item {
+        position: relative;
+        width: 50%;
+        padding: 20px;
+      }
+
+      .timeline-item.left {
+        text-align: right;
+      }
+
+      .timeline-item.right {
+        left: 50%;
+        text-align: left;
+      }
+
+      /* Dot Style */
+      .timeline-dot {
+        opacity: 0;
+        transform: scale(0.5);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        width: 12px;
+        height: 12px;
+        background-color: #7a6bca;
+        /* Color of the dot */
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        /* Center vertically */
+        transform: translateY(-50%);
+        z-index: 1;
+      }
+
+      .timeline-dot.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      /* Position the dot on the left side for right items, and on the right side for left items */
+      .timeline-item.left .timeline-dot {
+        left: 99%;
+        /* Position to the right of the line */
+      }
+
+      .timeline-item.right .timeline-dot {
+        left: 1%;
+        /* Position to the left of the line */
+        transform: translateX(-100%) translateY(-50%);
+        /* Corrects centering */
+      }
+
+      .timeline-box {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+      }
+
+      .timeline-box.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .timeline-date {
+        font-weight: bold;
+        color: rgb(175, 140, 204);
+        ;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <div id="page-wrapper">
+      <div class="custom-cursor">
+        <div class="inner-dot"></div>
+      </div>
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="../index.html">Home</a>
+          </li>
+          <li>
+            <a href="/blog/blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="../about.html">About Us</a>
+          </li>
+          <li>
+            <a href="/gallery/gallery.html">Our Gallery</a>
+          </li>
+          <li>
+            <a href="/resources.html">Resources</a>
+          </li>
+          <li class="current">
+            <a href="/timeline.html">Our Journey</a>
+          </li>
+        </ul>
+      </nav>
+      <nav id="mobile-nav">
+        <div class="nav-toggle" onclick="toggleNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="mobile-menu">
+          <li>
+            <a href="/index.html">Home</a>
+          </li>
+          <li>
+            <a href="/blog/blog.html">Blog</a>
+          </li>
+          <li>
+            <a href="/about.html">About Us</a>
+          </li>
+          <li>
+            <a href="/gallery/gallery.html">Our Gallery</a>
+          </li>
+          <li>
+            <a href="/resources.html">Resources</a>
+          </li>
+          <li class="current">
+            <a href="/timeline.html">Our Journey</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Main Section -->
+      <section id="main">
+        <div class="container">
+          <h2 class="major">
+            <span>Timeline</span>
+          </h2>
+          <div style="position: relative;">
+            <!-- Timeline Line -->
+            <div class="timeline-line"></div>
+            <!-- Timeline Items -->
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-box">
+                <div class="timeline-date">2023</div>
+                <h3>Project Launch</h3>
+                <p>Burak gathered capable leaders to organize the club</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>First Meeting</h3>
+                <p>Gave a summary of future plans for the club</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>Rocket Building</h3>
+                <p>Broke club members into groups and built model rockets</p>
+              </div>
+            </div>
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>Beginning of TARC Interviews</h3>
+                <p>Looked at TARC applications and did interviews to choose candidates for the competition</p>
+              </div>
+            </div>
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-box">
+                <div class="timeline-date">2024</div>
+                <h3>TARC Acceptances</h3>
+                <p>Broke up new TARC candidates into groups</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer id="footer">
+        <div class="container">
+          <h2 class="major">
+            <span>What's this about?</span>
+          </h2>
+          <p> This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia! We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to teach STEM topics at youth events. </p>
+          <h2 class="major">
+            <span>Get in touch</span>
+          </h2>
+          <ul class="contact">
+            <li>
+              <a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/">
+                <span class="label">Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV">
+                <span class="label">Discord</span>
+              </a>
+            </li>
+            <br />
+            <a href="https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+          </ul>
+          <div id="copyright">
+            <ul class="menu">
+              <li>&copy; BHS AAP. All rights reserved.</li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/cursor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/mobile-nav.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const timelineBoxes = document.querySelectorAll('.timeline-box');
+        const timelineDots = document.querySelectorAll('.timeline-dot');
+        const handleScroll = () => {
+          const triggerBottom = window.innerHeight * 0.8; // Trigger when the element is 80% into the viewport
+          timelineBoxes.forEach((box, index) => {
+            const boxTop = box.getBoundingClientRect().top;
+            if (boxTop < triggerBottom) {
+              box.classList.add('visible');
+              if (timelineDots[index]) {
+                timelineDots[index].classList.add('visible');
+              }
+            } else {
+              box.classList.remove('visible');
+              if (timelineDots[index]) {
+                timelineDots[index].classList.remove('visible');
+              }
+            }
+          });
+        };
+        // Trigger on scroll and on page load
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check in case some elements are already in the viewport
+      });
+    </script>
+  </body>
+</html>
