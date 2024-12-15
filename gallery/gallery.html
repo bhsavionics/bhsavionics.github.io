@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/ours.css" />
     <title>Our Gallery</title>
-    
+
     <style>
         /* General styles */
         body {
@@ -16,59 +17,67 @@
             padding: 0;
         }
 
-        h1, h2, h3 {
+        h1,
+        h2,
+        h3 {
             text-align: center;
         }
 
         /* Gallery Grid */
-.gallery-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 20px !important;
-    margin-top: 30px !important;
-}
+        .gallery-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 20px !important;
+            margin-top: 30px !important;
+        }
 
-.gallery-item {
-    background-color: white !important;
-    padding: 10px !important;
-    text-align: center !important;
-    border: 1px solid #ddd !important;
-    border-radius: 8px !important;
-    transition: transform 0.3s ease !important;
-}
+        .gallery-item {
+            background-color: white !important;
+            padding: 10px !important;
+            text-align: center !important;
+            border: 1px solid #ddd !important;
+            border-radius: 8px !important;
+            transition: transform 0.3s ease !important;
+        }
 
-.gallery-item img {
-    max-width: 200px !important; /* Adjusts image size */
-    height: 250px !important; /* Fixed height for consistency */
-    object-fit: cover; /* Ensures images maintain aspect ratio */
-    border-radius: 8px !important;
-}
+        .gallery-item img {
+            max-width: 200px !important;
+            /* Adjusts image size */
+            height: 250px !important;
+            /* Fixed height for consistency */
+            object-fit: cover;
+            /* Ensures images maintain aspect ratio */
+            border-radius: 8px !important;
+        }
 
-.gallery-item h3 {
-    margin-top: 10px !important;
-    font-size: 18px !important;
-    color: #333 !important;
-}
+        .gallery-item h3 {
+            margin-top: 10px !important;
+            font-size: 18px !important;
+            color: #333 !important;
+        }
 
-.gallery-item:hover {
-    transform: scale(1.05) !important;
-}
+        .gallery-item:hover {
+            transform: scale(1.05) !important;
+        }
 
 
         /* Adjust grid layout for smaller screens */
         @media (max-width: 768px) {
             .gallery-grid {
-                grid-template-columns: 1fr 1fr !important; /* 2 items per row on tablets */
+                grid-template-columns: 1fr 1fr !important;
+                /* 2 items per row on tablets */
             }
         }
 
         @media (max-width: 480px) {
             .gallery-grid {
-                grid-template-columns: 1fr !important; /* 1 item per row on mobile */
+                grid-template-columns: 1fr !important;
+                /* 1 item per row on mobile */
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Main Content Section: Gallery Grid -->
     <section id="main">
@@ -76,7 +85,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2>Our Gallery</h2>
-                    
+
                     <div class="custom-cursor">
                         <div class="inner-dot"></div>
                     </div>
@@ -90,7 +99,7 @@
                             <li><a href="/timeline.html">Our Journey</a></li>
                         </ul>
                     </nav>
-                    
+
                     <nav id="mobile-nav">
                         <div class="nav-toggle" onclick="toggleNav()">
                             <span></span>
@@ -106,8 +115,8 @@
                             <li><a href="/timeline.html">Our Journey</a></li>
                         </ul>
                     </nav>
-                    
-                    
+
+
                     <!-- Gallery Grid -->
                     <div class="gallery-grid">
                         <!-- Meeting 1 -->
@@ -149,8 +158,11 @@
                 <div class="col-12">
                     <section>
                         <h2 class="major"><span>What's this about?</span></h2>
-                        <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia!
-                            We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to 
+                        <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from
+                            <strong>Battlefield High School</strong> in northern Virginia!
+                            We are a group of students extremely interested in Computer Science, Physics, Engineering,
+                            and more, applying what we learn in projects. We are also active in our local community and
+                            like to
                             teach STEM topics at youth events.</p>
                     </section>
                 </div>
@@ -161,9 +173,12 @@
                     <section>
                         <h2 class="major"><span>Get in touch</span></h2>
                         <ul class="contact">
-                            <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-                            <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
-                            <br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
+                            <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span
+                                        class="label">Instagram</span></a></li>
+                            <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span
+                                        class="label">Discord</span></a></li>
+                            <br><a href="https://outlook.office.com/mail">Questions? Contact us at
+                                ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
 
                         </ul>
                     </section>
@@ -179,7 +194,7 @@
             </div>
         </div>
     </footer>
-         <!-- Scripts -->
+    <!-- Scripts -->
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrolly.min.js"></script>
     <script src="/assets/js/browser.min.js"></script>
@@ -190,6 +205,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/assets/js/mobile-nav.js"></script>
 
-    
+
 </body>
+
 </html>

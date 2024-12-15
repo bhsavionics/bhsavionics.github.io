@@ -21,13 +21,15 @@
 		line-height: 1;
 		text-transform: none !important;
 
-		@if ($category == brands) {
+		@if ($category==brands) {
 			font-family: 'Font Awesome 5 Brands';
 		}
-		@elseif ($category == solid) {
+
+		@elseif ($category==solid) {
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 900;
 		}
+
 		@else {
 			font-family: 'Font Awesome 5 Free';
 			font-weight: 400;
@@ -42,7 +44,7 @@
 /// @param {mixed} $lr Left/right padding.
 /// @param {list} $pad Optional extra padding (in the following order top, right, bottom, left)
 /// @param {bool} $important If true, adds !important.
-@mixin padding($tb, $lr, $pad: (0,0,0,0), $important: null) {
+@mixin padding($tb, $lr, $pad: (0, 0, 0, 0), $important: null) {
 
 	@if $important {
 		$important: '!important';
@@ -50,11 +52,11 @@
 
 	$x: 0.1em;
 
-	@if unit(_size(element-margin)) == 'rem' {
+	@if unit(_size(element-margin))=='rem' {
 		$x: 0.1rem;
 	}
 
-	padding: ($tb + nth($pad,1)) ($lr + nth($pad,2)) max($x, $tb - _size(element-margin) + nth($pad,3)) ($lr + nth($pad,4)) #{$important};
+	padding: ($tb + nth($pad, 1)) ($lr + nth($pad, 2)) max($x, $tb - _size(element-margin) + nth($pad, 3)) ($lr + nth($pad, 4)) #{$important};
 
 }
 

@@ -1,6 +1,7 @@
 $(document).ready(function () {
     const $customCursor = $('.custom-cursor');
-    let cursorX = 0, cursorY = 0;
+    let cursorX = 0,
+        cursorY = 0;
 
     // Track mouse position
     $(document).on('mousemove', function (e) {
