@@ -2614,6 +2614,8 @@ body {
 }
 
 .founder-box img {
+	border: 1px solid black;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Creates a shadow */
 	transform: translateX(70px);
 	width: 200px;
 	height: 250px;
@@ -2634,6 +2636,8 @@ body {
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .officer-box img {
+	border: 1px solid black;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Creates a shadow */
 	transform: translateX(30px);
 	width: 200px;
 	height: 250px;
