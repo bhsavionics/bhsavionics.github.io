@@ -61,7 +61,8 @@
                 <h2>The Battlefield Aeronautics</h2>
                 <h2>and Avionics Program</h2>
                 <p></p>
-                <a href="#main" class="button scrolly">Alright, let's go</a>
+                <a href="#main" class="button scrolly" data-scroll="true">Alright, let's go</a>
+
             </div>
         </section>
 
@@ -262,7 +263,13 @@
     <script defer src="assets/js/cursor.js"></script>
     <script defer src="assets/js/mobile-nav.js"></script>
 
-
+    <script>
+        document.querySelector('.scrolly').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.querySelector('#main').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+    
 </body>
 
 </html>
