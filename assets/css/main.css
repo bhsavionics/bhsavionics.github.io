@@ -3422,7 +3422,39 @@ body {
 	text-align: center;
 }
 
+
+.founder-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; 
+    gap: 20px; 
+}
+
+.founder-box {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+	margin: bottom(10px);
+}
+
+.founder-box img {
+	border: 1px solid black;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Creates a shadow */
+	transform: translateX(70px);
+	width: 200px;
+	height: 250px;
+	object-fit: cover;
+}
+
 .officer-box {
+	min-width: 280px; 
+	flex: 1 1 calc(25% - 40px); 
+    max-width: calc(25% + 40px); 
+    text-align: center;
 	border: 2px solid #ccc;
 	border-radius: 8px;
 	padding: 10px;
@@ -3435,6 +3467,9 @@ body {
 }
 
 .officer-box img {
+	border: 1px solid black;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Creates a shadow */
+	transform: translateX(30px);
 	width: 200px;
 	height: 250px;
 	object-fit: cover;
