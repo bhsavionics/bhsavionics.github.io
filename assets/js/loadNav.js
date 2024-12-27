@@ -27,8 +27,13 @@ function toggleNav() {
 }
 
 function setCurrentNavLink() {
-    const path = window.location.pathname.toLowerCase(); // Normalize the current path
+    let path = window.location.pathname.toLowerCase(); // Normalize the current path
     console.log('Current path:', path);
+
+    // Special case for root URL
+    if (path === '/' || path === '/index.html') {
+        path = '/index.html';
+    }
 
     const navLinks = document.querySelectorAll('#nav a, #mobile-nav a');
     navLinks.forEach(link => {
@@ -41,16 +46,12 @@ function setCurrentNavLink() {
                 link.parentElement.classList.add('current');
                 console.log('Set current for blog directory:', linkPath);
             }
-        } 
-        // Special case for /gallery/ subpaths
-        else if (path.startsWith('/gallery/') && !path.endsWith('/gallery.html')) {
+        } else if (path.startsWith('/gallery/posts/')) {
             if (linkPath === '/gallery/gallery.html') {
                 link.parentElement.classList.add('current');
                 console.log('Set current for gallery directory:', linkPath);
             }
-        } 
-        // General matching for other links
-        else if (path === linkPath || path.startsWith(`${linkPath}/`)) {
+        } else if (linkPath === path) {
             link.parentElement.classList.add('current');
             console.log('Set current for:', linkPath);
         } else {
