@@ -48,7 +48,7 @@ function setCurrentNavLink() {
                 link.parentElement.classList.add('current');
                 console.log('Set current for blog directory:', linkPath);
             }
-        } else if (path.startsWith('/gallery/posts/')) {
+        } else if (path.startsWith('/gallery/')) {
             if (linkPath === '/gallery/gallery.html') {
                 link.parentElement.classList.add('current');
                 console.log('Set current for gallery directory:', linkPath);
