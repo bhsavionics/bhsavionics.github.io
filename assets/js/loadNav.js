@@ -27,16 +27,30 @@ function toggleNav() {
 }
 
 function setCurrentNavLink() {
-    const path = window.location.pathname.replace(/\/$/, ''); // Normalize path
+    const path = window.location.pathname.toLowerCase(); // Normalize the current path
     console.log('Current path:', path);
 
     const navLinks = document.querySelectorAll('#nav a, #mobile-nav a');
     navLinks.forEach(link => {
-        const linkPath = link.getAttribute('href').replace(/\/$/, ''); // Normalize link paths
+        const linkPath = link.getAttribute('href').toLowerCase(); // Normalize link paths
         console.log('Checking link:', linkPath);
 
-        // Exact match or if the current path starts with the link's path (for nested directories)
-        if (path === linkPath || path.startsWith(`${linkPath}/`)) {
+        // Special case for /blog/posts/
+        if (path.startsWith('/blog/posts/')) {
+            if (linkPath === '/blog/blog.html') {
+                link.parentElement.classList.add('current');
+                console.log('Set current for blog directory:', linkPath);
+            }
+        } 
+        // Special case for /gallery/ subpaths
+        else if (path.startsWith('/gallery/') && !path.endsWith('/gallery.html')) {
+            if (linkPath === '/gallery/gallery.html') {
+                link.parentElement.classList.add('current');
+                console.log('Set current for gallery directory:', linkPath);
+            }
+        } 
+        // General matching for other links
+        else if (path === linkPath || path.startsWith(`${linkPath}/`)) {
             link.parentElement.classList.add('current');
             console.log('Set current for:', linkPath);
         } else {
