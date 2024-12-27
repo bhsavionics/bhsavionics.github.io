@@ -34,7 +34,9 @@ function setCurrentNavLink() {
     if (path === '/' || path === '/index.html') {
         path = '/index.html';
     }
-
+    if(path === "/blog/all-posts.html"){
+        path ="/blog/posts/";
+    }
     const navLinks = document.querySelectorAll('#nav a, #mobile-nav a');
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href').toLowerCase(); // Normalize link paths
