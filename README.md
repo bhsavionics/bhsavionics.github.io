@@ -1,6 +1,6 @@
 # BAAP GitHub Website Repository
 
-[BAAP Website](bhsavionics.github.io)
+[BAAP Website](https://bhsavionics.github.io)
 
 Welcome to the GitHub repository for the **Battlefield Aerospace and Aeronautics Program (BAAP)** website! This repository hosts the code and content for our official website, providing an online platform for club information, events, blog posts, and project showcases.
 
