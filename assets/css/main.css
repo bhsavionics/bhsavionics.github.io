@@ -3537,4 +3537,8 @@ html {
 		width: 150px;
 		height: 200px;
 	}
+	input, textarea, button {
+		cursor: none;
+	}
+	
 }

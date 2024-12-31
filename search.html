@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/ours.css" />
+    <title>Search</title>
+    <style>
+        body {
+            cursor: none;
+        }
+        .search-container {
+            text-align: center;
+            padding: 2rem;
+            cursor: none;
+        }
+        .search-bar {
+            width: 80%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        #results {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 80%;
+            cursor: none;
+        }
+        input, textarea, button {
+    cursor: none;
+}
+
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Include your nav.html content here using server-side includes or manually -->
+    </nav>
+    <div class="search-container">
+        <h1>Search</h1>
+        <div class="custom-cursor">
+            <div class="inner-dot"></div>
+        </div>
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search here..." oninput="performSearch()" />
+        <div id="results"></div>
+    </div>
+    
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/cursor.js"></script>
+    <script>
+        const pages = [
+            { title: "Home", url: "/index.html" },
+            { title: "Blog", url: "/blog/blog.html" },
+            { title: "About Us", url: "/about.html" },
+            { title: "Our Gallery", url: "/gallery/gallery.html" },
+            { title: "Resources", url: "/resources.html" },
+            { title: "Our Journey", url: "/timeline.html" },
+        ];
+
+        function performSearch() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            if (query) {
+                const results = pages.filter(page => page.title.toLowerCase().includes(query));
+                if (results.length) {
+                    results.forEach(page => {
+                        const resultItem = document.createElement('div');
+                        resultItem.innerHTML = `<a href="${page.url}">${page.title}</a>`;
+                        resultsDiv.appendChild(resultItem);
+                    });
+                } else {
+                    resultsDiv.innerHTML = "<p>No results found.</p>";
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>
