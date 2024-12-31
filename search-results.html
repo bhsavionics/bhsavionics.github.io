@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/ours.css" />
+    <title>Search Results</title>
+    <style>
+        .results-container {
+            max-width: 80%;
+            margin: 2rem auto;
+        }
+        .result-item {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <!-- Include your nav.html content here -->
+    </nav>
+    <div class="results-container">
+        <h1>Search Results</h1>
+        <div id="searchResults"></div>
+    </div>
+
+    <script>
+        const queryParams = new URLSearchParams(window.location.search);
+        const query = queryParams.get('q')?.toLowerCase() || '';
+
+        const pages = [
+            { title: "Home", url: "/index.html", content: "Welcome to our homepage." },
+            { title: "Blog", url: "/blog/blog.html", content: "Explore our latest articles and updates." },
+            { title: "About Us", url: "/about.html", content: "Learn more about our mission and team." },
+            { title: "Our Gallery", url: "/gallery/gallery.html", content: "Check out our photo collection." },
+            { title: "Resources", url: "/resources.html", content: "Find helpful guides and materials." },
+            { title: "Our Journey", url: "/timeline.html", content: "Discover our milestones and history." },
+        ];
+
+        const resultsDiv = document.getElementById('searchResults');
+        const results = pages.filter(page => 
+            page.title.toLowerCase().includes(query) || 
+            page.content.toLowerCase().includes(query)
+        );
+
+        if (results.length) {
+            results.forEach(page => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+                resultItem.innerHTML = `
+                    <a href="${page.url}"><h3>${page.title}</h3></a>
+                    <p>${page.content}</p>
+                `;
+                resultsDiv.appendChild(resultItem);
+            });
+        } else {
+            resultsDiv.innerHTML = "<p>No results found.</p>";
+        }
+    </script>
+</body>
+</html>

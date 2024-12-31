@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="/assets/css/ours.css" />
     <title>Search</title>
     <style>
-        body {
-            cursor: none;
-        }
         .search-container {
             text-align: center;
             padding: 2rem;
-            cursor: none;
+            position: relative;
         }
         .search-bar {
             width: 80%;
@@ -25,60 +22,163 @@
             text-align: left;
             margin: 0 auto;
             max-width: 80%;
-            cursor: none;
         }
-        input, textarea, button {
-    cursor: none;
+        #results div {
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+        #results div.active {
+            background-color: #f0f0f0;
+        }
+        .suggestion-box {
+    position: absolute;
+    background: transparent;  /* Changed from white to transparent */
+    border: 1px solid #ddd;
+    max-width: 80%;
+    z-index: 1000;
+    margin: 0 auto;
+    left: 10%;
 }
 
+        .suggestion-box div {
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+        .suggestion-box div:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <!-- Include your nav.html content here using server-side includes or manually -->
+        <!-- Include your nav.html content here -->
     </nav>
     <div class="search-container">
         <h1>Search</h1>
-        <div class="custom-cursor">
-            <div class="inner-dot"></div>
-        </div>
         <input type="text" id="searchInput" class="search-bar" placeholder="Search here..." oninput="performSearch()" />
         <div id="results"></div>
     </div>
-    
-    
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="/assets/js/cursor.js"></script>
+
     <script>
-        const pages = [
-            { title: "Home", url: "/index.html" },
-            { title: "Blog", url: "/blog/blog.html" },
-            { title: "About Us", url: "/about.html" },
-            { title: "Our Gallery", url: "/gallery/gallery.html" },
-            { title: "Resources", url: "/resources.html" },
-            { title: "Our Journey", url: "/timeline.html" },
-        ];
+       // Function to fetch content from each page using AJAX (fetch)
+async function fetchPageContent(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch ${url}`);
+        }
+        const text = await response.text();
 
-        function performSearch() {
-            const query = document.getElementById('searchInput').value.toLowerCase();
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';
+        // Use a DOM parser to extract the text content of the page (from a specific element or the entire body)
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, 'text/html');
 
-            if (query) {
-                const results = pages.filter(page => page.title.toLowerCase().includes(query));
-                if (results.length) {
-                    results.forEach(page => {
-                        const resultItem = document.createElement('div');
-                        resultItem.innerHTML = `<a href="${page.url}">${page.title}</a>`;
-                        resultsDiv.appendChild(resultItem);
-                    });
-                } else {
-                    resultsDiv.innerHTML = "<p>No results found.</p>";
+        // Extract text from the body (or a specific element, e.g., <main>, <article>, etc.)
+        const bodyText = doc.body.innerText || doc.body.textContent;
+
+        return bodyText;
+    } catch (error) {
+        console.error(error);
+        return '';
+    }
+}
+
+// Function to populate the pages array with dynamic content fetched from each page
+async function populatePages() {
+    const pages = [
+        { title: "Home", url: "/index.html" },
+        { title: "Blog", url: "/blog/blog.html" },
+        { title: "About Us", url: "/about.html" },
+        { title: "Our Gallery", url: "/gallery/gallery.html" },
+        { title: "Resources", url: "/resources.html" },
+        { title: "Our Journey", url: "/timeline.html" }
+    ];
+
+    // Fetch and add content to each page
+    for (const page of pages) {
+        page.content = await fetchPageContent(page.url); // Fetch and add content
+    }
+
+    return pages;
+}
+
+// Function to perform search and show relevant results with snippets
+async function performSearch() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const resultsDiv = document.getElementById('results');
+
+    resultsDiv.innerHTML = '';
+    currentIndex = -1;
+
+    // Fetch the pages dynamically before performing the search
+    const pages = await populatePages(); 
+
+    if (query) {
+        const results = pages.filter(page => {
+            return page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query);
+        });
+
+        if (results.length) {
+            results.forEach(page => {
+                const highlightedTitle = page.title.replace(new RegExp(query, 'gi'), match => `<mark>${match}</mark>`);
+                
+                // Extract a snippet of content around the first match
+                const contentLower = page.content.toLowerCase();
+                const indexOfMatch = contentLower.indexOf(query);
+
+                let snippet = '';
+                if (indexOfMatch !== -1) {
+                    const start = Math.max(0, indexOfMatch - 100); // 100 chars before match
+                    const end = Math.min(contentLower.length, indexOfMatch + query.length + 100); // 100 chars after match
+                    snippet = page.content.substring(start, end);
+
+                    // Highlight the query in the snippet
+                    snippet = snippet.replace(new RegExp(query, 'gi'), match => `<mark>${match}</mark>`);
+                }
+
+                // Append a result item with the highlighted title and snippet
+                const resultItem = document.createElement('div');
+                resultItem.innerHTML = `
+                    <div>
+                        <a href="${page.url}"><strong>${highlightedTitle}</strong></a>
+                        <p>${snippet}</p>
+                    </div>`;
+                resultsDiv.appendChild(resultItem);
+            });
+
+            // Add "See all results" link
+            const viewAll = document.createElement('div');
+            viewAll.innerHTML = `<a href="/search-results.html?q=${query}">See all results</a>`;
+            resultsDiv.appendChild(viewAll);
+        } else {
+            resultsDiv.innerHTML = "<p>No results found.</p>";
+        }
+    }
+}
+
+
+
+
+        document.addEventListener('keydown', (e) => {
+            const results = document.querySelectorAll('#results div');
+            if (results.length > 0) {
+                if (e.key === 'ArrowDown') {
+                    currentIndex = (currentIndex + 1) % results.length;
+                    updateActiveResult(results);
+                } else if (e.key === 'ArrowUp') {
+                    currentIndex = (currentIndex - 1 + results.length) % results.length;
+                    updateActiveResult(results);
+                } else if (e.key === 'Enter' && currentIndex >= 0) {
+                    results[currentIndex].querySelector('a').click();
                 }
             }
+        });
+
+        function updateActiveResult(results) {
+            results.forEach((result, index) => {
+                result.classList.toggle('active', index === currentIndex);
+            });
         }
     </script>
-    
 </body>
 </html>
