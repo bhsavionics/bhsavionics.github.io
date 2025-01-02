@@ -3513,6 +3513,18 @@ body {
 	color: #444;
 }
 
+.two-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 48%;
+    height: auto;
+    object-fit: cover;
+}
+
 body,
 html {
 	overflow-y: auto;
