@@ -204,6 +204,7 @@
 
     <!-- Scripts -->
     <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/latestNewsletter.js"></script>
     <script src="../assets/js/browser.min.js"></script>
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
@@ -215,43 +216,3 @@
 </body>
 
 </html>
-
-<script>
-    // Function to dynamically load content
-    function loadPost(postUrl) {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', postUrl, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                // Insert the content into the post container
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(xhr.responseText, 'text/html');
-
-                // Remove any custom cursor elements from the loaded page
-                const customCursor = doc.querySelector('.custom-cursor');
-                if (customCursor) {
-                    customCursor.remove();
-                }
-
-                // Place the modified content into the target element
-                document.getElementById('postContent').innerHTML = doc.body.innerHTML;
-
-                // Optionally hide footer buttons
-                const buttons = document.querySelectorAll('footer p a.button');
-                buttons.forEach(button => {
-                    button.style.display = 'none';
-                });
-            }
-        };
-
-        xhr.send();
-    }
-
-
-    // Optionally, load a default post when the page loads
-    window.onload = function () {
-        loadPost('Posts/RocketBuilding.html');
-    };
-
-
-</script>
