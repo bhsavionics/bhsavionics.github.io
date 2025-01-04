@@ -106,55 +106,51 @@ async function populatePages() {
 async function performSearch() {
     const query = document.getElementById('searchInput').value.toLowerCase();
     const resultsDiv = document.getElementById('results');
-
     resultsDiv.innerHTML = '';
     currentIndex = -1;
 
-    // Fetch the pages dynamically before performing the search
-    const pages = await populatePages(); 
+    const pages = await populatePages();
+
+    const results = pages.filter(page => {
+        return page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query);
+    });
 
     if (query) {
-        const results = pages.filter(page => {
-            return page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query);
-        });
+        // Fetch AI-enhanced results
+        const aiResponse = await fetch('/ai-search', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ query }),
+        }).then(res => res.json()).catch(err => console.error(err));
 
+        if (aiResponse?.aiResponse) {
+            const aiDiv = document.createElement('div');
+            aiDiv.innerHTML = `
+                <div style="border: 1px solid #ddd; padding: 1rem; background: #f9f9f9;">
+                    <h4>AI-Enhanced Suggestion:</h4>
+                    <p>${aiResponse.aiResponse}</p>
+                </div>
+            `;
+            resultsDiv.appendChild(aiDiv);
+        }
+
+        // Display traditional results
         if (results.length) {
             results.forEach(page => {
-                const highlightedTitle = page.title.replace(new RegExp(query, 'gi'), match => `<mark>${match}</mark>`);
-                
-                // Extract a snippet of content around the first match
-                const contentLower = page.content.toLowerCase();
-                const indexOfMatch = contentLower.indexOf(query);
-
-                let snippet = '';
-                if (indexOfMatch !== -1) {
-                    const start = Math.max(0, indexOfMatch - 100); // 100 chars before match
-                    const end = Math.min(contentLower.length, indexOfMatch + query.length + 100); // 100 chars after match
-                    snippet = page.content.substring(start, end);
-
-                    // Highlight the query in the snippet
-                    snippet = snippet.replace(new RegExp(query, 'gi'), match => `<mark>${match}</mark>`);
-                }
-
-                // Append a result item with the highlighted title and snippet
                 const resultItem = document.createElement('div');
                 resultItem.innerHTML = `
                     <div>
-                        <a href="${page.url}"><strong>${highlightedTitle}</strong></a>
-                        <p>${snippet}</p>
+                        <a href="${page.url}"><strong>${page.title}</strong></a>
+                        <p>${page.content.substring(0, 200)}...</p>
                     </div>`;
                 resultsDiv.appendChild(resultItem);
             });
-
-            // Add "See all results" link
-            const viewAll = document.createElement('div');
-            viewAll.innerHTML = `<a href="/search-results.html?q=${query}">See all results</a>`;
-            resultsDiv.appendChild(viewAll);
         } else {
-            resultsDiv.innerHTML = "<p>No results found.</p>";
+            resultsDiv.innerHTML += "<p>No results found.</p>";
         }
     }
 }
+
 
 
 
