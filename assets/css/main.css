@@ -1949,14 +1949,6 @@ header>p {
 	/* space between the images */
 	margin-top: 20px;
 }
-.image-grid2 {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	/* 2 columns */
-	gap: 20px;
-	/* space between the images */
-	margin-top: 20px;
-}
 
 .image-item img {
 	width: 100%;
