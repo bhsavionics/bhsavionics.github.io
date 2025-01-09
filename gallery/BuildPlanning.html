@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/ours.css" />
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .photo {
+            margin: 10px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 300px; /* Increased width of each image container */
+        }
+
+        .photo img {
+            width: 100%;
+            /* Responsive image */
+            height: auto;
+        }
+
+        .date {
+            font-size: 0.8em;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-cursor">
+        <div class="inner-dot"></div>
+    </div>
+    <div id="nav-container"></div>
+
+    <div class="gallery">
+        <div class="photo">
+            <img src="/images/gallery/BuildPlanning/PowerPoint1.jpg" alt="Image 7001" loading="lazy">
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/BuildPlanning/PowerPoint2.jpg" alt="Image 7002" loading="lazy">
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/BuildPlanning/PowerPoint3.jpg" alt="Image 7003" loading="lazy">
+        </div>
+        <div class="photo">
+            <img src="/images/gallery/BuildPlanning/PowerPoint4.jpg" alt="Image 7004" loading="lazy">
+        </div>
+    </div>
+
+    <script src="/assets/js/jquery.min.js" defer></script>
+    <script src="/assets/js/browser.min.js" defer></script>
+    <script src="/assets/js/breakpoints.min.js" defer></script>
+    <script src="/assets/js/util.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/cursor.js" defer></script>
+    <script src="/assets/js/mobile-nav.js" defer></script>
+    <script src="/assets/js/loadNav.js"></script>
+
+</body>
+
+</html>
