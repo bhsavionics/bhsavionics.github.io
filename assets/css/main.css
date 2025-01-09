@@ -1970,10 +1970,8 @@ header>p {
 
 .image-grid2 {
 	display: grid;
-	grid-template-rows: repeat(2, 1fr);
+	grid-template-rows: repeat(1, 1fr);
 	/* 2 columns */
-	gap: 20px;
-	/* space between the images */
 	margin-top: 20px;
 }
 
