@@ -107,24 +107,6 @@ section {
 
 #postContent {
 	cursor: none;
-    overflow: hidden; /* Ensures content doesn't overlap */
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Ensure images are properly spaced and resized */
-#postContent img {
-    display: block; /* Prevent inline spacing issues */
-    max-width: 100%; /* Contain images within their container */
-    height: auto;
-    margin-bottom: 10px; /* Add spacing between images */
-}
-
-/* Clearfix for floated elements */
-.blog-container::after {
-    content: "";
-    display: block;
-    clear: both;
 }
 
 body {
@@ -1967,12 +1949,12 @@ header>p {
 	/* space between the images */
 	margin-top: 20px;
 }
-
 .image-grid2 {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	/* 2 columns */
 	gap: 20px;
+	/* space between the images */
 	margin-top: 20px;
 }
 
@@ -3044,17 +3026,6 @@ body {
 	.sidebar {
 		border-top: solid 2px #e7eae8;
 		padding-top: 50px;
-    	width: 250px; /* Adjust as needed */
-    	float: right;
-	}
-	.blog-post {
-		max-width: calc(100% - 300px); /* Adjust width to leave space for sidebar */
-		margin: 0 auto; /* Center content */
-	}
-	
-	.latest img {
-		max-width: calc(100% - 300px);
-		height: auto; /* Ensure images fit within boundaries */
 	}
 
 	/* Nav */
@@ -3548,16 +3519,6 @@ body {
 .post-box p.preview {
 	font-size: 1em;
 	color: #444;
-}
-
-.two-image {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
-    width: 1200px;
-    height: auto;
-	margin: 0 0 2em 0;
 }
 
 body,
