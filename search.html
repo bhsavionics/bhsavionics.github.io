@@ -51,14 +51,26 @@
 </head>
 <body>
     <nav>
-        <!-- Include your nav.html content here -->
+        <div id="nav-container"></div>
     </nav>
+    <div class="custom-cursor">
+        <div class="inner-dot"></div>
+    </div>
     <div class="search-container">
         <h1>Search</h1>
         <input type="text" id="searchInput" class="search-bar" placeholder="Search here..." oninput="performSearch()" />
         <div id="results"></div>
     </div>
-
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/cursor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/mobile-nav.js"></script>
+    <script src="assets/js/loadNav.js"></script>
     <script>
        // Function to fetch content from each page using AJAX (fetch)
 async function fetchPageContent(url) {
@@ -176,5 +188,6 @@ async function performSearch() {
             });
         }
     </script>
+    
 </body>
 </html>
