@@ -106,7 +106,7 @@ section {
 }
 
 #postContent {
-	cursor: none;
+	cursor: default;
 }
 
 body {
@@ -116,7 +116,7 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
-	cursor: pointer;
+	cursor: default;
 }
 
 a:hover {
@@ -124,46 +124,18 @@ a:hover {
 	color: #3498db;
 }
 
-.custom-cursor {
-	position: absolute;
-	width: 30px;
-	height: 30px;
-	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.5);
-	pointer-events: none;
-	transform: translate(-50%, -50%);
-	z-index: 9999;
-	transition: transform 0.1s ease;
-}
-
-.inner-dot {
-	width: 10px;
-	height: 10px;
-	background-color: #000;
-	border-radius: 50%;
-	position: relative;
-	margin: auto;
-	top: 50%;
-	transform: translateY(-50%);
-}
-
 body {
-	cursor: none;
-}
-
-a:hover~.custom-cursor,
-button:hover~.custom-cursor {
-	transform: translate(-50%, -50%) scale(1.5);
+	cursor: default;
 }
 
 a,
 button {
-	cursor: none;
+	cursor: default;
 }
 
 a:hover,
 button:hover {
-	cursor: none;
+	cursor: pointer;
 }
 
 @media (max-width: 768px) {
