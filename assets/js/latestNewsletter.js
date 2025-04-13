@@ -4,7 +4,11 @@ const posts = [
     { title: "2024 Interest Meeting", date: "2024-09-12", link: "Posts/InterestMeeting.html", preview: "Kickstarting the year with an interest meeting..." },
     { title: "Model Rocket Building Meeting", date: "2024-09-26", link: "Posts/RocketBuilding.html", preview: "Our journey in building rockets..." },
     { title: "TARC Rocket Design Presentations", date: "2024-12-6", link: "Posts/DesignPresentations.html", preview: "The first steps of our journey..." },
-    { title: "TARC Rocket Model Building", date: "2024-12-18", link: "Posts/ModelBuilding.html", preview: "Our first model..." }
+    { title: "TARC Rocket Model Building", date: "2024-12-18", link: "Posts/ModelBuilding.html", preview: "Our first model..." },
+    { title: "First TARC Launch", date: "2025-02-23", link: "Posts/02-23RocketLaunch.html", preview: "The first launch of our V1 TARC rocket..." },
+    { title: "First TARC Launch", date: "2025-03-15", link: "Posts/03-15RocketLaunch.html", preview: "The first launch of our V2 TARC rocket..." },
+    { title: "First TARC Launch", date: "2025-03-30", link: "Posts/03-30RocketLaunch.html", preview: "The first launch of our V2 TARC rocket..." },
+    
     // Add additional posts here
 ];
 

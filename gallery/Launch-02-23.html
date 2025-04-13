@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/ours.css" />
+  <title>Launch Gallery - 02/23</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .photo,
+    .video {
+      margin: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 300px;
+    }
+
+    .photo img,
+    .video video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .date {
+      font-size: 0.8em;
+      color: gray;
+    }
+
+    .lightbox {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="nav-container"></div>
+
+  <div class="gallery">
+    <!-- Images -->
+    <div class="photo">
+      <img src="/images/gallery/Launches/02-23/Work3(1).jpg" alt="Work3(1)" loading="lazy">
+    </div>
+    <div class="photo">
+      <img src="/images/gallery/Launches/02-23/Work3.jpg" alt="Work3" loading="lazy">
+    </div>
+    <div class="photo">
+      <img src="/images/gallery/Launches/02-23/02-23ENGINEERS.jpg" alt="Engineers Group" loading="lazy">
+    </div>
+    <div class="photo">
+      <img src="/images/gallery/Launches/02-23/02-23ALL.jpg" alt="All Group" loading="lazy">
+    </div>
+    <div class="photo">
+      <img src="/images/gallery/Launches/02-23/02-23.jpg" alt="Launch Day" loading="lazy">
+    </div>
+
+    <!-- Videos -->
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/Successful_Launch.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/Success.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/IMG_7916.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/IMG_7915.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/20250223_144303.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/20250223_144246.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video">
+      <video controls>
+        <source src="/images/gallery/Launches/02-23/20250223_132806.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <script src="/assets/js/jquery.min.js" defer></script>
+  <script src="/assets/js/browser.min.js" defer></script>
+  <script src="/assets/js/breakpoints.min.js" defer></script>
+  <script src="/assets/js/util.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/cursor.js" defer></script>
+  <script src="/assets/js/mobile-nav.js" defer></script>
+  <script src="/assets/js/loadNav.js"></script>
+  <script>
+    // Lightbox functionality
+    const photos = document.querySelectorAll('.photo img');
+    const lightbox = document.createElement('div');
+    lightbox.id = 'lightbox';
+    lightbox.classList.add('lightbox');
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = document.createElement('img');
+    lightbox.appendChild(lightboxImg);
+
+    const closeBtn = document.createElement('span');
+    closeBtn.classList.add('close');
+    closeBtn.innerHTML = '&times;';
+    lightbox.appendChild(closeBtn);
+
+    photos.forEach(photo => {
+      photo.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = photo.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+
+</html>
