@@ -1,189 +1,422 @@
 <!DOCTYPE HTML>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<html>
-   <head>
-      <title>About Us</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-      <link rel="stylesheet" href="assets/css/main.css" />
-      <link rel="stylesheet" href="assets/css/ours.css" />
-      <link rel="icon" type="image/png" href="images/logo.png" />
-   </head>
-   <body class="is-preload">
-      <div id="page-wrapper">
-         <div id="nav-container"></div>
-         <!-- Main -->
-         <section id="main">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="content">
-                        <!-- Officers Section -->
-                        <section class="box features">
-                           <h2 class="major"><span>Meet Our Officers!</span></h2>
-                           <div class="officer-grid">
-                              <!-- Burak -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="image featured">
-                                 <img src="images/officers/Burak1.jpg" alt="Burak" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/">President: Burak Ayyorgun</a></h3>
-                                 <p>Founder, President, and Lead Project Manager of BAAP.</p>
-                              </div>
-                              <!-- Andrew -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="image featured">
-                                 <img src="images/officers/Olsen.jpg" alt="Andrew" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/">Vice President: Andrew Olson</a></h3>
-                                 <p>Co-Founder and Vice President at BAAP.</p>
-                              </div>
-                              <!-- KJ -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/kjkast/" class="image featured">
-                                 <img src="images/officers/KJ.jpeg" alt="KJ" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/kjkast/">CS Lead: KJ Kastning</a></h3>
-                                 <p>Co-Founder and Senior Computer Science Team Lead at BAAP.</p>
-                              </div>
-                              <!-- Alex -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/Alex.jpg" alt="Alex" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Outreach Lead: Alex Diatchenko</a></h3>
-                                 <p>Co-Founder and Senior Outreach and Volunteering Project Lead at BAAP.</p>
-                              </div>
-                              <!-- Hanchae -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/HanchaeCho.jpg" alt="Hanchae" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Secretary: Hanchae Cho</a></h3>
-                                 <p>Secretary at BAAP.</p>
-                              </div>
-                              <!-- Claire -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/claire.jpg" alt="Claire" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Treasurer: Claire Davidson</a></h3>
-                                 <p>Treasurer at BAAP.</p>
-                              </div>
-                              <!-- Avi -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" class="image featured">
-                                 <img src="images/officers/Avi.jpg" alt="Avi" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/">Engineering Lead: Avi Sharma</a></h3>
-                                 <p>Senior Engineering Team Lead at BAAP.</p>
-                              </div>
-                              <!-- Tien -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/tien-vu-003ab2335/" class="image featured">
-                                 <img src="images/officers/TienVu.jpg" alt="Tien" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/tien-vu-003ab2335/">Engineering Lead: Tien Vu</a></h3>
-                                 <p>Senior Engineering Team Lead at BAAP.</p>
-                              </div>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>About Us - BAAP</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-primary">BAAP</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="/blog/blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="/about.html" class="text-primary font-medium">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-gray-600 hover:text-primary transition-colors">Gallery</a>
+                        <a href="/resources.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+                        <a href="/timeline.html" class="text-gray-600 hover:text-primary transition-colors">Our Journey</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-primary font-medium">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">About Us</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                Meet the passionate team behind the Battlefield Aeronautics and Avionics Program
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Officers Section -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Meet Our Officers</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Our dedicated leadership team driving innovation and excellence in aerospace education
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Burak -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/Burak1.jpg" alt="Burak Ayyorgun" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                President
                             </div>
-                        </section>
-                        <!-- Content -->
-                        <article class="box page-content">
-                           <header>
-                              <h2>About Us</h2>
-                           </header>
-                           <section>
-                              <span class="image featured"><img src="" alt="" style="max-width: 5000px; height: auto;" /></span>
-                              <p>
-                                 At BHS Avionics, we believe in the transformative power of engineering and technology. Our mission is to foster innovation and creativity among aspiring engineers and enthusiasts in the field of avionics. We strive to provide a platform where ideas take flight and collaboration thrives. Through engaging content and hands-on projects, we aim to inspire the next generation of engineers to explore their passions and achieve their goals.
-                              </p>
-                           </section>
-                           <section>
-                              <h3>What We Offer</h3>
-                              <p>
-                                 We offer a diverse range of articles, tutorials, and resources focused on avionics and robotics. Whether you're looking for insights on programming, robotics design, or project-based learning, our content is tailored to meet the needs of our community. Our team consists of experienced mentors and passionate learners, ensuring a comprehensive and engaging perspective on all things avionics.
-                              </p>
-                           </section>
-                           <section>
-                              <h3>Join Us</h3>
-                              <p>
-                                 We invite you to join our community of innovators! Share your thoughts, engage with our content, and connect with fellow enthusiasts. Your feedback and participation are what make BHS Avionics vibrant and dynamic. Together, we can push the boundaries of technology and create a space where everyone feels valued and inspired.
-                              </p>
-                           </section>
-                           <section>
-                              <h3>Stay Connected</h3>
-                              <p>
-                                 Don’t miss out on our latest updates and projects! Follow us on social media and subscribe to our newsletter for exclusive content and insights. We look forward to having you as part of our journey!
-                              </p>
-                           </section>
-                           <section>
-                              <h3>Thank You</h3>
-                              <p>
-                                 Thank you for taking the time to learn more about BHS Avionics. We appreciate your support and enthusiasm, and we are excited to grow and innovate together. Let’s make great things happen in the world of avionics!
-                              </p>
-                           </section>
-                        </article>
-                     </div>
-                  </div>
-                  <div class="col-12">
-                     <div class="col-12">
-                        <ul class="actions">
-                           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" class="button large">Sign Up</a></li>
-                           <li><a href="index.html" class="button alt large">Think About It</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-         </section>
-         </div>
-      </div>
-      </div>
-      </section>
-      <!-- Footer -->
-      <footer id="footer">
-         <div class="container">
-            <div class="row gtr-200">
-               <!-- About -->
-               <div class="col-12">
-                  <section>
-                     <h2 class="major"><span>What's this about?</span></h2>
-                     <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia!
-                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to 
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="hover:text-primary transition-colors">
+                                    Burak Ayyorgun
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Founder, President, and Lead Project Manager of BAAP.
+                            </p>
+                            <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Andrew -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/Olsen.jpg" alt="Andrew Olson" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Vice President
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="hover:text-primary transition-colors">
+                                    Andrew Olson
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Co-Founder and Vice President at BAAP.
+                            </p>
+                            <a href="https://www.linkedin.com/in/burak-ayyorgun-7a8439240/" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- KJ -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/KJ.jpeg" alt="KJ Kastning" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                CS Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="https://www.linkedin.com/in/kjkast/" class="hover:text-primary transition-colors">
+                                    KJ Kastning
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Co-Founder and Senior Computer Science Team Lead at BAAP.
+                            </p>
+                            <a href="https://www.linkedin.com/in/kjkast/" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Alex -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/Alex.jpg" alt="Alex Diatchenko" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Outreach Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="#" class="hover:text-primary transition-colors">
+                                    Alex Diatchenko
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Co-Founder and Senior Outreach and Volunteering Project Lead at BAAP.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hanchae -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/HanchaeCho.jpg" alt="Hanchae Cho" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Secretary
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="#" class="hover:text-primary transition-colors">
+                                    Hanchae Cho
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Secretary at BAAP.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Claire -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/claire.jpg" alt="Claire Davidson" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Treasurer
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="#" class="hover:text-primary transition-colors">
+                                    Claire Davidson
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Treasurer at BAAP.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Avi -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/Avi.jpg" alt="Avi Sharma" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Engineering Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" class="hover:text-primary transition-colors">
+                                    Avi Sharma
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Senior Engineering Team Lead at BAAP.
+                            </p>
+                            <a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tien -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        <div class="relative">
+                            <img src="images/officers/TienVu.jpg" alt="Tien Vu" class="w-full h-64 object-cover">
+                            <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Engineering Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                <a href="https://www.linkedin.com/in/tien-vu-003ab2335/" class="hover:text-primary transition-colors">
+                                    Tien Vu
+                                </a>
+                            </h3>
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                Senior Engineering Team Lead at BAAP.
+                            </p>
+                            <a href="https://www.linkedin.com/in/tien-vu-003ab2335/" class="text-primary hover:text-primary/80 transition-colors">
+                                <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Content Section -->
+            <section class="mb-24">
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                    <div class="max-w-4xl mx-auto">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-8">Our Mission</h2>
+                        
+                        <div class="space-y-8">
+                            <div>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    At BHS Avionics, we believe in the transformative power of engineering and technology. 
+                                    Our mission is to foster innovation and creativity among aspiring engineers and enthusiasts 
+                                    in the field of avionics. We strive to provide a platform where ideas take flight and 
+                                    collaboration thrives. Through engaging content and hands-on projects, we aim to inspire 
+                                    the next generation of engineers to explore their passions and achieve their goals.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">What We Offer</h3>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    We offer a diverse range of articles, tutorials, and resources focused on avionics and robotics. 
+                                    Whether you're looking for insights on programming, robotics design, or project-based learning, 
+                                    our content is tailored to meet the needs of our community. Our team consists of experienced 
+                                    mentors and passionate learners, ensuring a comprehensive and engaging perspective on all things avionics.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Join Us</h3>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    We invite you to join our community of innovators! Share your thoughts, engage with our content, 
+                                    and connect with fellow enthusiasts. Your feedback and participation are what make BHS Avionics 
+                                    vibrant and dynamic. Together, we can push the boundaries of technology and create a space where 
+                                    everyone feels valued and inspired.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Stay Connected</h3>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Don't miss out on our latest updates and projects! Follow us on social media and subscribe to 
+                                    our newsletter for exclusive content and insights. We look forward to having you as part of our journey!
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-2xl font-semibold text-gray-900 mb-4">Thank You</h3>
+                                <p class="text-lg text-gray-700 leading-relaxed">
+                                    Thank you for taking the time to learn more about BHS Avionics. We appreciate your support and 
+                                    enthusiasm, and we are excited to grow and innovate together. Let's make great things happen 
+                                    in the world of avionics!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center">
+                <div class="bg-gradient-to-r from-primary to-blue-700 rounded-2xl p-8 md:p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-6">Ready to Join BAAP?</h2>
+                    <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                        Become part of our innovative community and help shape the future of aerospace education
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" 
+                           class="bg-accent text-white font-semibold py-4 px-8 rounded-lg hover:bg-accent/90 transition-colors shadow-lg">
+                            Sign Up Now
+                        </a>
+                        <a href="index.html" 
+                           class="bg-white text-primary font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">What's this about?</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
                         teach STEM topics at youth events.
-                     </p>
-                  </section>
-               </div>
-               <!-- Contact -->
-               <div class="col-12">
-                  <!-- Contact -->
-                  <section>
-                     <h2 class="major"><span>Get in touch</span></h2>
-                     <ul class="contact">
-                        <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-                        <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
-                        <br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-                     </ul>
-                  </section>
-               </div>
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-300">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-300">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-300">
+                                Questions? Contact us at 
+                                <a href="mailto:ayyorgbt25@pwcs-edu.org" class="text-accent hover:text-accent/80 transition-colors">
+                                    ayyorgbt25@pwcs-edu.org
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-accent hover:text-accent/80 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!-- Copyright -->
-            <div id="copyright">
-               <ul class="menu">
-                  <li>&copy; BHS AAP. All rights reserved.</li>
-               </ul>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
             </div>
-         </div>
-      </footer>
-      </div>
-   </body>
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.scrolly.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
-   <script src="assets/js/cursor.js"></script>
-   <script src="assets/js/mobile-nav.js"></script>
-   <script src="assets/js/loadNav.js"></script>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
 </html>

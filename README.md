@@ -1,3 +1,7 @@
+# ⚠️ Migration in Progress: Moving to React + Tailwind CSS
+
+> This project is currently being migrated from a static HTML/CSS site to a modern React + Tailwind CSS application. The old static files will remain available during the transition. Please see the new `/react-app` directory for the latest version once it appears.
+
 # BAAP GitHub Website Repository
 
 [BAAP Website](https://bhsavionics.github.io)
@@ -20,7 +24,7 @@ The BAAP website serves as a central hub for our club, where we:
 - Document club projects and activities with photo galleries
 - Provide resources and contacts for club members and prospective members
 
-The site aims to increase engagement and showcase BAAP’s commitment to fostering interest in aerospace and aeronautics.
+The site aims to increase engagement and showcase BAAP's commitment to fostering interest in aerospace and aeronautics.
 
 ### Structure and Files
 The website is built as a static site, organized into the following main directories and files:
@@ -33,7 +37,7 @@ The website is built as a static site, organized into the following main directo
 - **`/js/`**: Includes JavaScript for interactive features, such as custom cursors and hover effects.
 
 ### Contributing
-We welcome contributions to improve the website’s content, design, and functionality! To contribute:
+We welcome contributions to improve the website's content, design, and functionality! To contribute:
 
 1. **Fork the repository** and clone it to your local machine.
 2. Create a new branch for your changes.
@@ -43,7 +47,7 @@ We welcome contributions to improve the website’s content, design, and functio
 Before submitting, please test changes locally to ensure they work as expected across devices, especially for mobile compatibility.
 
 ### Issues and Feedback
-If you encounter any bugs, issues, or have suggestions, please check the [Issues](https://github.com/bhsavionics/issues) tab and create a new issue if it hasn’t been reported. We appreciate feedback on functionality, design, and user experience!
+If you encounter any bugs, issues, or have suggestions, please check the [Issues](https://github.com/bhsavionics/issues) tab and create a new issue if it hasn't been reported. We appreciate feedback on functionality, design, and user experience!
 
 ### License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.

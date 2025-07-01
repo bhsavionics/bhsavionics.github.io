@@ -1,131 +1,372 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-    <title>Resources Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/ours.css" />
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <style>
-        .flexbox-container {
-            display: flex;
-            justify-content: space-between;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Resources - BAAP</title>
 
-        .flex-box {
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
         }
-    </style>
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
-<body class="is-preload">
-    <div id="page-wrapper">
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-primary">BAAP</span>
+                </div>
 
-        <div id="nav-container"></div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="/blog/blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="/about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-gray-600 hover:text-primary transition-colors">Gallery</a>
+                        <a href="/resources.html" class="text-primary font-medium">Resources</a>
+                        <a href="/timeline.html" class="text-gray-600 hover:text-primary transition-colors">Our Journey</a>
+                    </div>
+                </div>
 
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
 
-        <section id="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="content">
-                            <h2 class="major"><span>Resources</span></h2>
-                            <div class="flexbox-container">
-                                <div class="flex-box">
-                                    <h2>Engineering</h2>
-                                    <ul class="divided">
-                                        <li><a href="https://www.youtube.com/watch?v=uwnLS1RBpCA&t=3001s"
-                                                target="_blank">OpenRocket Tutorial</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=LbeoauyEEiI&t=785s"
-                                                target="_blank">Rocket CAD Tutorial</a></li>
-                                        <li><a href="https://pwcps-my.sharepoint.com/:f:/g/personal/sharmaa26_pwcs-edu_org/EowN6VMZr3ZFtv3Y41V-H0cBvT83qGw7L22ZeDYN1ZJrmQ?e=On4cPf"
-                                                target="_blank">OneDrive Folder</a></li>
-                                        <li><a href="https://cad.onshape.com/documents?nodeId=3d38b0792fd2d23e022a5e24&resourceType=folder"
-                                                target="_blank">Onshape Folder</a></li>
-                                    </ul>
-                                </div>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-gray-600 hover:text-primary">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-primary font-medium">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-                                <div class="flex-box">
-                                    <h2>Computer Science</h2>
-                                    <ul class="divided">
-                                        <li><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-                                                target="_blank">HTML/CSS Tutorial</a></li>
-                                        <li><a href="https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP&si=kBKF-eCTQw-cM0xi"
-                                                target="_blank">Arduino Tutorial</a></li>
-                                        <li><a href="https://github.com/practical-tutorials/project-based-learning"
-                                                target="_blank">Hands-On Learning</a></li>
-                                        <li><a href="https://www.theodinproject.com/paths/full-stack-javascript"
-                                                target="_blank"> Javascript Tutorial</a></li>
-                                    </ul>
-                                </div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Resources</h1>
+            <p class="text-xl text-blue-100 max-w-3xl mx-auto">
+                Educational materials, tutorials, and tools to help you excel in aerospace engineering and STEM
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Resources Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Engineering Resources -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-primary text-white p-3 rounded-lg mr-4">
+                            <i class="fas fa-rocket text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Engineering</h2>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="https://www.youtube.com/watch?v=uwnLS1RBpCA&t=3001s" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-youtube text-red-500 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    OpenRocket Tutorial
+                                </h3>
+                                <p class="text-sm text-gray-600">Learn rocket design and simulation</p>
                             </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/watch?v=LbeoauyEEiI&t=785s" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-youtube text-red-500 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    Rocket CAD Tutorial
+                                </h3>
+                                <p class="text-sm text-gray-600">Computer-aided design for rocketry</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+
+                        <a href="https://pwcps-my.sharepoint.com/:f:/g/personal/sharmaa26_pwcs-edu_org/EowN6VMZr3ZFtv3Y41V-H0cBvT83qGw7L22ZeDYN1ZJrmQ?e=On4cPf" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-microsoft text-blue-500 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    OneDrive Folder
+                                </h3>
+                                <p class="text-sm text-gray-600">Shared project files and documents</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+
+                        <a href="https://cad.onshape.com/documents?nodeId=3d38b0792fd2d23e022a5e24&resourceType=folder" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fas fa-cube text-blue-600 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    Onshape Folder
+                                </h3>
+                                <p class="text-sm text-gray-600">3D CAD models and designs</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Computer Science Resources -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-accent text-white p-3 rounded-lg mr-4">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Computer Science</h2>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-html5 text-orange-500 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    HTML/CSS Tutorial
+                                </h3>
+                                <p class="text-sm text-gray-600">Learn responsive web design</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+
+                        <a href="https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP&si=kBKF-eCTQw-cM0xi" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-youtube text-red-500 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    Arduino Tutorial
+                                </h3>
+                                <p class="text-sm text-gray-600">Microcontroller programming basics</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+
+                        <a href="https://github.com/practical-tutorials/project-based-learning" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-github text-gray-800 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    Hands-On Learning
+                                </h3>
+                                <p class="text-sm text-gray-600">Project-based programming tutorials</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+
+                        <a href="https://www.theodinproject.com/paths/full-stack-javascript" 
+                           target="_blank" 
+                           class="flex items-center p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <i class="fab fa-js-square text-yellow-400 text-xl mr-4"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                                    JavaScript Tutorial
+                                </h3>
+                                <p class="text-sm text-gray-600">Full-stack JavaScript development</p>
+                            </div>
+                            <i class="fas fa-external-link-alt text-gray-400 ml-auto"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Resources Section -->
+            <section class="mb-16">
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4">Learning Paths</h2>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                            Choose your focus area and follow our curated learning paths to develop your skills
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Beginner Path -->
+                        <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl">
+                            <div class="bg-blue-500 text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-seedling text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Beginner</h3>
+                            <p class="text-gray-600 mb-4">
+                                Start with the fundamentals of aerospace engineering and basic programming concepts
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• HTML/CSS Basics</li>
+                                <li>• Introduction to Arduino</li>
+                                <li>• Rocket Design Fundamentals</li>
+                            </ul>
+                        </div>
+
+                        <!-- Intermediate Path -->
+                        <div class="text-center p-6 bg-gradient-to-br from-accent/10 to-yellow-50 rounded-xl">
+                            <div class="bg-accent text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-rocket text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Intermediate</h3>
+                            <p class="text-gray-600 mb-4">
+                                Advance your skills with complex projects and advanced engineering concepts
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• JavaScript Programming</li>
+                                <li>• OpenRocket Simulation</li>
+                                <li>• CAD Design Projects</li>
+                            </ul>
+                        </div>
+
+                        <!-- Advanced Path -->
+                        <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
+                            <div class="bg-purple-500 text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                                <i class="fas fa-crown text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Advanced</h3>
+                            <p class="text-gray-600 mb-4">
+                                Master advanced techniques and lead complex aerospace engineering projects
+                            </p>
+                            <ul class="text-sm text-gray-600 space-y-2">
+                                <li>• Full-Stack Development</li>
+                                <li>• Advanced Rocketry</li>
+                                <li>• Project Leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center">
+                <div class="bg-gradient-to-r from-primary to-blue-700 rounded-2xl p-8 md:p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-6">Ready to Start Learning?</h2>
+                    <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                        Join our community and access exclusive resources, mentorship, and hands-on projects
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" 
+                           class="bg-accent text-white font-semibold py-4 px-8 rounded-lg hover:bg-accent/90 transition-colors shadow-lg">
+                            Join BAAP
+                        </a>
+                        <a href="/about.html" 
+                           class="bg-white text-primary font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                            Meet Our Team
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">What's this about?</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
+                        teach STEM topics at youth events.
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-300">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-300">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-300">
+                                Questions? Contact us at 
+                                <a href="mailto:ayyorgbt25@pwcs-edu.org" class="text-accent hover:text-accent/80 transition-colors">
+                                    ayyorgbt25@pwcs-edu.org
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-accent hover:text-accent/80 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <footer id="footer">
-            <div class="container">
-                <div class="row gtr-200">
-                    <!-- About -->
-                    <div class="col-12">
-                        <section>
-                            <h2 class="major"><span>What's this about?</span></h2>
-                            <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you
-                                from <strong>Battlefield High School</strong> in northern Virginia!
-                                We are a group of students extremely interested in Computer Science, Physics,
-                                Engineering, and more, applying what we learn in projects. We are also active in our
-                                local community and like to
-                                teach STEM topics at youth events.</p>
-                        </section>
-                    </div>
-
-                    <!-- Contact -->
-                    <div class="col-12">
-                        <section>
-                            <h2 class="major"><span>Get in touch</span></h2>
-                            <ul class="contact">
-                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span
-                                            class="label">Instagram</span></a></li>
-                                <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span
-                                            class="label">Discord</span></a></li>
-                                <br><a href="https://outlook.office.com/mail">Questions? Contact us at
-                                    ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-
-                <!-- Copyright -->
-                <div id="copyright">
-                    <ul class="menu">
-                        <li>&copy; BHS AAP. All rights reserved.</li>
-                    </ul>
-                </div>
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
-    <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery.scrolly.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/mobile-nav.js"></script>
-    <script src="assets/js/loadNav.js"></script>
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>

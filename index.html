@@ -4,15 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <title>BAAP Homepage</title>
+    <title>BAAP - Battlefield Aeronautics and Avionics Program</title>
 
-    <!-- Preload important assets -->
-    <link rel="preload" href="images/logo.png" as="image">
-    <link rel="preload" href="assets/css/main.css" as="style">
-    <link rel="preload" href="assets/css/ours.css" as="style">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
 
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/ours.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="icon" type="image/png" href="images/logo.png">
 
@@ -29,199 +40,414 @@
     <meta name="mobile-web-app-capable" content="yes">
 </head>
 
-<body class="homepage is-preload">
-    <div id="page-wrapper">
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-primary">BAAP</span>
+                </div>
 
-        <!-- Nav -->
-        <div id="nav-container"></div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/index.html" class="text-primary font-medium hover:text-primary/80 transition-colors">Home</a>
+                        <a href="/blog/blog.html" class="text-gray-600 hover:text-primary transition-colors">Blog</a>
+                        <a href="/about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-gray-600 hover:text-primary transition-colors">Gallery</a>
+                        <a href="/resources.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+                        <a href="/timeline.html" class="text-gray-600 hover:text-primary transition-colors">Our Journey</a>
+                    </div>
+                </div>
 
-        <!-- Banner (Likely LCP Element) -->
-        <section id="banner">
-            <div class="content">
-                <h2>The Battlefield Aeronautics</h2>
-                <h2>and Avionics Program</h2>
-                <a href="#main" class="button scrolly">Alright, let's go</a>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
-        </section>
 
-        <!-- Main -->
-        <section id="main">
-            <div class="container">
-                <div class="row gtr-200">
-                    <div class="col-12">
-                        <section class="box highlight">
-                            <header>
-                                <h2>Welcome to BAAP</h2>
-                                <p>Also known as the <strong>Battlefield Aeronautics and Avionics Program</strong></p>
-                            </header>
-                            <p>This Website (Webpage or Social Media Platform) is not managed, approved, or sponsored by
-                                Prince William County Public Schools.</p>
-                        </section>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-primary font-medium">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-gray-600 hover:text-primary">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-24 lg:py-32 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <!-- Animated Badge -->
+                <div class="inline-flex items-center bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-6 py-3 rounded-full text-sm font-semibold mb-8 animate-pulse">
+                    <i class="fas fa-rocket mr-2"></i>
+                    <span>Leading Aerospace Education Program</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+                    The Battlefield Aeronautics
+                    <br>
+                    <span class="text-accent bg-gradient-to-r from-accent to-yellow-400 bg-clip-text text-transparent">and Avionics Program</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+                    Exploring the frontiers of aerospace engineering and STEM education through hands-on projects, 
+                    innovative research, and community outreach
+                </p>
+                
+                <!-- Enhanced CTA Section -->
+                <div class="pt-8 space-y-4">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#main" class="group inline-flex items-center px-8 py-4 bg-accent text-white font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Discover Our Mission
+                            <i class="fas fa-arrow-down ml-2 group-hover:animate-bounce"></i>
+                        </a>
+                        <a href="/about.html" class="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20">
+                            Meet Our Team
+                            <i class="fas fa-users ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
                     </div>
-
-                    <!-- Features Section -->
-                    <div class="col-12">
-                        <section class="box features">
-                            <h2 class="major"><span>What We Do</span></h2>
-                            <div class="row">
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <section class="box feature">
-                                        <a class="image featured">
-                                            <img src="images/vol1.jpg" alt="Volunteering" loading="lazy" decoding="async">
-                                        </a>
-                                        <h3>Volunteering</h3>
-                                        <p>We volunteer at various youth events to promote STEM initiatives.</p>
-                                    </section>
-                                </div>
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <section class="box feature">
-                                        <a class="image featured">
-                                            <img src="images/rocket1.jpg" alt="Rocketry" loading="lazy" decoding="async">
-                                        </a>
-                                        <h3>Rocketry</h3>
-                                        <p>We build various rockets for The American Rocketry Challenge (TARC)!</p>
-                                    </section>
-                                </div>
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <section class="box feature">
-                                        <a class="image featured">
-                                            <img src="images/vol2.jpg" alt="Educational Outreach" loading="lazy" decoding="async">
-                                        </a>
-                                        <h3>Educational Outreach</h3>
-                                        <p>Tutoring and teaching STEM topics to our local community.</p>
-                                    </section>
-                                </div>
-                                <div class="col-3 col-6-medium col-12-small">
-                                    <section class="box feature">
-                                        <a class="image featured">
-                                            <img src="images/balloon1.jpeg" alt="High Altitude Balloons" loading="lazy" decoding="async">
-                                        </a>
-                                        <h3>High Altitude Balloons</h3>
-                                        <p>We are preparing a high-altitude weather balloon to reach 100,000 ft.</p>
-                                    </section>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Blog Section -->
-                    <div class="col-12">
-                        <section class="box blog">
-                            <h2 class="major"><span>Announcements & Activity</span></h2>
-                            <div class="row">
-                                <div class="col-9 col-12-medium">
-                                    <div class="content">
-                                        <article class="box post">
-                                            <header>
-                                                <h3><a href="/blog/Posts/StemNight.html">Mountain View STEM Night</a></h3>
-                                                <p>STEM Youth Event</p>
-                                                <ul class="meta">
-                                                    <li class="icon fa-clock">03/13/24</li>
-                                                </ul>
-                                            </header>
-                                            <a href="/blog/Posts/StemNight.html" class="image featured">
-                                                <img src="images/vol3.jpg" alt="STEM Night" loading="lazy" decoding="async">
-                                            </a>
-                                            <p>Great job at the Mountain View STEM Night. Our paper rocket activity was a success!</p>
-                                        </article>
-                                    </div>
-                                </div>
-                                <!-- Sidebar Archives -->
-                                <div class="col-3 col-12-medium">
-                                    <div class="sidebar">
-                                        <ul class="divided">
-                                            <li>
-                                                <article class="box post-summary">
-                                                    <h3><a href="#">First TARC Competition meeting</a></h3>
-                                                    <ul class="meta">
-                                                        <li class="icon fa-clock">Spring 2024</li>
-                                                    </ul>
-                                                </article>
-                                            </li>
-                                            <li>
-                                                <article class="box post-summary">
-                                                    <h3><a href="#">Executive Meeting - Club Plans</a></h3>
-                                                    <ul class="meta">
-                                                        <li class="icon fa-clock">Spring 2024</li>
-                                                    </ul>
-                                                </article>
-                                            </li>
-                                            <li>
-                                                <article class="box post-summary">
-                                                    <h3><a href="#">BAAP Creation</a></h3>
-                                                    <ul class="meta">
-                                                        <li class="icon fa-clock">Fall 2023</li>
-                                                    </ul>
-                                                </article>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="button alt">Archives</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                    
+                    <!-- Stats Section -->
+                    <div class="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-white/20">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">50+</div>
+                            <div class="text-sm text-blue-200">Active Members</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">10+</div>
+                            <div class="text-sm text-blue-200">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-accent">100%</div>
+                            <div class="text-sm text-blue-200">Student Led</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-white/60 text-xl"></i>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main" class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Welcome Section -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Welcome to BAAP</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                        Also known as the <strong class="text-primary">Battlefield Aeronautics and Avionics Program</strong>
+                    </p>
+                </div>
+                
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        This Website (Webpage or Social Media Platform) is not managed, approved, or sponsored by
+                        Prince William County Public Schools.
+                    </p>
+                </div>
+            </section>
+
+            <!-- What We Do Section -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-star mr-2"></i>
+                        <span>Our Core Activities</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">What We Do</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        We're passionate about aerospace engineering, STEM education, and community outreach. 
+                        Our diverse range of activities empowers students to explore, innovate, and inspire.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Volunteering -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="relative overflow-hidden">
+                            <img src="images/vol1.jpg" alt="Volunteering" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-heart mr-1"></i>Community
                             </div>
-                        </section>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 text-primary p-2 rounded-lg mr-3">
+                                    <i class="fas fa-hands-helping text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">Volunteering</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                We volunteer at various youth events to promote STEM initiatives and inspire the next generation.
+                            </p>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>Regular Events</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rocketry -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="relative overflow-hidden">
+                            <img src="images/rocket1.jpg" alt="Rocketry" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-rocket mr-1"></i>Competition
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-red-100 text-red-600 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-rocket text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">Rocketry</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                We build various rockets for The American Rocketry Challenge (TARC) and other competitions.
+                            </p>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-trophy mr-2"></i>
+                                    <span>TARC Competition</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Educational Outreach -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="relative overflow-hidden">
+                            <img src="images/vol2.jpg" alt="Educational Outreach" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-graduation-cap mr-1"></i>Education
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-green-100 text-green-600 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-chalkboard-teacher text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">Educational Outreach</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                Tutoring and teaching STEM topics to our local community and schools.
+                            </p>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-users mr-2"></i>
+                                    <span>Local Schools</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- High Altitude Balloons -->
+                    <div class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                        <div class="relative overflow-hidden">
+                            <img src="images/balloon1.jpeg" alt="High Altitude Balloons" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-satellite mr-1"></i>Research
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-100 text-purple-600 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-satellite text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-900">High Altitude Balloons</h3>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed">
+                                We are preparing a high-altitude weather balloon to reach 100,000 ft and beyond.
+                            </p>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-arrow-up mr-2"></i>
+                                    <span>100,000+ ft</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Announcements & Activity Section -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Announcements & Activity</h2>
+                    <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                        Stay updated with our latest projects and community events
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <!-- Main Article -->
+                    <div class="lg:col-span-3">
+                        <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                            <img src="images/vol3.jpg" alt="STEM Night" class="w-full h-64 object-cover">
+                            <div class="p-8">
+                                <div class="flex items-center text-sm text-gray-500 mb-4">
+                                    <i class="fas fa-calendar mr-2"></i>
+                                    <span>March 13, 2024</span>
+                                    <span class="mx-2">•</span>
+                                    <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">STEM Youth Event</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-4">
+                                    <a href="/blog/Posts/StemNight.html" class="hover:text-primary transition-colors">
+                                        Mountain View STEM Night
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 leading-relaxed mb-6">
+                                    Great job at the Mountain View STEM Night. Our paper rocket activity was a huge success! 
+                                    Students were engaged and excited to learn about the principles of rocketry.
+                                </p>
+                                <a href="/blog/Posts/StemNight.html" class="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors">
+                                    Read More
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Recent Updates</h3>
+                            <div class="space-y-6">
+                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <a href="#" class="hover:text-primary transition-colors">First TARC Competition Meeting</a>
+                                    </h4>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>Spring 2024</span>
+                                    </div>
+                                </article>
+
+                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <a href="#" class="hover:text-primary transition-colors">Executive Meeting - Club Plans</a>
+                                    </h4>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>Spring 2024</span>
+                                    </div>
+                                </article>
+
+                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <a href="#" class="hover:text-primary transition-colors">BAAP Creation</a>
+                                    </h4>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>Fall 2023</span>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <div class="mt-8">
+                                <a href="/blog/blog.html" class="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors text-center block">
+                                    View All Posts
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">What's this about?</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
+                        teach STEM topics at youth events.
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-300">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-300">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-300">
+                                Questions? Contact us at 
+                                <a href="mailto:ayyorgbt25@pwcs-edu.org" class="text-accent hover:text-accent/80 transition-colors">
+                                    ayyorgbt25@pwcs-edu.org
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-accent hover:text-accent/80 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <footer id="footer">
-            <div class="container">
-               <div class="row gtr-200">
-                  <!-- About -->
-                  <div class="col-12">
-                     <section>
-                        <h2 class="major"><span>What's this about?</span></h2>
-                        <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia!
-                           We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to 
-                           teach STEM topics at youth events.
-                        </p>
-                     </section>
-                  </div>
-                  <!-- Contact -->
-                  <div class="col-12">
-                     <!-- Contact -->
-                     <section>
-                        <h2 class="major"><span>Get in touch</span></h2>
-                        <ul class="contact">
-                           <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-                           <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
-                           <br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-                        </ul>
-                     </section>
-                  </div>
-               </div>
-               <!-- Copyright -->
-               <div id="copyright">
-                  <ul class="menu">
-                     <li>&copy; BHS AAP. All rights reserved.</li>
-                  </ul>
-               </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
             </div>
-         </footer>
-         </div>
-      </body>
-      <script src="assets/js/jquery.min.js"></script>
-      <script src="assets/js/jquery.scrolly.min.js"></script>
-      <script src="assets/js/browser.min.js"></script>
-      <script src="assets/js/breakpoints.min.js"></script>
-      <script src="assets/js/util.js"></script>
-      <script src="assets/js/main.js"></script>
-      <script src="assets/js/cursor.js"></script>
-      <script src="assets/js/mobile-nav.js"></script>
-      <script src="assets/js/loadNav.js"></script>
-      <script>
-document.querySelector('.scrolly').addEventListener('click', function (event) {
-event.preventDefault();
-document.querySelector('#main').scrollIntoView({ behavior: 'smooth' });
-});
-</script>
-<script src="assets/js/loadNav.js"></script>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>

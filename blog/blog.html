@@ -2,213 +2,446 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/ours.css">
+    <title>Blog - BAAP</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e40af',
+                        secondary: '#64748b',
+                        accent: '#f59e0b'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="icon" type="image/png" href="../images/logo.png">
-    <title>Blog</title>
 </head>
 
-<body class="is-preload">
-    <div id="page-wrapper">
-        <!-- Nav -->
-        <div id="nav-container"></div>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="../images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-primary">BAAP</span>
+                </div>
 
-
-        <!-- Main -->
-        <section id="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-9 col-12-medium">
-                        <div class="content">
-                            <article>
-                                <h2>Latest Newsletter</h2>
-                                <div id="postContent"></div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="col-3 col-12-medium">
-                        <div class="sidebar">
-                            <!-- Recent Posts -->
-                            <section>
-                                <h2 class="major"><span>Recent Posts</span></h2>
-                                <ul class="divided">
-                                    <li>
-                                        <article class="box post-summary">
-                                            <h3><a href="/blog/Posts/DesignPresentations.html">Rocket Design Presentations</a>
-                                            </h3>
-                                            <ul class="meta">
-                                                <li class="icon fa-clock">12/06/24</li>
-                                            </ul>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="box post-summary">
-                                            <h3><a href="/blog/Posts/RocketBuilding.html">Rocket Building Meeting</a>
-                                            </h3>
-                                            <ul class="meta">
-                                                <li class="icon fa-clock">09/26/24</li>
-                                            </ul>
-                                        </article>
-                                    </li>
-                                    <li>
-                                        <article class="box post-summary">
-                                            <h3><a href="/blog/Posts/InterestMeeting.html">2024 Interest Meeting</a>
-                                            </h3>
-                                            <ul class="meta">
-                                                <li class="icon fa-clock">9/12/24</li>
-                                            </ul>
-                                        </article>
-                                    </li>
-                                    
-                                </ul>
-                                <a href="all-posts.html" class="button alt">All Posts</a>
-                            </section>
-
-                            <!-- Fun Facts Slideshow -->
-                            <section>
-                                <h2 class="major"><span>Aerospace Fun Facts</span></h2>
-                                <div class="slideshow-container">
-                                    <div class="myFacts">
-                                        <a class="image featured"><img src="/images/blog/Blackbird_SR-71.jpg"
-                                                alt="Picture of the fastest plane in the world, the Lockheed Martin SR-71 Blackbird."
-                                                loading="lazy"></a>
-                                        <p>Did you know? The SR-71 Blackbird holds the record for the fastest
-                                            air-breathing manned aircraft at over 2,000 mph.</p>
-                                        <a href="https://www.nasa.gov/wp-content/uploads/2021/09/495839main_fs-030_sr-71.pdf?emrc=0612db"
-                                            class="button alt" target="_blank">Learn more</a>
-                                    </div>
-                                    <div class="myFacts">
-                                        <a class="image featured"><img src="/images/blog/sputnik1.jpg"
-                                                alt="Picture of the first satellite, Sputnik 1." loading="lazy"></a>
-                                        <p>The Soviet Union launched the first artificial satellite, Sputnik 1, on
-                                            October 4, 1957. It orbited Earth for three months before falling back into
-                                            the atmosphere.</p>
-                                        <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1957-001B"
-                                            class="button alt" target="_blank">Learn more</a>
-                                    </div>
-                                    <div class="myFacts">
-                                        <a class="image featured"><img src="/images/blog/voyager1.jpg"
-                                                alt="Picture of the furthest space probe, Voyager 1."
-                                                loading="lazy"></a>
-                                        <p>Launched in 1977, NASA’s Voyager 1 spacecraft is the most distant human-made
-                                            object from Earth, now in interstellar space, over 14 billion miles away!
-                                        </p>
-                                        <a href="https://science.nasa.gov/mission/voyager/voyager-1/" class="button alt"
-                                            target="_blank">Learn more</a>
-                                    </div>
-                                    <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
-                                    <button class="next" onclick="plusSlides(1)">&#10095;</button>
-                                </div>
-                            </section>
-
-                            <!-- Quotes Slideshow -->
-                            <section>
-                                <h2 class="major"><span>Inspiration</span></h2>
-                                <div class="slideshow-container">
-                                    <div class="myQuotes">
-                                        <a class="image featured"><img src="/images/blog/TheovonKarman.jpg"
-                                                alt="Theodore von Karman" loading="lazy"></a>
-                                        <p><i>"Scientists study the world as it is, engineers create the world that
-                                                never has been."</i></p>
-                                        <p>- Theodore von Karman</p>
-                                        <a href="https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-theodore-von-karman-1881-1963/"
-                                            class="button alt" target="_blank">Learn more</a>
-                                    </div>
-                                    <div class="myQuotes">
-                                        <a class="image featured"><img src="/images/blog/henry-ford.jpg"
-                                                alt="Henry Ford" loading="lazy"></a>
-                                        <p><i>"Whether you think you can, or you think you can't - you're right."</i>
-                                        </p>
-                                        <p>- Henry Ford</p>
-                                        <a href="https://en.wikipedia.org/wiki/Henry_Ford" class="button alt"
-                                            target="_blank">Learn more</a>
-                                    </div>
-                                    <div class="myQuotes">
-                                        <a class="image featured"><img src="/images/blog/Thomas_Edison.jpg"
-                                                alt="Thomas Edison" loading="lazy"></a>
-                                        <p><i>"I have not failed. I've just found 10,000 ways that won't work."</i></p>
-                                        <p>- Thomas Edison</p>
-                                        <a href="https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/biography/life-of-thomas-alva-edison"
-                                            class="button alt" target="_blank">Learn more</a>
-                                    </div>
-                                    <button class="prev" onclick="plusSlidesQuotes(-1)">&#10094;</button>
-                                    <button class="next" onclick="plusSlidesQuotes(1)">&#10095;</button>
-                                </div>
-                            </section>
-                        </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+                        <a href="/blog/blog.html" class="text-primary font-medium">Blog</a>
+                        <a href="/about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-gray-600 hover:text-primary transition-colors">Gallery</a>
+                        <a href="/resources.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
+                        <a href="/timeline.html" class="text-gray-600 hover:text-primary transition-colors">Our Journey</a>
                     </div>
                 </div>
 
-                <!-- Sign-Up Section -->
-                <div class="signup-container">
-                    <ul class="actions centered">
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link"
-                                class="button large">Sign Up</a></li>
-                        <li><a href="about.html#contact" class="button alt large">Think About It</a></li>
-                    </ul>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
                 </div>
             </div>
-        </section>
 
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="container">
-                <div class="row gtr-200">
-                    <!-- About -->
-                    <div class="col-12">
-                        <section>
-                            <h2 class="major"><span>What's this about?</span></h2>
-                            <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you
-                                from <strong>Battlefield High School</strong> in northern Virginia!
-                                We are a group of students extremely interested in Computer Science, Physics,
-                                Engineering, and more, applying what we learn in projects. We are also active in our
-                                local community and like to
-                                teach STEM topics at youth events.</p>
-                        </section>
-                    </div>
-
-                    <!-- Contact -->
-                    <div class="col-12">
-                        <!-- Contact -->
-                        <section>
-                            <h2 class="major"><span>Get in touch</span></h2>
-                            <ul class="contact">
-                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span
-                                            class="label">Instagram</span></a></li>
-                                <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span
-                                            class="label">Discord</span></a></li>
-                                <br><a href="https://outlook.office.com/mail">Questions? Contact us at
-                                    ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-
-                            </ul>
-                        </section>
-
-                    </div>
-                </div>
-
-                <!-- Copyright -->
-                <div id="copyright">
-                    <ul class="menu">
-                        <li>&copy; BHS AAP. All rights reserved.</li>
-                    </ul>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-primary font-medium">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-gray-600 hover:text-primary">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Our Journey</a>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </nav>
 
-    <!-- Scripts -->
-    <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/latestNewsletter.js"></script>
-    <script src="../assets/js/browser.min.js"></script>
-    <script src="../assets/js/breakpoints.min.js"></script>
-    <script src="../assets/js/util.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/cursor.js"></script>
-    <script src="../assets/js/slideshow.js"></script>
-    <script src="../assets/js/quoteSlideshow.js"></script>
-    <script src="/assets/js/loadNav.js"></script>
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 lg:py-20 overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-6">
+                <!-- Animated Badge -->
+                <div class="inline-flex items-center bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-6 py-3 rounded-full text-sm font-semibold mb-6 animate-pulse">
+                    <i class="fas fa-newspaper mr-2"></i>
+                    <span>Latest Updates & Insights</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                    BAAP
+                    <span class="text-accent bg-gradient-to-r from-accent to-yellow-400 bg-clip-text text-transparent">Blog</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+                    Stay updated with our latest projects, achievements, and insights from the world of aerospace engineering
+                </p>
+                
+                <!-- Quick Stats -->
+                <div class="flex flex-wrap justify-center gap-8 mt-8 pt-8 border-t border-white/20">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">15+</div>
+                        <div class="text-sm text-blue-200">Blog Posts</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">1000+</div>
+                        <div class="text-sm text-blue-200">Monthly Readers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">24/7</div>
+                        <div class="text-sm text-blue-200">Content Updates</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Main Content Area -->
+                <div class="lg:col-span-3">
+                    <!-- Latest Newsletter Section -->
+                    <section class="mb-16">
+                        <div class="bg-white rounded-2xl shadow-lg p-8">
+                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Latest Newsletter</h2>
+                            <div id="postContent" class="prose max-w-none">
+                                <!-- Newsletter content will be loaded here -->
+                                <div class="text-center py-12">
+                                    <i class="fas fa-newspaper text-4xl text-gray-400 mb-4"></i>
+                                    <p class="text-gray-600">Loading latest newsletter...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Call to Action -->
+                    <section class="text-center">
+                        <div class="bg-gradient-to-r from-primary to-blue-700 rounded-2xl p-8 md:p-12 text-white">
+                            <h2 class="text-3xl font-bold mb-6">Join Our Community</h2>
+                            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                                Be part of our aerospace journey and stay connected with the latest updates
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" 
+                                   class="bg-accent text-white font-semibold py-4 px-8 rounded-lg hover:bg-accent/90 transition-colors shadow-lg">
+                                    Sign Up Now
+                                </a>
+                                <a href="/about.html" 
+                                   class="bg-white text-primary font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                                    Learn More
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="space-y-8">
+                        <!-- Recent Posts -->
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Recent Posts</h3>
+                            <div class="space-y-6">
+                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <a href="/blog/Posts/DesignPresentations.html" class="hover:text-primary transition-colors">
+                                            Rocket Design Presentations
+                                        </a>
+                                    </h4>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>December 6, 2024</span>
+                                    </div>
+                                </article>
+
+                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <a href="/blog/Posts/RocketBuilding.html" class="hover:text-primary transition-colors">
+                                            Rocket Building Meeting
+                                        </a>
+                                    </h4>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>September 26, 2024</span>
+                                    </div>
+                                </article>
+
+                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-gray-900 mb-2">
+                                        <a href="/blog/Posts/InterestMeeting.html" class="hover:text-primary transition-colors">
+                                            2024 Interest Meeting
+                                        </a>
+                                    </h4>
+                                    <div class="flex items-center text-sm text-gray-500">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>September 12, 2024</span>
+                                    </div>
+                                </article>
+                            </div>
+                            
+                            <div class="mt-6">
+                                <a href="all-posts.html" class="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors text-center block">
+                                    View All Posts
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Aerospace Fun Facts -->
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Aerospace Fun Facts</h3>
+                            <div id="funFactsSlideshow" class="relative">
+                                <!-- Fact 1 -->
+                                <div class="fun-fact-slide active">
+                                    <img src="/images/blog/Blackbird_SR-71.jpg" 
+                                         alt="SR-71 Blackbird" 
+                                         class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-gray-700 mb-4">
+                                        Did you know? The SR-71 Blackbird holds the record for the fastest air-breathing manned aircraft at over 2,000 mph.
+                                    </p>
+                                    <a href="https://www.nasa.gov/wp-content/uploads/2021/09/495839main_fs-030_sr-71.pdf?emrc=0612db" 
+                                       target="_blank" 
+                                       class="text-primary hover:text-primary/80 transition-colors font-semibold">
+                                        Learn more →
+                                    </a>
+                                </div>
+
+                                <!-- Fact 2 -->
+                                <div class="fun-fact-slide hidden">
+                                    <img src="/images/blog/sputnik1.jpg" 
+                                         alt="Sputnik 1" 
+                                         class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-gray-700 mb-4">
+                                        The Soviet Union launched the first artificial satellite, Sputnik 1, on October 4, 1957. It orbited Earth for three months before falling back into the atmosphere.
+                                    </p>
+                                    <a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1957-001B" 
+                                       target="_blank" 
+                                       class="text-primary hover:text-primary/80 transition-colors font-semibold">
+                                        Learn more →
+                                    </a>
+                                </div>
+
+                                <!-- Fact 3 -->
+                                <div class="fun-fact-slide hidden">
+                                    <img src="/images/blog/voyager1.jpg" 
+                                         alt="Voyager 1" 
+                                         class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <p class="text-gray-700 mb-4">
+                                        Launched in 1977, NASA's Voyager 1 spacecraft is the most distant human-made object from Earth, now in interstellar space, over 14 billion miles away!
+                                    </p>
+                                    <a href="https://science.nasa.gov/mission/voyager/voyager-1/" 
+                                       target="_blank" 
+                                       class="text-primary hover:text-primary/80 transition-colors font-semibold">
+                                        Learn more →
+                                    </a>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-colors" onclick="changeFunFact(-1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-colors" onclick="changeFunFact(1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Inspiration Quotes -->
+                        <div class="bg-white rounded-2xl shadow-lg p-6">
+                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Inspiration</h3>
+                            <div id="quotesSlideshow" class="relative">
+                                <!-- Quote 1 -->
+                                <div class="quote-slide active">
+                                    <img src="/images/blog/TheovonKarman.jpg" 
+                                         alt="Theodore von Karman" 
+                                         class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <blockquote class="text-gray-700 mb-4 italic">
+                                        "Scientists study the world as it is, engineers create the world that never has been."
+                                    </blockquote>
+                                    <p class="text-gray-600 mb-4">- Theodore von Karman</p>
+                                    <a href="https://www.jpl.nasa.gov/who-we-are/faces-of-leadership-the-directors-of-jpl/dr-theodore-von-karman-1881-1963/" 
+                                       target="_blank" 
+                                       class="text-primary hover:text-primary/80 transition-colors font-semibold">
+                                        Learn more →
+                                    </a>
+                                </div>
+
+                                <!-- Quote 2 -->
+                                <div class="quote-slide hidden">
+                                    <img src="/images/blog/henry-ford.jpg" 
+                                         alt="Henry Ford" 
+                                         class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <blockquote class="text-gray-700 mb-4 italic">
+                                        "Whether you think you can, or you think you can't - you're right."
+                                    </blockquote>
+                                    <p class="text-gray-600 mb-4">- Henry Ford</p>
+                                    <a href="https://en.wikipedia.org/wiki/Henry_Ford" 
+                                       target="_blank" 
+                                       class="text-primary hover:text-primary/80 transition-colors font-semibold">
+                                        Learn more →
+                                    </a>
+                                </div>
+
+                                <!-- Quote 3 -->
+                                <div class="quote-slide hidden">
+                                    <img src="/images/blog/Thomas_Edison.jpg" 
+                                         alt="Thomas Edison" 
+                                         class="w-full h-48 object-cover rounded-lg mb-4">
+                                    <blockquote class="text-gray-700 mb-4 italic">
+                                        "I have not failed. I've just found 10,000 ways that won't work."
+                                    </blockquote>
+                                    <p class="text-gray-600 mb-4">- Thomas Edison</p>
+                                    <a href="https://www.loc.gov/collections/edison-company-motion-pictures-and-sound-recordings/articles-and-essays/biography/life-of-thomas-alva-edison" 
+                                       target="_blank" 
+                                       class="text-primary hover:text-primary/80 transition-colors font-semibold">
+                                        Learn more →
+                                    </a>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-colors" onclick="changeQuote(-1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-colors" onclick="changeQuote(1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">What's this about?</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
+                        teach STEM topics at youth events.
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-300">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-300">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-300">
+                                Questions? Contact us at 
+                                <a href="mailto:ayyorgbt25@pwcs-edu.org" class="text-accent hover:text-accent/80 transition-colors">
+                                    ayyorgbt25@pwcs-edu.org
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-accent hover:text-accent/80 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Slideshows -->
+    <script>
+        // Mobile Menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fun Facts Slideshow
+        let currentFunFact = 0;
+        const funFacts = document.querySelectorAll('.fun-fact-slide');
+
+        function changeFunFact(direction) {
+            funFacts[currentFunFact].classList.add('hidden');
+            currentFunFact = (currentFunFact + direction + funFacts.length) % funFacts.length;
+            funFacts[currentFunFact].classList.remove('hidden');
+        }
+
+        // Auto-advance fun facts every 5 seconds
+        setInterval(() => changeFunFact(1), 5000);
+
+        // Quotes Slideshow
+        let currentQuote = 0;
+        const quotes = document.querySelectorAll('.quote-slide');
+
+        function changeQuote(direction) {
+            quotes[currentQuote].classList.add('hidden');
+            currentQuote = (currentQuote + direction + quotes.length) % quotes.length;
+            quotes[currentQuote].classList.remove('hidden');
+        }
+
+        // Auto-advance quotes every 7 seconds
+        setInterval(() => changeQuote(1), 7000);
+
+        // Load latest newsletter (placeholder for now)
+        // This would typically load content from your newsletter system
+        document.addEventListener('DOMContentLoaded', function() {
+            const postContent = document.getElementById('postContent');
+            // You can replace this with actual newsletter loading logic
+            postContent.innerHTML = `
+                <div class="text-center py-12">
+                    <i class="fas fa-newspaper text-4xl text-gray-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Latest BAAP Newsletter</h3>
+                    <p class="text-gray-600 mb-6">Stay tuned for our latest updates and achievements!</p>
+                    <a href="all-posts.html" class="bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">
+                        View All Posts
+                    </a>
+                </div>
+            `;
+        });
+    </script>
 </body>
 
 </html>
