@@ -13,9 +13,23 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e40af',
-                        secondary: '#64748b',
-                        accent: '#f59e0b'
+                        primary: '#9B5DE5',
+                        accent: '#7F5AF0',
+                        purple: {
+                            400: '#A770EF',
+                            500: '#9B5DE5',
+                            600: '#7F5AF0',
+                            700: '#6B46C1'
+                        },
+                        dark: {
+                            900: '#000000',
+                            800: '#101010',
+                            700: '#1A1A1A',
+                            600: '#2D2D2D'
+                        }
+                    },
+                    fontFamily: {
+                        'tech': ['Inter', 'system-ui', 'sans-serif']
                     }
                 }
             }
@@ -25,35 +39,47 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VNC4DM2HT7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VNC4DM2HT7');
+    </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-dark-900 text-white font-tech">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
+    <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
                     <img src="../images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
-                    <span class="text-xl font-bold text-primary">BAAP</span>
+                    <span class="text-xl font-bold text-purple-400">BAAP</span>
                 </div>
 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="/index.html" class="text-gray-600 hover:text-primary transition-colors">Home</a>
-                        <a href="/blog/blog.html" class="text-primary font-medium">Blog</a>
-                        <a href="/about.html" class="text-gray-600 hover:text-primary transition-colors">About Us</a>
-                        <a href="/gallery/gallery.html" class="text-gray-600 hover:text-primary transition-colors">Gallery</a>
-                        <a href="/resources.html" class="text-gray-600 hover:text-primary transition-colors">Resources</a>
-                        <a href="/timeline.html" class="text-gray-600 hover:text-primary transition-colors">Our Journey</a>
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
+                        <a href="/blog/blog.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
                     </div>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-primary focus:outline-none">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-400 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
@@ -62,52 +88,53 @@
             <!-- Mobile Navigation -->
             <div id="mobile-menu" class="hidden md:hidden pb-4">
                 <div class="space-y-2">
-                    <a href="/index.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Home</a>
-                    <a href="/blog/blog.html" class="block px-3 py-2 text-primary font-medium">Blog</a>
-                    <a href="/about.html" class="block px-3 py-2 text-gray-600 hover:text-primary">About Us</a>
-                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Gallery</a>
-                    <a href="/resources.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Resources</a>
-                    <a href="/timeline.html" class="block px-3 py-2 text-gray-600 hover:text-primary">Our Journey</a>
+                    <a href="/index.html" class="block px-3 py-2 text-white hover:text-purple-400">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-purple-400 font-medium border-l-2 border-purple-400">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-white hover:text-purple-400">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-white hover:text-purple-400">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-white hover:text-purple-400">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-white hover:text-purple-400">Our Journey</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16 lg:py-20 overflow-hidden">
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 bg-black/20"></div>
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+    <section class="relative bg-gradient-to-br from-dark-900 via-purple-900/20 to-dark-800 text-white py-20 lg:py-32 overflow-hidden">
+        <!-- Starfield Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
         
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="space-y-6">
+            <div class="space-y-8">
                 <!-- Animated Badge -->
-                <div class="inline-flex items-center bg-accent/20 backdrop-blur-sm border border-accent/30 text-accent px-6 py-3 rounded-full text-sm font-semibold mb-6 animate-pulse">
+                <div class="inline-flex items-center bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-purple-400 px-6 py-3 rounded-full text-sm font-semibold mb-8 animate-pulse">
                     <i class="fas fa-newspaper mr-2"></i>
                     <span>Latest Updates & Insights</span>
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide">
                     BAAP
-                    <span class="text-accent bg-gradient-to-r from-accent to-yellow-400 bg-clip-text text-transparent">Blog</span>
+                    <br>
+                    <span class="text-purple-400 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Blog</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed">
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                     Stay updated with our latest projects, achievements, and insights from the world of aerospace engineering
                 </p>
                 
                 <!-- Quick Stats -->
                 <div class="flex flex-wrap justify-center gap-8 mt-8 pt-8 border-t border-white/20">
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-accent">15+</div>
-                        <div class="text-sm text-blue-200">Blog Posts</div>
+                        <div class="text-2xl font-bold text-purple-400">15+</div>
+                        <div class="text-sm text-gray-300">Blog Posts</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-accent">1000+</div>
-                        <div class="text-sm text-blue-200">Monthly Readers</div>
+                        <div class="text-2xl font-bold text-purple-400">1000+</div>
+                        <div class="text-sm text-gray-300">Monthly Readers</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold text-accent">24/7</div>
-                        <div class="text-sm text-blue-200">Content Updates</div>
+                        <div class="text-2xl font-bold text-purple-400">24/7</div>
+                        <div class="text-sm text-gray-300">Content Updates</div>
                     </div>
                 </div>
             </div>
@@ -122,13 +149,13 @@
                 <div class="lg:col-span-3">
                     <!-- Latest Newsletter Section -->
                     <section class="mb-16">
-                        <div class="bg-white rounded-2xl shadow-lg p-8">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-6">Latest Newsletter</h2>
+                        <div class="bg-dark-800 rounded-2xl shadow-2xl p-8 border border-gray-700">
+                            <h2 class="text-3xl font-bold text-purple-400 mb-6">Latest Newsletter</h2>
                             <div id="postContent" class="prose max-w-none">
                                 <!-- Newsletter content will be loaded here -->
                                 <div class="text-center py-12">
                                     <i class="fas fa-newspaper text-4xl text-gray-400 mb-4"></i>
-                                    <p class="text-gray-600">Loading latest newsletter...</p>
+                                    <p class="text-gray-400">Loading latest newsletter...</p>
                                 </div>
                             </div>
                         </div>
@@ -136,18 +163,18 @@
 
                     <!-- Call to Action -->
                     <section class="text-center">
-                        <div class="bg-gradient-to-r from-primary to-blue-700 rounded-2xl p-8 md:p-12 text-white">
+                        <div class="bg-gradient-to-r from-purple-600 to-purple-800 rounded-2xl p-8 md:p-12 text-white">
                             <h2 class="text-3xl font-bold mb-6">Join Our Community</h2>
-                            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                            <p class="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
                                 Be part of our aerospace journey and stay connected with the latest updates
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" 
-                                   class="bg-accent text-white font-semibold py-4 px-8 rounded-lg hover:bg-accent/90 transition-colors shadow-lg">
+                                   class="bg-purple-400 text-white font-semibold py-4 px-8 rounded-lg hover:bg-purple-300 transition-colors shadow-lg">
                                     Sign Up Now
                                 </a>
                                 <a href="/about.html" 
-                                   class="bg-white text-primary font-semibold py-4 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
+                                   class="bg-dark-800 text-white font-semibold py-4 px-8 rounded-lg hover:bg-dark-700 transition-colors shadow-lg border border-purple-400">
                                     Learn More
                                 </a>
                             </div>
@@ -159,56 +186,50 @@
                 <div class="lg:col-span-1">
                     <div class="space-y-8">
                         <!-- Recent Posts -->
-                        <div class="bg-white rounded-2xl shadow-lg p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Recent Posts</h3>
+                        <div class="bg-dark-800 rounded-2xl shadow-2xl p-6 border border-gray-700">
+                            <h3 class="text-xl font-semibold text-purple-400 mb-6">Recent Posts</h3>
                             <div class="space-y-6">
-                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
-                                    <h4 class="font-semibold text-gray-900 mb-2">
-                                        <a href="/blog/Posts/DesignPresentations.html" class="hover:text-primary transition-colors">
+                                <article class="border-b border-gray-700 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-white mb-2">
+                                        <a href="/blog/Posts/DesignPresentations.html" class="hover:text-purple-400 transition-colors">
                                             Rocket Design Presentations
                                         </a>
                                     </h4>
-                                    <div class="flex items-center text-sm text-gray-500">
+                                    <div class="flex items-center text-sm text-gray-400">
                                         <i class="fas fa-clock mr-2"></i>
                                         <span>December 6, 2024</span>
                                     </div>
                                 </article>
 
-                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
-                                    <h4 class="font-semibold text-gray-900 mb-2">
-                                        <a href="/blog/Posts/RocketBuilding.html" class="hover:text-primary transition-colors">
+                                <article class="border-b border-gray-700 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-white mb-2">
+                                        <a href="/blog/Posts/RocketBuilding.html" class="hover:text-purple-400 transition-colors">
                                             Rocket Building Meeting
                                         </a>
                                     </h4>
-                                    <div class="flex items-center text-sm text-gray-500">
+                                    <div class="flex items-center text-sm text-gray-400">
                                         <i class="fas fa-clock mr-2"></i>
                                         <span>September 26, 2024</span>
                                     </div>
                                 </article>
 
-                                <article class="border-b border-gray-200 pb-4 last:border-b-0">
-                                    <h4 class="font-semibold text-gray-900 mb-2">
-                                        <a href="/blog/Posts/InterestMeeting.html" class="hover:text-primary transition-colors">
+                                <article class="border-b border-gray-700 pb-4 last:border-b-0">
+                                    <h4 class="font-semibold text-white mb-2">
+                                        <a href="/blog/Posts/InterestMeeting.html" class="hover:text-purple-400 transition-colors">
                                             2024 Interest Meeting
                                         </a>
                                     </h4>
-                                    <div class="flex items-center text-sm text-gray-500">
+                                    <div class="flex items-center text-sm text-gray-400">
                                         <i class="fas fa-clock mr-2"></i>
                                         <span>September 12, 2024</span>
                                     </div>
                                 </article>
                             </div>
-                            
-                            <div class="mt-6">
-                                <a href="all-posts.html" class="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors text-center block">
-                                    View All Posts
-                                </a>
-                            </div>
                         </div>
 
                         <!-- Aerospace Fun Facts -->
-                        <div class="bg-white rounded-2xl shadow-lg p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Aerospace Fun Facts</h3>
+                        <div class="bg-dark-800 rounded-2xl shadow-2xl p-6 border border-gray-700">
+                            <h3 class="text-xl font-semibold text-purple-400 mb-6">Aerospace Fun Facts</h3>
                             <div id="funFactsSlideshow" class="relative">
                                 <!-- Fact 1 -->
                                 <div class="fun-fact-slide active">
@@ -266,8 +287,8 @@
                         </div>
 
                         <!-- Inspiration Quotes -->
-                        <div class="bg-white rounded-2xl shadow-lg p-6">
-                            <h3 class="text-xl font-semibold text-gray-900 mb-6">Inspiration</h3>
+                        <div class="bg-dark-800 rounded-2xl shadow-2xl p-6 border border-gray-700">
+                            <h3 class="text-xl font-semibold text-purple-400 mb-6">Inspiration</h3>
                             <div id="quotesSlideshow" class="relative">
                                 <!-- Quote 1 -->
                                 <div class="quote-slide active">

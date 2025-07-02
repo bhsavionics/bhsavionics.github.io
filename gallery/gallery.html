@@ -1,189 +1,299 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/ours.css" />
-    <title>Our Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Gallery - BAAP</title>
 
-    <style>
-        /* General styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1,
-        h2,
-        h3 {
-            text-align: center;
-        }
-
-        /* Gallery Grid */
-        .gallery-grid {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 20px !important;
-            margin-top: 30px !important;
-        }
-
-        .gallery-item {
-            background-color: white !important;
-            padding: 10px !important;
-            text-align: center !important;
-            border: 1px solid #ddd !important;
-            border-radius: 8px !important;
-            transition: transform 0.3s ease !important;
-        }
-
-        .gallery-item img {
-            max-width: 200px !important;
-            /* Adjusts image size */
-            height: 250px !important;
-            /* Fixed height for consistency */
-            object-fit: cover;
-            /* Ensures images maintain aspect ratio */
-            border-radius: 8px !important;
-        }
-
-        .gallery-item h3 {
-            margin-top: 10px !important;
-            font-size: 18px !important;
-            color: #333 !important;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05) !important;
-        }
-
-
-        /* Adjust grid layout for smaller screens */
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr !important;
-                /* 2 items per row on tablets */
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B5DE5',
+                        accent: '#7F5AF0',
+                        purple: {
+                            400: '#A770EF',
+                            500: '#9B5DE5',
+                            600: '#7F5AF0',
+                            700: '#6B46C1'
+                        },
+                        dark: {
+                            900: '#000000',
+                            800: '#101010',
+                            700: '#1A1A1A',
+                            600: '#2D2D2D'
+                        }
+                    },
+                    fontFamily: {
+                        'tech': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
             }
         }
+    </script>
 
-        @media (max-width: 480px) {
-            .gallery-grid {
-                grid-template-columns: 1fr !important;
-                /* 1 item per row on mobile */
-            }
-        }
-    </style>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VNC4DM2HT7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VNC4DM2HT7');
+    </script>
 </head>
 
-<body>
-    <!-- Main Content Section: Gallery Grid -->
-    <section id="main">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2>Our Gallery</h2>
+<body class="bg-dark-900 text-white font-tech">
+    <!-- Navigation -->
+    <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="../images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-purple-400">BAAP</span>
+                </div>
 
-                    <div id="nav-container"></div>
-
-
-
-                    <!-- Gallery Grid -->
-                    <div class="gallery-grid">
-                        <!-- Meeting 1 -->
-                        <div class="gallery-item">
-                            <a href="InterestMeeting.html">
-                                <img src="/images/gallery/InterestMeeting/interestmeeting4.jpg" alt="Meeting 1">
-                                <h3>Interest Meeting</h3>
-                            </a>
-                        </div>
-
-                        <!-- Meeting 2 -->
-                        <div class="gallery-item">
-                            <a href="RocketryMeeting.html">
-                                <img src="/images/gallery/RocketBuildingMeeting/Candidate.jpg" alt="Meeting 2">
-                                <h3>Rocketry Meeting</h3>
-                            </a>
-                        </div>
-
-                        <div class="gallery-item">
-                            <a href="BuildPlanning.html">
-                                <img src="/images/gallery/BuildPlanning/PowerPoint1.jpg" alt="Meeting 2">
-                                <h3>Rocketry Meeting</h3>
-                            </a>
-                        </div>
-                        <div class="gallery-item">
-                            <a href="TARCBuild.html">
-                                <img src="/images/gallery/TARCBuild/RocketPhoto2.jpg" alt="Meeting 2">
-                                <h3>Rocketry Meeting</h3>
-                            </a>
-                        </div>
-                        <!-- Add more gallery items as needed -->
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
                     </div>
                 </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-white hover:text-purple-400">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-white hover:text-purple-400">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-white hover:text-purple-400">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-purple-400 font-medium border-l-2 border-purple-400">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-white hover:text-purple-400">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-white hover:text-purple-400">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-dark-900 via-purple-900/20 to-dark-800 text-white py-20 lg:py-32 overflow-hidden">
+        <!-- Starfield Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/50 to-dark-900"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-purple-400 px-6 py-3 rounded-full text-sm font-semibold mb-8">
+                    <i class="fas fa-images mr-2"></i>
+                    <span>Photo Gallery</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide">
+                    Our
+                    <br>
+                    <span class="text-purple-400 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Gallery</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Explore moments from our meetings, events, and projects through our photo collection
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer id="footer">
-        <div class="container">
-            <div class="row gtr-200">
+    <!-- Main Content -->
+    <main class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Gallery Grid -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 tracking-wide">Photo Collections</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Browse through our organized photo collections from various events and activities
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Interest Meeting -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="/images/gallery/InterestMeeting/interestmeeting4.jpg" alt="Interest Meeting" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-users mr-1"></i>Meeting
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Interest Meeting</h3>
+                            <p class="text-gray-400 text-sm mb-4">Photos from our annual interest meeting where we introduce BAAP to new students.</p>
+                            <a href="InterestMeeting.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium">
+                                View Photos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Rocketry Meeting -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="/images/gallery/RocketBuildingMeeting/Candidate.jpg" alt="Rocketry Meeting" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-rocket mr-1"></i>Rocketry
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Rocketry Meeting</h3>
+                            <p class="text-gray-400 text-sm mb-4">Building and testing rockets during our rocketry-focused meetings.</p>
+                            <a href="RocketryMeeting.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium">
+                                View Photos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Build Planning -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="/images/gallery/BuildPlanning/PowerPoint1.jpg" alt="Build Planning" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-tools mr-1"></i>Planning
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Build Planning</h3>
+                            <p class="text-gray-400 text-sm mb-4">Planning sessions and design presentations for our rocket projects.</p>
+                            <a href="BuildPlanning.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium">
+                                View Photos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TARC Build -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="/images/gallery/TARCBuild/RocketPhoto2.jpg" alt="TARC Build" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-trophy mr-1"></i>Competition
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">TARC Build</h3>
+                            <p class="text-gray-400 text-sm mb-4">Building rockets for The American Rocketry Challenge competition.</p>
+                            <a href="TARCBuild.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium">
+                                View Photos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="text-center">
+                <div class="bg-gradient-to-r from-purple-600 to-purple-800 rounded-2xl p-8 md:p-12 text-white">
+                    <h2 class="text-3xl font-bold mb-6">Join Our Journey</h2>
+                    <p class="text-xl text-purple-100 mb-8 max-w-2xl mx-auto">
+                        Be part of our aerospace adventures and create memories that will be featured in our gallery
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" 
+                           class="bg-purple-400 text-white font-semibold py-4 px-8 rounded-lg hover:bg-purple-300 transition-colors shadow-lg">
+                            Join BAAP
+                        </a>
+                        <a href="/about.html" 
+                           class="bg-dark-800 text-white font-semibold py-4 px-8 rounded-lg hover:bg-dark-700 transition-colors shadow-lg border border-purple-400">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-dark-600 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- About -->
-                <div class="col-12">
-                    <section>
-                        <h2 class="major"><span>What's this about?</span></h2>
-                        <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from
-                            <strong>Battlefield High School</strong> in northern Virginia!
-                            We are a group of students extremely interested in Computer Science, Physics, Engineering,
-                            and more, applying what we learn in projects. We are also active in our local community and
-                            like to
-                            teach STEM topics at youth events.</p>
-                    </section>
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-purple-400">About BAAP</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        The Battlefield Aeronautics and Avionics Program is a student-led organization dedicated to 
+                        aerospace engineering, STEM education, and community outreach.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-purple-400">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-purple-400 transition-colors">About Us</a></li>
+                        <li><a href="/blog/blog.html" class="text-gray-400 hover:text-purple-400 transition-colors">Blog</a></li>
+                        <li><a href="/gallery/gallery.html" class="text-gray-400 hover:text-purple-400 transition-colors">Gallery</a></li>
+                        <li><a href="/resources.html" class="text-gray-400 hover:text-purple-400 transition-colors">Resources</a></li>
+                    </ul>
                 </div>
 
                 <!-- Contact -->
-                <div class="col-12">
-                    <!-- Contact -->
-                    <section>
-                        <h2 class="major"><span>Get in touch</span></h2>
-                        <ul class="contact">
-                            <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span
-                                        class="label">Instagram</span></a></li>
-                            <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span
-                                        class="label">Discord</span></a></li>
-                            <br><a href="https://outlook.office.com/mail">Questions? Contact us at
-                                ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-
-                        </ul>
-                    </section>
-
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-purple-400">Contact</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-gray-400">
+                            <i class="fab fa-instagram mr-2 text-purple-400"></i>
+                            <a href="https://www.instagram.com/bhsaap/" class="hover:text-purple-400 transition-colors">@bhsaap</a>
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fab fa-discord mr-2 text-purple-400"></i>
+                            <a href="https://discord.gg/pfyX6FZBkV" class="hover:text-purple-400 transition-colors">Discord</a>
+                        </div>
+                        <div class="flex items-center text-gray-400">
+                            <i class="fas fa-envelope mr-2 text-purple-400"></i>
+                            <a href="mailto:ayyorgbt25@pwcs-edu.org" class="hover:text-purple-400 transition-colors">Email</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Copyright -->
-            <div id="copyright">
-                <ul class="menu">
-                    <li>&copy; BHS AAP. All rights reserved.</li>
-                </ul>
+            <div class="border-t border-dark-600 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 BHS AAP. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery.scrolly.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/mobile-nav.js"></script>
-    <script src="/assets/js/loadNav.js"></script>
 
-
+    <!-- Mobile Navigation Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 
 </html>
