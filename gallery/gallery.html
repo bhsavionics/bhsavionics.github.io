@@ -52,9 +52,61 @@
         gtag('js', new Date());
         gtag('config', 'G-VNC4DM2HT7');
     </script>
+    
+    <style>
+        /* Page Transition Overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
+            z-index: 9999;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .page-transition-overlay.active {
+            transform: translateY(0);
+        }
+        
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9998;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .shutter.active {
+            transform: scaleY(1);
+        }
+        
+        /* Fade Out Effect */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        /* Slide Out Effect */
+        .slide-out {
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
 </head>
 
 <body class="bg-dark-900 text-white font-tech">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -238,60 +290,154 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-dark-600 py-12">
+    <footer class="bg-black text-white py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- About -->
-                <div class="space-y-4">
-                    <h3 class="text-lg font-semibold text-purple-400">About BAAP</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        The Battlefield Aeronautics and Avionics Program is a student-led organization dedicated to 
-                        aerospace engineering, STEM education, and community outreach.
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">What's this about?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
+                        teach STEM topics at youth events.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="space-y-4">
-                    <h3 class="text-lg font-semibold text-purple-400">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/about.html" class="text-gray-400 hover:text-purple-400 transition-colors">About Us</a></li>
-                        <li><a href="/blog/blog.html" class="text-gray-400 hover:text-purple-400 transition-colors">Blog</a></li>
-                        <li><a href="/gallery/gallery.html" class="text-gray-400 hover:text-purple-400 transition-colors">Gallery</a></li>
-                        <li><a href="/resources.html" class="text-gray-400 hover:text-purple-400 transition-colors">Resources</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div class="space-y-4">
-                    <h3 class="text-lg font-semibold text-purple-400">Contact</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center text-gray-400">
-                            <i class="fab fa-instagram mr-2 text-purple-400"></i>
-                            <a href="https://www.instagram.com/bhsaap/" class="hover:text-purple-400 transition-colors">@bhsaap</a>
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-400">Follow us on Instagram</span>
                         </div>
-                        <div class="flex items-center text-gray-400">
-                            <i class="fab fa-discord mr-2 text-purple-400"></i>
-                            <a href="https://discord.gg/pfyX6FZBkV" class="hover:text-purple-400 transition-colors">Discord</a>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-400">Join our Discord</span>
                         </div>
-                        <div class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-2 text-purple-400"></i>
-                            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="hover:text-purple-400 transition-colors">Email</a>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-400">
+                                Questions? Contact us at 
+                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    bhsaeronauticsandavionics@gmail.com
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-dark-600 mt-8 pt-8 text-center">
-                <p class="text-gray-400">&copy; 2024 BHS AAP. All rights reserved.</p>
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Navigation Script -->
+    <!-- JavaScript -->
     <script>
+        // Page Transition Functions
+        function createPageTransition(url, effect = 'shutter') {
+            const overlay = document.querySelector('.page-transition-overlay');
+            const shutter = document.querySelector('.shutter');
+            const body = document.body;
+            
+            // Prevent multiple transitions
+            if (overlay.classList.contains('active')) return;
+            
+            // Choose transition effect
+            switch(effect) {
+                case 'shutter':
+                    shutter.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'slide':
+                    body.classList.add('slide-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'fade':
+                    body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300);
+                    break;
+                    
+                case 'overlay':
+                default:
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                    break;
+            }
+        }
+        
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all anchor links with hash (same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Handle navigation links with page transitions
+            document.querySelectorAll('nav a[href^="/"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Use different effects for different links
+                    let effect = 'overlay'; // default
+                    
+                    // Special effects for specific pages
+                    if (url.includes('index.html')) {
+                        effect = 'shutter';
+                    } else if (url.includes('gallery')) {
+                        effect = 'slide';
+                    } else if (url.includes('blog')) {
+                        effect = 'fade';
+                    }
+                    
+                    createPageTransition(url, effect);
+                });
+            });
         });
     </script>
 </body>

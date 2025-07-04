@@ -55,9 +55,61 @@
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    
+    <style>
+        /* Page Transition Overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
+            z-index: 9999;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .page-transition-overlay.active {
+            transform: translateY(0);
+        }
+        
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9998;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .shutter.active {
+            transform: scaleY(1);
+        }
+        
+        /* Fade Out Effect */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        /* Slide Out Effect */
+        .slide-out {
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
 </head>
 
-<body class="bg-dark-900 text-white font-tech">
+<body class="bg-dark-900 text-white font-tech" style="scroll-behavior: smooth;">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,7 +185,7 @@
                             Discover Our Mission
                             <i class="fas fa-arrow-down ml-2 group-hover:animate-bounce"></i>
                         </a>
-                        <a href="/about.html" class="group inline-flex items-center px-8 py-4 bg-dark-700/50 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-dark-600 transition-all duration-300 border border-gray-600 hover:border-purple-400">
+                        <a href="/about.html#officers" class="group inline-flex items-center px-8 py-4 bg-dark-700/50 backdrop-blur-sm text-white font-semibold rounded-lg hover:bg-dark-600 transition-all duration-300 border border-gray-600 hover:border-purple-400">
                             Meet Our Team
                             <i class="fas fa-users ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </a>
@@ -173,13 +225,6 @@
                     <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 tracking-wide">Welcome to BAAP</h2>
                     <p class="text-xl text-gray-300 leading-relaxed">
                         Also known as the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>
-                    </p>
-                </div>
-                
-                <div class="bg-dark-800 rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-700">
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        This Website (Webpage or Social Media Platform) is not managed, approved, or sponsored by
-                        Prince William County Public Schools.
                     </p>
                 </div>
             </section>
@@ -484,11 +529,102 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu JavaScript -->
+    <!-- JavaScript -->
     <script>
+        // Page Transition Functions
+        function createPageTransition(url, effect = 'shutter') {
+            const overlay = document.querySelector('.page-transition-overlay');
+            const shutter = document.querySelector('.shutter');
+            const body = document.body;
+            
+            // Prevent multiple transitions
+            if (overlay.classList.contains('active')) return;
+            
+            // Choose transition effect
+            switch(effect) {
+                case 'shutter':
+                    shutter.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'slide':
+                    body.classList.add('slide-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'fade':
+                    body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300);
+                    break;
+                    
+                case 'overlay':
+                default:
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                    break;
+            }
+        }
+        
+        // Mobile Menu Toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all anchor links with hash (same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Handle navigation links with page transitions
+            document.querySelectorAll('nav a[href^="/"], .hero-section a[href^="/"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Use different effects for different links
+                    let effect = 'overlay'; // default
+                    
+                    // Special effects for specific pages
+                    if (url.includes('about.html')) {
+                        effect = 'shutter';
+                    } else if (url.includes('gallery')) {
+                        effect = 'slide';
+                    } else if (url.includes('blog')) {
+                        effect = 'fade';
+                    }
+                    
+                    createPageTransition(url, effect);
+                });
+            });
+            
+            // Handle "Meet Our Team" button specifically
+            document.querySelector('a[href="/about.html#officers"]').addEventListener('click', function(e) {
+                e.preventDefault();
+                createPageTransition('/about.html#officers', 'shutter');
+            });
         });
     </script>
 </body>

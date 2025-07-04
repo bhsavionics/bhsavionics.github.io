@@ -52,9 +52,61 @@
         gtag('js', new Date());
         gtag('config', 'G-VNC4DM2HT7');
     </script>
+    
+    <style>
+        /* Page Transition Overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
+            z-index: 9999;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .page-transition-overlay.active {
+            transform: translateY(0);
+        }
+        
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9998;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .shutter.active {
+            transform: scaleY(1);
+        }
+        
+        /* Fade Out Effect */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        /* Slide Out Effect */
+        .slide-out {
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
 </head>
 
 <body class="bg-dark-900 text-white font-tech">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -401,13 +453,13 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-16">
+    <footer class="bg-black text-white py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- About Section -->
                 <div>
-                    <h2 class="text-2xl font-bold mb-6">What's this about?</h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">What's this about?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
                         This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
                         coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
                         We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
@@ -418,30 +470,30 @@
 
                 <!-- Contact Section -->
                 <div>
-                    <h2 class="text-2xl font-bold mb-6">Get in touch</h2>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
                     <div class="space-y-4">
                         <div class="flex items-center space-x-4">
                             <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <span class="text-gray-300">Follow us on Instagram</span>
+                            <span class="text-gray-400">Follow us on Instagram</span>
                         </div>
                         
                         <div class="flex items-center space-x-4">
                             <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
                                 <i class="fab fa-discord"></i>
                             </a>
-                            <span class="text-gray-300">Join our Discord</span>
+                            <span class="text-gray-400">Join our Discord</span>
                         </div>
                         
                         <div class="pt-4">
-                            <p class="text-gray-300">
+                            <p class="text-gray-400">
                                 Questions? Contact us at 
-                                                            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-accent hover:text-accent/80 transition-colors">
-                                bhsaeronauticsandavionics@gmail.com
-                            </a> 
+                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    bhsaeronauticsandavionics@gmail.com
+                                </a> 
                                 or 
-                                <a href="mailto:marshkj@pwcs.edu" class="text-accent hover:text-accent/80 transition-colors">
+                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
                                     marshkj@pwcs.edu
                                 </a>
                             </p>
@@ -452,15 +504,57 @@
 
             <!-- Copyright -->
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p class="text-gray-400">
+                <p class="text-gray-500">
                     © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Slideshows -->
+    <!-- JavaScript -->
     <script>
+        // Page Transition Functions
+        function createPageTransition(url, effect = 'shutter') {
+            const overlay = document.querySelector('.page-transition-overlay');
+            const shutter = document.querySelector('.shutter');
+            const body = document.body;
+            
+            // Prevent multiple transitions
+            if (overlay.classList.contains('active')) return;
+            
+            // Choose transition effect
+            switch(effect) {
+                case 'shutter':
+                    shutter.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'slide':
+                    body.classList.add('slide-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'fade':
+                    body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300);
+                    break;
+                    
+                case 'overlay':
+                default:
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                    break;
+            }
+        }
+        
         // Mobile Menu
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -493,21 +587,62 @@
         // Auto-advance quotes every 7 seconds
         setInterval(() => changeQuote(1), 7000);
 
-        // Load latest newsletter (placeholder for now)
-        // This would typically load content from your newsletter system
+        // Smooth Scrolling for Anchor Links
         document.addEventListener('DOMContentLoaded', function() {
+            // Handle all anchor links with hash (same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Handle navigation links with page transitions
+            document.querySelectorAll('nav a[href^="/"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Use different effects for different links
+                    let effect = 'overlay'; // default
+                    
+                    // Special effects for specific pages
+                    if (url.includes('index.html')) {
+                        effect = 'shutter';
+                    } else if (url.includes('gallery')) {
+                        effect = 'slide';
+                    } else if (url.includes('blog')) {
+                        effect = 'fade';
+                    }
+                    
+                    createPageTransition(url, effect);
+                });
+            });
+            
+            // Load latest newsletter (placeholder for now)
             const postContent = document.getElementById('postContent');
-            // You can replace this with actual newsletter loading logic
-            postContent.innerHTML = `
-                <div class="text-center py-12">
-                    <i class="fas fa-newspaper text-4xl text-gray-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Latest BAAP Newsletter</h3>
-                    <p class="text-gray-600 mb-6">Stay tuned for our latest updates and achievements!</p>
-                    <a href="all-posts.html" class="bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">
-                        View All Posts
-                    </a>
-                </div>
-            `;
+            if (postContent) {
+                // You can replace this with actual newsletter loading logic
+                postContent.innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-newspaper text-4xl text-gray-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Latest BAAP Newsletter</h3>
+                        <p class="text-gray-600 mb-6">Stay tuned for our latest updates and achievements!</p>
+                        <a href="all-posts.html" class="bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">
+                            View All Posts
+                        </a>
+                    </div>
+                `;
+            }
         });
     </script>
 </body>
