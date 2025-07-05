@@ -2423,11 +2423,11 @@ table.default thead {
 
 .box.post-summary h3 {
 	line-height: 1em;
-	margin: 0 0 0.75em 0;
+	margin: 0 0.75 0.75em 0;
 }
 
 .box.post-summary .meta {
-	margin: 0;
+	margin: 0 0 0.4em 0;
 	line-height: 1em;
 }
 
@@ -2447,6 +2447,15 @@ table.default thead {
 
 .box.page-content ul.meta {
 	margin: 0 0 0.5em 0;
+}
+
+/*Post*/
+.post-image {
+    width: 100%;            /* make image fill the article width */
+    height: auto;           /* keep original aspect ratio */
+    margin: 0.25em 0;       /* small vertical spacing */
+    border-radius: 6px;     /* optional: rounded corners */
+    object-fit: cover;      /* crops image if it has fixed height (optional) */
 }
 
 /* Icons */

@@ -1,10 +1,10 @@
 // Blog post data
 const posts = [
-    { title: "Mountain View STEM Night", date: "2024-03-13", link: "Posts/StemNight.html", preview: "A look into our STEM Night event..." },
-    { title: "2024 Interest Meeting", date: "2024-09-12", link: "Posts/InterestMeeting.html", preview: "Kickstarting the year with an interest meeting..." },
-    { title: "Model Rocket Building Meeting", date: "2024-09-26", link: "Posts/ModelBuilding.html", preview: "Our journey in building rockets..." },
-    { title: "TARC Rocket Design Presentations", date: "2024-12-6", link: "Posts/DesignPresentations.html", preview: "The first steps of our journey..." },
-    { title: "TARC Rocket Model Building", date: "2024-12-18", link: "Posts/RocketBuilding.html", preview: "Our first model..." }
+    { title: "Mountain View STEM Night", date: "2024-03-13", link: "Posts/StemNight.html", preview: "A look into our STEM Night event...", image: "/images/vol3.jpg" },
+    { title: "2024 Interest Meeting", date: "2024-09-12", link: "Posts/InterestMeeting.html", preview: "Kickstarting the year with an interest meeting...", image: "/images/gallery/InterestMeeting/InterestMeeting.jpg" },
+    { title: "Model Rocket Building Meeting", date: "2024-09-26", link: "Posts/RocketryBuilding.html", preview: "Our journey in building rockets...", image: "/images/gallery/RocketBuildingMeeting/Candidate2.jpg" },
+    { title: "TARC Rocket Design Presentations", date: "2024-12-6", link: "Posts/DesignPresentations.html", preview: "The first steps of our journey...", image: "/images/gallery/DesignPresentations/designpresentation.jpg" },
+    { title: "TARC Rocket Model Building", date: "2024-12-18", link: "Posts/RocketBuilding.html", preview: "Our first model...", image: "/images/gallery/ModelBuilding/rocketmodel.jpg" }
     // Add additional posts here
 ];
 
@@ -61,6 +61,7 @@ recentPosts.forEach(post => {
             <ul class="meta">
                 <li class="icon fa-clock">${formatDate(post.date)}</li>
             </ul>
+            <img src="${post.image}" alt="${post.title}" class="post-image" />
         </article>
     `;
     container.innerHTML += postHTML;
