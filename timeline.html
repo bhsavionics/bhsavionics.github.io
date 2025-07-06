@@ -36,6 +36,9 @@
         }
     </script>
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/tailwind-custom.css">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -52,55 +55,6 @@
         gtag('js', new Date());
         gtag('config', 'G-VNC4DM2HT7');
     </script>
-    
-    <style>
-        /* Page Transition Overlay */
-        .page-transition-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
-            z-index: 9999;
-            transform: translateY(-100%);
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .page-transition-overlay.active {
-            transform: translateY(0);
-        }
-        
-        /* Shutter Effect */
-        .shutter {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9998;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .shutter.active {
-            transform: scaleY(1);
-        }
-        
-        /* Fade Out Effect */
-        .fade-out {
-            opacity: 0;
-            transition: opacity 0.3s ease-out;
-        }
-        
-        /* Slide Out Effect */
-        .slide-out {
-            transform: translateX(-100%);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-    </style>
 </head>
 
 <body class="bg-dark-900 text-white font-tech">

@@ -6,36 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Interest Meeting Gallery - BAAP</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#9B5DE5',
-                        accent: '#7F5AF0',
-                        purple: {
-                            400: '#A770EF',
-                            500: '#9B5DE5',
-                            600: '#7F5AF0',
-                            700: '#6B46C1'
-                        },
-                        dark: {
-                            900: '#000000',
-                            800: '#101010',
-                            700: '#1A1A1A',
-                            600: '#2D2D2D'
-                        }
-                    },
-                    fontFamily: {
-                        'tech': ['Inter', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-
+    <!-- Custom Tailwind CSS -->
+    <link rel="stylesheet" href="../assets/css/tailwind-custom.css">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -52,99 +25,6 @@
         gtag('js', new Date());
         gtag('config', 'G-VNC4DM2HT7');
     </script>
-    
-    <style>
-        /* Page Transition Overlay */
-        .page-transition-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
-            z-index: 9999;
-            transform: translateY(-100%);
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .page-transition-overlay.active {
-            transform: translateY(0);
-        }
-        
-        /* Shutter Effect */
-        .shutter {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            z-index: 9998;
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .shutter.active {
-            transform: scaleY(1);
-        }
-        
-        /* Fade Out Effect */
-        .fade-out {
-            opacity: 0;
-            transition: opacity 0.3s ease-out;
-        }
-        
-        /* Slide Out Effect */
-        .slide-out {
-            transform: translateX(-100%);
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Lightbox Styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-
-        .lightbox .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .lightbox .close:hover {
-            background: rgba(155, 93, 229, 0.8);
-            transform: scale(1.1);
-        }
-    </style>
 </head>
 
 <body class="bg-dark-900 text-white font-tech">
@@ -207,8 +87,8 @@
                 <div class="inline-flex items-center bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-purple-400 px-6 py-3 rounded-full text-sm font-semibold mb-8">
                     <i class="fas fa-users mr-2"></i>
                     <span>Interest Meeting</span>
-                </div>
-                
+        </div>
+
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide">
                     Interest Meeting
                     <br>
@@ -261,8 +141,8 @@
                     <div class="p-6">
                         <p class="text-gray-300 mb-2">Really loved the collaboration! ✨ - Burak</p>
                         <p class="text-gray-500 text-sm">September 12, 2024</p>
-                    </div>
-                </div>
+            </div>
+        </div>
 
                 <!-- Photo 3 -->
                 <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
