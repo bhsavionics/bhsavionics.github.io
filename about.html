@@ -1,189 +1,605 @@
 <!DOCTYPE HTML>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<html>
-   <head>
-      <title>About Us</title>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes" />
-      <link rel="stylesheet" href="assets/css/main.css" />
-      <link rel="stylesheet" href="assets/css/ours.css" />
-      <link rel="icon" type="image/png" href="images/logo.png" />
-   </head>
-   <body class="is-preload">
-      <div id="page-wrapper">
-         <div id="nav-container"></div>
-         <!-- Main -->
-         <section id="main">
-            <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="content">
-                        <!-- Officers Section -->
-                        <section class="box features">
-                           <h2 class="major"><span>Meet Our Officers!</span></h2>
-                           <div class="officer-grid">
-                             <!-- Avi -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/" class="image featured">
-                                 <img src="images/officers/Avi.jpg" alt="Avi" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/avi-sharma-aa5a73223/">Co Project Director: Avi Sharma</a></h3>
-                                 <p>Co Project Director of BAAP.</p>
-                              </div>
-                             <!-- Tien -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/tien-vu-003ab2335/" class="image featured">
-                                 <img src="images/officers/TienVu1.jpg" alt="Tien" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/tien-vu-003ab2335/">Co Project Director: Tien Vu</a></h3>
-                                 <p>Co Project Director of BAAP.</p>
-                              </div>
-                              <!-- Hanchae -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/HanchaeCho1.jpg" alt="Hanchae" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Manager: Hanchae Cho</a></h3>
-                                 <p>Manager of BAAP.</p>
-                              </div>
-                              <!-- Nick -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/image.png" alt="Nick" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Electronics Lead: Svanik Kasa</a></h3>
-                                 <p>Electronics Lead at BAAP.</p>
-                              </div>
-                              <!-- Ellie -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/EllieKwon.jpg" alt="Ellie" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Engineering Lead: Ellie Kwon</a></h3>
-                                 <p>Engineering Lead at BAAP.</p>
-                              </div>
-                              <!-- Ava -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/AvaCantarella.jpg" alt="Ava" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Engineering Lead: Ava Cantarella</a></h3>
-                                 <p>Engineering Lead at BAAP.</p>
-                              </div>
-                              <!-- Sam -->
-                              <div class="officer-box">
-                                 <a href="https://www.linkedin.com/in/samuel-lee-302227336/" class="image featured">
-                                 <img src="images/officers/SamLee.jpg" alt="Sam" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="https://www.linkedin.com/in/samuel-lee-302227336/">Outreach Lead: Sam Lee</a></h3>
-                                 <p>Outreach Lead at BAAP.</p>
-                              </div>
-                              <!-- Lucas -->
-                              <div class="officer-box">
-                                 <a href="#" class="image featured">
-                                 <img src="images/officers/LucasCheung.jpg" alt="Tien" loading="lazy"/>
-                                 </a>
-                                 <h3><a href="#">Outreach Lead: Lucas Cheung</a></h3>
-                                 <p>Outreach Lead at BAAP.</p>
-                              </div>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>About Us - BAAP</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B5DE5',
+                        accent: '#7F5AF0',
+                        purple: {
+                            400: '#A770EF',
+                            500: '#9B5DE5',
+                            600: '#7F5AF0',
+                            700: '#6B46C1'
+                        },
+                        dark: {
+                            900: '#000000',
+                            800: '#101010',
+                            700: '#1A1A1A',
+                            600: '#2D2D2D'
+                        }
+                    },
+                    fontFamily: {
+                        'tech': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VNC4DM2HT7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VNC4DM2HT7');
+    </script>
+    
+    <style>
+        /* Page Transition Overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
+            z-index: 9999;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .page-transition-overlay.active {
+            transform: translateY(0);
+        }
+        
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9998;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .shutter.active {
+            transform: scaleY(1);
+        }
+        
+        /* Fade Out Effect */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        /* Slide Out Effect */
+        .slide-out {
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-900 text-white font-tech">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
+    <!-- Navigation -->
+    <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-purple-400">BAAP</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
+                        <a href="/about.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-white hover:text-purple-400">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-white hover:text-purple-400">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-purple-400 font-medium border-l-2 border-purple-400">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-white hover:text-purple-400">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-white hover:text-purple-400">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-white hover:text-purple-400">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center text-white py-20 lg:py-32 overflow-hidden" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('images/balloon1.jpeg');">
+        <!-- Starfield Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/30 to-dark-900"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-purple-400 px-6 py-3 rounded-full text-sm font-semibold mb-8">
+                    <i class="fas fa-users mr-2"></i>
+                    <span>Meet Our Team</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide">
+                    About
+                    <br>
+                    <span class="text-purple-400 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">BAAP</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Discover the passionate students and dedicated mentors behind the Battlefield Aeronautics and Avionics Program
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-8 lg:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Sponsors Section -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center bg-purple-500/10 text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-handshake mr-2"></i>
+                        <span>Our Partners</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-purple-400 mb-6 tracking-wide">Sponsors & Partners</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Organizations and companies that support our mission to advance aerospace education and innovation
+                    </p>
+                </div>
+
+                <!-- Sponsor Call-to-Action -->
+                <div class="bg-gradient-to-br from-dark-800 to-purple-900/20 rounded-2xl shadow-2xl p-12 border border-purple-500/30 text-center">
+                    <div class="max-w-2xl mx-auto">
+                        <div class="bg-purple-500/20 text-purple-400 p-6 rounded-full w-24 h-24 mx-auto mb-8 flex items-center justify-center">
+                            <i class="fas fa-star text-3xl"></i>
+                        </div>
+                        
+                        <h3 class="text-3xl font-bold text-white mb-6">Want to be featured here as a sponsor?</h3>
+                        
+                        <p class="text-xl text-gray-300 leading-relaxed mb-8">
+                            Support the next generation of aerospace engineers and innovators. 
+                            Partner with BAAP to make a difference in STEM education.
+                        </p>
+                        
+                        <div class="bg-dark-700 rounded-xl p-6 border border-gray-600 mb-8">
+                            <p class="text-lg text-gray-300 mb-4">
+                                <strong class="text-purple-400">Contact us:</strong>
+                            </p>
+                            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-2xl font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+                                bhsaeronauticsandavionics@gmail.com
+                            </a>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-gray-400">
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-rocket mr-2 text-purple-400"></i>
+                                <span>Equipment & Materials</span>
                             </div>
-                        </section>
-                        <!-- Content -->
-                        <article class="box page-content">
-                           <header>
-                              <h2>About Us</h2>
-                           </header>
-                           <section>
-                              <span class="image featured"><img src="" alt="" style="max-width: 5000px; height: auto;" /></span>
-                              <p>
-                                 At BHS Avionics, we believe in the transformative power of engineering and technology. Our mission is to foster innovation and creativity among aspiring engineers and enthusiasts in the field of avionics. We strive to provide a platform where ideas take flight and collaboration thrives. Through engaging content and hands-on projects, we aim to inspire the next generation of engineers to explore their passions and achieve their goals.
-                              </p>
-                           </section>
-                           <section>
-                              <h3>What We Offer</h3>
-                              <p>
-                                 We offer a diverse range of articles, tutorials, and resources focused on avionics and robotics. Whether you're looking for insights on programming, robotics design, or project-based learning, our content is tailored to meet the needs of our community. Our team consists of experienced mentors and passionate learners, ensuring a comprehensive and engaging perspective on all things avionics.
-                              </p>
-                           </section>
-                           <section>
-                              <h3>Join Us</h3>
-                              <p>
-                                 We invite you to join our community of innovators! Share your thoughts, engage with our content, and connect with fellow enthusiasts. Your feedback and participation are what make BHS Avionics vibrant and dynamic. Together, we can push the boundaries of technology and create a space where everyone feels valued and inspired.
-                              </p>
-                           </section>
-                           <section>
-                              <h3>Stay Connected</h3>
-                              <p>
-                                 Don’t miss out on our latest updates and projects! Follow us on social media and subscribe to our newsletter for exclusive content and insights. We look forward to having you as part of our journey!
-                              </p>
-                           </section>
-                           <section>
-                              <h3>Thank You</h3>
-                              <p>
-                                 Thank you for taking the time to learn more about BHS Avionics. We appreciate your support and enthusiasm, and we are excited to grow and innovate together. Let’s make great things happen in the world of avionics!
-                              </p>
-                           </section>
-                        </article>
-                     </div>
-                  </div>
-                  <div class="col-12">
-                     <div class="col-12">
-                        <ul class="actions">
-                           <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdVMo2RgWsLQNNix1ytbyjwSKT0o-MKGgC6kyh6en4OWKnYOA/viewform?usp=sf_link" class="button large">Sign Up</a></li>
-                           <li><a href="index.html" class="button alt large">Think About It</a></li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-         </section>
-         </div>
-      </div>
-      </div>
-      </section>
-      <!-- Footer -->
-      <footer id="footer">
-         <div class="container">
-            <div class="row gtr-200">
-               <!-- About -->
-               <div class="col-12">
-                  <section>
-                     <h2 class="major"><span>What's this about?</span></h2>
-                     <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you from <strong>Battlefield High School</strong> in northern Virginia!
-                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, applying what we learn in projects. We are also active in our local community and like to 
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-graduation-cap mr-2 text-purple-400"></i>
+                                <span>Educational Support</span>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-hands-helping mr-2 text-purple-400"></i>
+                                <span>Mentorship Opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission Statement -->
+            <section class="mb-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-4 tracking-wide">Our Mission</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Empowering students through aerospace engineering, STEM education, and community outreach
+                    </p>
+                </div>
+                
+                <div class="bg-dark-800 rounded-2xl shadow-2xl p-6 md:p-8 max-w-4xl mx-auto border border-gray-700">
+                    <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                        The Battlefield Aeronautics and Avionics Program (BAAP) is a student-led organization at Battlefield High School 
+                        dedicated to exploring the frontiers of aerospace engineering and STEM education. Our mission is to inspire 
+                        the next generation of engineers, scientists, and innovators through hands-on projects, innovative research, 
+                        and meaningful community engagement.
+                    </p>
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        We believe in learning by doing, pushing boundaries, and making a positive impact in our community through 
+                        educational outreach and volunteer work.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Officers Section -->
+            <section id="officers" class="mb-24">
+                <div class="text-center mb-12">
+                    <div class="inline-flex items-center bg-purple-500/10 text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                        <i class="fas fa-crown mr-2"></i>
+                        <span>Leadership Team</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-purple-400 mb-4 tracking-wide">Our Officers</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Meet the dedicated students who lead our organization and drive our mission forward
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                    <!-- Avi Sharma -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/AviSharma.PNG" alt="Avi Sharma - Co Project Director" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Co Project Director
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Avi Sharma</h3>
+                            <p class="text-gray-400 text-sm mb-4">Co Project Director</p>
+                        </div>
+                    </div>
+
+                    <!-- Tien Vu -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/TienVu.jpg" alt="Tien Vu - Co Project Director" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Co Project Director
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Tien Vu</h3>
+                            <p class="text-gray-400 text-sm mb-4">Co Project Director</p>
+                        </div>
+                    </div>
+
+                    <!-- Hanchae Cho -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/HanchaeCho.jpg" alt="Hanchae Cho - Operations Manager" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Operations Manager
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Hanchae Cho</h3>
+                            <p class="text-gray-400 text-sm mb-4">Operations Manager</p>
+                        </div>
+                    </div>
+
+                    <!-- Samuel Lee -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/SamuelLee.JPG" alt="Samuel Lee - Outreach Lead" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'flex items-center justify-center w-full h-64 bg-gray-700 text-white text-4xl font-bold\'>SL</div>'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Outreach Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Samuel Lee</h3>
+                            <p class="text-gray-400 text-sm mb-4">Outreach Lead</p>
+                        </div>
+                    </div>
+
+                    <!-- Ellie Kwon -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/EllieKwon.JPEG" alt="Ellie Kwon - Engineering Lead" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'flex items-center justify-center w-full h-64 bg-gray-700 text-white text-4xl font-bold\'>EK</div>'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Engineering Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Ellie Kwon</h3>
+                            <p class="text-gray-400 text-sm mb-4">Engineering Lead</p>
+                        </div>
+                    </div>
+
+                    <!-- Ava Cantarella -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/AvaCantarella.JPEG" alt="Ava Cantarella - Engineering Lead" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'flex items-center justify-center w-full h-64 bg-gray-700 text-white text-4xl font-bold\'>AC</div>'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Engineering Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Ava Cantarella</h3>
+                            <p class="text-gray-400 text-sm mb-4">Engineering Lead</p>
+                        </div>
+                    </div>
+
+                    <!-- Nick Kasa -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/NickKasa.JPG" alt="Nick Kasa - Electronics Lead" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'flex items-center justify-center w-full h-64 bg-gray-700 text-white text-4xl font-bold\'>NK</div>'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Electronics Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Nick Kasa</h3>
+                            <p class="text-gray-400 text-sm mb-4">Electronics Lead</p>
+                        </div>
+                    </div>
+
+                    <!-- Lucas Cheung -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/officers/KJ.jpeg" alt="Lucas Cheung - Outreach Lead" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300" onerror="this.style.display='none';this.parentNode.innerHTML='<div class=\'flex items-center justify-center w-full h-64 bg-gray-700 text-white text-4xl font-bold\'>LC</div>'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-star mr-1"></i>Outreach Lead
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-white mb-2">Lucas Cheung</h3>
+                            <p class="text-gray-400 text-sm mb-4">Outreach Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 tracking-wide">Our Values</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        The principles that guide everything we do
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-purple-500/20 text-purple-400 p-3 rounded-lg w-fit mb-6">
+                            <i class="fas fa-lightbulb text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Innovation</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We push the boundaries of what's possible, constantly exploring new technologies and approaches 
+                            to solve complex aerospace challenges.
+                        </p>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-purple-500/20 text-purple-400 p-3 rounded-lg w-fit mb-6">
+                            <i class="fas fa-hands-helping text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Community</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We believe in giving back to our community through educational outreach, volunteering, 
+                            and inspiring the next generation of STEM leaders.
+                        </p>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-purple-500/20 text-purple-400 p-3 rounded-lg w-fit mb-6">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-4">Education</h3>
+                        <p class="text-gray-400 leading-relaxed">
+                            We're committed to hands-on learning, practical experience, and sharing knowledge 
+                            to help everyone grow and succeed.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">What's this about?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
                         teach STEM topics at youth events.
-                     </p>
-                  </section>
-               </div>
-               <!-- Contact -->
-               <div class="col-12">
-                  <!-- Contact -->
-                  <section>
-                     <h2 class="major"><span>Get in touch</span></h2>
-                     <ul class="contact">
-                        <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span class="label">Instagram</span></a></li>
-                        <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span class="label">Discord</span></a></li>
-                        <br><a href = "https://outlook.office.com/mail">Questions? Contact us at ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-                     </ul>
-                  </section>
-               </div>
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-400">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-400">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-400">
+                                Questions? Contact us at 
+                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    bhsaeronauticsandavionics@gmail.com
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <!-- Copyright -->
-            <div id="copyright">
-               <ul class="menu">
-                  <li>&copy; BHS AAP. All rights reserved.</li>
-               </ul>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
             </div>
-         </div>
-      </footer>
-      </div>
-   </body>
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.scrolly.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
-   <script src="assets/js/cursor.js"></script>
-   <script src="assets/js/mobile-nav.js"></script>
-   <script src="assets/js/loadNav.js"></script>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Page Transition Functions
+        function createPageTransition(url, effect = 'shutter') {
+            const overlay = document.querySelector('.page-transition-overlay');
+            const shutter = document.querySelector('.shutter');
+            const body = document.body;
+            
+            // Prevent multiple transitions
+            if (overlay.classList.contains('active')) return;
+            
+            // Choose transition effect
+            switch(effect) {
+                case 'shutter':
+                    shutter.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'slide':
+                    body.classList.add('slide-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'fade':
+                    body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300);
+                    break;
+                    
+                case 'overlay':
+                default:
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                    break;
+            }
+        }
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all anchor links with hash (same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Handle navigation links with page transitions
+            document.querySelectorAll('nav a[href^="/"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Use different effects for different links
+                    let effect = 'overlay'; // default
+                    
+                    // Special effects for specific pages
+                    if (url.includes('index.html')) {
+                        effect = 'shutter';
+                    } else if (url.includes('gallery')) {
+                        effect = 'slide';
+                    } else if (url.includes('blog')) {
+                        effect = 'fade';
+                    }
+                    
+                    createPageTransition(url, effect);
+                });
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js"></script>
+    <script>
+      VanillaTilt.init(document.querySelectorAll(".group"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.15,
+        scale: 1.04
+      });
+    </script>
+</body>
+
 </html>

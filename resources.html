@@ -1,131 +1,643 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-    <title>Resources Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/ours.css" />
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <style>
-        .flexbox-container {
-            display: flex;
-            justify-content: space-between;
-        }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Resources - BAAP</title>
 
-        .flex-box {
-            flex: 1;
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B5DE5',
+                        accent: '#7F5AF0',
+                        purple: {
+                            400: '#A770EF',
+                            500: '#9B5DE5',
+                            600: '#7F5AF0',
+                            700: '#6B46C1'
+                        },
+                        dark: {
+                            900: '#000000',
+                            800: '#101010',
+                            700: '#1A1A1A',
+                            600: '#2D2D2D'
+                        }
+                    },
+                    fontFamily: {
+                        'tech': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VNC4DM2HT7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VNC4DM2HT7');
+    </script>
+    
+    <style>
+        /* Page Transition Overlay */
+        .page-transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
+            z-index: 9999;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .page-transition-overlay.active {
+            transform: translateY(0);
+        }
+        
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9998;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .shutter.active {
+            transform: scaleY(1);
+        }
+        
+        /* Fade Out Effect */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        /* Slide Out Effect */
+        .slide-out {
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
 </head>
 
-<body class="is-preload">
-    <div id="page-wrapper">
+<body class="bg-dark-900 text-white font-tech">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
+    <!-- Navigation -->
+    <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-purple-400">BAAP</span>
+                </div>
 
-        <div id="nav-container"></div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
+                        <a href="/resources.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                    </div>
+                </div>
 
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
 
-        <section id="main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="content">
-                            <h2 class="major"><span>Resources</span></h2>
-                            <div class="flexbox-container">
-                                <div class="flex-box">
-                                    <h2>Engineering</h2>
-                                    <ul class="divided">
-                                        <li><a href="https://www.youtube.com/watch?v=uwnLS1RBpCA&t=3001s"
-                                                target="_blank">OpenRocket Tutorial</a></li>
-                                        <li><a href="https://www.youtube.com/watch?v=LbeoauyEEiI&t=785s"
-                                                target="_blank">Rocket CAD Tutorial</a></li>
-                                        <li><a href="https://pwcps-my.sharepoint.com/:f:/g/personal/sharmaa26_pwcs-edu_org/EowN6VMZr3ZFtv3Y41V-H0cBvT83qGw7L22ZeDYN1ZJrmQ?e=On4cPf"
-                                                target="_blank">OneDrive Folder</a></li>
-                                        <li><a href="https://cad.onshape.com/documents?nodeId=3d38b0792fd2d23e022a5e24&resourceType=folder"
-                                                target="_blank">Onshape Folder</a></li>
-                                    </ul>
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-white hover:text-purple-400">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-white hover:text-purple-400">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-white hover:text-purple-400">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-white hover:text-purple-400">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-purple-400 font-medium border-l-2 border-purple-400">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-white hover:text-purple-400">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center text-white py-20 lg:py-32 overflow-hidden" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('images/spacex2.jpg');">
+        <!-- Starfield Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/30 to-dark-900"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-purple-400 px-6 py-3 rounded-full text-sm font-semibold mb-8">
+                    <i class="fas fa-book mr-2"></i>
+                    <span>Learning Resources</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide">
+                    Resources &
+                    <br>
+                    <span class="text-purple-400 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Learning</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Discover tools, tutorials, and educational materials to help you explore aerospace engineering and STEM
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Featured Resources -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 tracking-wide">Featured Resources</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Essential tools and materials for aerospace engineering and STEM education
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- TARC Resources -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/rocket1.jpg" alt="TARC Resources" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-rocket mr-1"></i>Competition
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-500/20 text-purple-400 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-trophy text-lg"></i>
                                 </div>
+                                <h3 class="text-xl font-semibold text-white">TARC Resources</h3>
+                            </div>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                Comprehensive guides and materials for The American Rocketry Challenge competition.
+                            </p>
+                            <div class="space-y-2">
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-file-pdf mr-2"></i>Official TARC Rules & Guidelines
+                                </a>
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-video mr-2"></i>Rocket Design Tutorials
+                                </a>
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-calculator mr-2"></i>Flight Simulation Tools
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="flex-box">
-                                    <h2>Computer Science</h2>
-                                    <ul class="divided">
-                                        <li><a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/"
-                                                target="_blank">HTML/CSS Tutorial</a></li>
-                                        <li><a href="https://youtube.com/playlist?list=PLGs0VKk2DiYw-L-RibttcvK-WBZm8WLEP&si=kBKF-eCTQw-cM0xi"
-                                                target="_blank">Arduino Tutorial</a></li>
-                                        <li><a href="https://github.com/practical-tutorials/project-based-learning"
-                                                target="_blank">Hands-On Learning</a></li>
-                                        <li><a href="https://www.theodinproject.com/paths/full-stack-javascript"
-                                                target="_blank"> Javascript Tutorial</a></li>
-                                    </ul>
+                    <!-- STEM Education -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/vol2.jpg" alt="STEM Education" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-graduation-cap mr-1"></i>Education
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-500/20 text-purple-400 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-chalkboard-teacher text-lg"></i>
                                 </div>
+                                <h3 class="text-xl font-semibold text-white">STEM Education</h3>
+                            </div>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                Educational materials and lesson plans for teaching STEM concepts to students.
+                            </p>
+                            <div class="space-y-2">
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-book mr-2"></i>Lesson Plans & Activities
+                                </a>
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-flask mr-2"></i>Science Experiments
+                                </a>
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-code mr-2"></i>Programming Tutorials
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- High Altitude Balloons -->
+                    <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                        <div class="relative overflow-hidden">
+                            <img src="images/balloon1.jpeg" alt="High Altitude Balloons" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                <i class="fas fa-satellite mr-1"></i>Research
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-500/20 text-purple-400 p-2 rounded-lg mr-3">
+                                    <i class="fas fa-satellite text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-white">High Altitude Balloons</h3>
+                            </div>
+                            <p class="text-gray-400 leading-relaxed mb-4">
+                                Resources for designing and launching high-altitude weather balloons.
+                            </p>
+                            <div class="space-y-2">
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-file-alt mr-2"></i>Design Guidelines
+                                </a>
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-map mr-2"></i>Flight Planning Tools
+                                </a>
+                                <a href="#" class="block text-purple-400 hover:text-purple-300 transition-colors text-sm">
+                                    <i class="fas fa-camera mr-2"></i>Payload Integration
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <footer id="footer">
-            <div class="container">
-                <div class="row gtr-200">
-                    <!-- About -->
-                    <div class="col-12">
-                        <section>
-                            <h2 class="major"><span>What's this about?</span></h2>
-                            <p>This is the <strong>Battlefield Aeronautics and Avionics Program</strong>, coming to you
-                                from <strong>Battlefield High School</strong> in northern Virginia!
-                                We are a group of students extremely interested in Computer Science, Physics,
-                                Engineering, and more, applying what we learn in projects. We are also active in our
-                                local community and like to
-                                teach STEM topics at youth events.</p>
-                        </section>
+            <!-- Learning Paths -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center bg-purple-500/10 text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-road mr-2"></i>
+                        <span>Learning Paths</span>
                     </div>
-
-                    <!-- Contact -->
-                    <div class="col-12">
-                        <section>
-                            <h2 class="major"><span>Get in touch</span></h2>
-                            <ul class="contact">
-                                <li><a class="icon brands fa-instagram" href="https://www.instagram.com/bhsaap/"><span
-                                            class="label">Instagram</span></a></li>
-                                <li><a class="icon brands fa-discord" href="https://discord.gg/pfyX6FZBkV"><span
-                                            class="label">Discord</span></a></li>
-                                <br><a href="https://outlook.office.com/mail">Questions? Contact us at
-                                    ayyorgbt25@pwcs-edu.org or marshkj@pwcs.edu!</a>
-                            </ul>
-                        </section>
-                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-purple-400 mb-6 tracking-wide">Start Your Journey</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Structured learning paths to help you master aerospace engineering concepts
+                    </p>
                 </div>
 
-                <!-- Copyright -->
-                <div id="copyright">
-                    <ul class="menu">
-                        <li>&copy; BHS AAP. All rights reserved.</li>
-                    </ul>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Beginner Path -->
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-green-500/20 text-green-400 p-3 rounded-lg mr-4">
+                                <i class="fas fa-seedling text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-white">Beginner</h3>
+                                <p class="text-gray-400">Perfect for newcomers to aerospace</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Introduction to Rocketry Basics</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Safety Protocols & Best Practices</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Basic Physics & Aerodynamics</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-green-400 mr-3"></i>
+                                <span>Simple Rocket Construction</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="inline-flex items-center bg-green-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-600 transition-colors">
+                            Start Learning
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Advanced Path -->
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-purple-500/20 text-purple-400 p-3 rounded-lg mr-4">
+                                <i class="fas fa-rocket text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold text-white">Advanced</h3>
+                                <p class="text-gray-400">For experienced aerospace enthusiasts</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-purple-400 mr-3"></i>
+                                <span>Advanced Rocket Design</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-purple-400 mr-3"></i>
+                                <span>Electronics & Avionics Systems</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-purple-400 mr-3"></i>
+                                <span>High-Altitude Balloon Projects</span>
+                            </div>
+                            <div class="flex items-center text-gray-300">
+                                <i class="fas fa-check-circle text-purple-400 mr-3"></i>
+                                <span>Competition Preparation</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="inline-flex items-center bg-purple-500 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-600 transition-colors">
+                            Explore Advanced
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tools & Software -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 tracking-wide">Tools & Software</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Essential software and tools for aerospace engineering projects
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-blue-500/20 text-blue-400 p-3 rounded-lg w-fit mb-4">
+                            <i class="fas fa-calculator text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">OpenRocket</h3>
+                        <p class="text-gray-400 text-sm mb-4">Rocket design and simulation software</p>
+                        <a href="#" class="text-blue-400 hover:text-blue-300 text-sm font-semibold">Download →</a>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-green-500/20 text-green-400 p-3 rounded-lg w-fit mb-4">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Arduino IDE</h3>
+                        <p class="text-gray-400 text-sm mb-4">Programming environment for electronics</p>
+                        <a href="#" class="text-green-400 hover:text-green-300 text-sm font-semibold">Download →</a>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-purple-500/20 text-purple-400 p-3 rounded-lg w-fit mb-4">
+                            <i class="fas fa-drafting-compass text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Fusion 360</h3>
+                        <p class="text-gray-400 text-sm mb-4">3D CAD software for design</p>
+                        <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-semibold">Download →</a>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <div class="bg-orange-500/20 text-orange-400 p-3 rounded-lg w-fit mb-4">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Excel/Sheets</h3>
+                        <p class="text-gray-400 text-sm mb-4">Data analysis and calculations</p>
+                        <a href="#" class="text-orange-400 hover:text-orange-300 text-sm font-semibold">Learn More →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- External Links -->
+            <section class="mb-24">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-purple-400 mb-6 tracking-wide">External Resources</h2>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Additional resources and organizations in the aerospace community
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-white mb-4">Organizations</h3>
+                        <div class="space-y-3">
+                            <a href="https://www.nar.org/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>National Association of Rocketry
+                            </a>
+                            <a href="https://www.rocketcontest.org/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>American Rocketry Challenge
+                            </a>
+                            <a href="https://www.nasa.gov/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>NASA
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-white mb-4">Educational</h3>
+                        <div class="space-y-3">
+                            <a href="https://www.khanacademy.org/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Khan Academy
+                            </a>
+                            <a href="https://www.edx.org/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>edX
+                            </a>
+                            <a href="https://www.coursera.org/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Coursera
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-dark-800 rounded-xl shadow-2xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300">
+                        <h3 class="text-xl font-semibold text-white mb-4">Communities</h3>
+                        <div class="space-y-3">
+                            <a href="https://www.reddit.com/r/rocketry/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>r/rocketry
+                            </a>
+                            <a href="https://www.reddit.com/r/arduino/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>r/arduino
+                            </a>
+                            <a href="https://github.com/" class="block text-purple-400 hover:text-purple-300 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">What's this about?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
+                        teach STEM topics at youth events.
+                    </p>
+                </div>
+
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-400">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-400">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-400">
+                                Questions? Contact us at 
+                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    bhsaeronauticsandavionics@gmail.com
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
-    </div>
 
-    <!-- Scripts -->
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/jquery.scrolly.min.js"></script>
-    <script src="/assets/js/browser.min.js"></script>
-    <script src="/assets/js/breakpoints.min.js"></script>
-    <script src="/assets/js/util.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/cursor.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/assets/js/mobile-nav.js"></script>
-    <script src="assets/js/loadNav.js"></script>
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Page Transition Functions
+        function createPageTransition(url, effect = 'shutter') {
+            const overlay = document.querySelector('.page-transition-overlay');
+            const shutter = document.querySelector('.shutter');
+            const body = document.body;
+            
+            // Prevent multiple transitions
+            if (overlay.classList.contains('active')) return;
+            
+            // Choose transition effect
+            switch(effect) {
+                case 'shutter':
+                    shutter.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'slide':
+                    body.classList.add('slide-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'fade':
+                    body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300);
+                    break;
+                    
+                case 'overlay':
+                default:
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                    break;
+            }
+        }
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all anchor links with hash (same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Handle navigation links with page transitions
+            document.querySelectorAll('nav a[href^="/"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Use different effects for different links
+                    let effect = 'overlay'; // default
+                    
+                    // Special effects for specific pages
+                    if (url.includes('index.html')) {
+                        effect = 'shutter';
+                    } else if (url.includes('gallery')) {
+                        effect = 'slide';
+                    } else if (url.includes('blog')) {
+                        effect = 'fade';
+                    }
+                    
+                    createPageTransition(url, effect);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

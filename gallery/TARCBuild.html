@@ -1,66 +1,126 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/ours.css" />
-    <title>Photo Gallery</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>TARC Build Gallery - BAAP</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B5DE5',
+                        accent: '#7F5AF0',
+                        purple: {
+                            400: '#A770EF',
+                            500: '#9B5DE5',
+                            600: '#7F5AF0',
+                            700: '#6B46C1'
+                        },
+                        dark: {
+                            900: '#000000',
+                            800: '#101010',
+                            700: '#1A1A1A',
+                            600: '#2D2D2D'
+                        }
+                    },
+                    fontFamily: {
+                        'tech': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../images/logo.png">
+
+    <!-- Google tag (gtag.js) -->
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VNC4DM2HT7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VNC4DM2HT7');
+    </script>
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .photo {
-            margin: 10px;
-            border: 2px solid #ccc;
-            border-radius: 8px;
-            overflow: hidden;
-            width: 300px;
-            /* Increased width of each image container */
-        }
-
-        .photo img {
-            width: 100%;
-            /* Responsive image */
-            height: auto;
-        }
-
-        .date {
-            font-size: 0.8em;
-            color: gray;
-        }
-
-        .lightbox {
-            display: none;
-            /* Hidden by default */
+        /* Page Transition Overlay */
+        .page-transition-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            /* Semi-transparent background */
+            background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
+            z-index: 9999;
+            transform: translateY(-100%);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .page-transition-overlay.active {
+            transform: translateY(0);
+        }
+        
+        /* Shutter Effect */
+        .shutter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9998;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .shutter.active {
+            transform: scaleY(1);
+        }
+        
+        /* Fade Out Effect */
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+        }
+        
+        /* Slide Out Effect */
+        .slide-out {
+            transform: translateX(-100%);
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            backdrop-filter: blur(10px);
         }
 
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         .lightbox .close {
@@ -70,44 +130,395 @@
             font-size: 2rem;
             color: white;
             cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox .close:hover {
+            background: rgba(155, 93, 229, 0.8);
+            transform: scale(1.1);
         }
     </style>
 </head>
 
-<body>
-    <div id="nav-container"></div>
+<body class="bg-dark-900 text-white font-tech">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
+    
+    <!-- Navigation -->
+    <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="../images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-purple-400">BAAP</span>
+                </div>
 
-    <div class="gallery">
-        <div class="photo">
-            <img src="/images/gallery/TARCBuild/RocketPhoto.jpg" alt="Image 7001" loading="lazy">
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-white hover:text-purple-400">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-white hover:text-purple-400">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-white hover:text-purple-400">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-purple-400 font-medium border-l-2 border-purple-400">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-white hover:text-purple-400">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-white hover:text-purple-400">Our Journey</a>
+                </div>
+            </div>
         </div>
-        <div class="photo">
-            <img src="/images/gallery/TARCBuild/RocketPhoto2.jpg" alt="Image 7002" loading="lazy">
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center text-white py-20 lg:py-32 overflow-hidden" style="background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../images/gallery/TARCBuild/RocketPhoto2.jpg');">
+        <!-- Starfield Background Pattern -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="1"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-dark-900/30 to-dark-900"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-purple-500/20 backdrop-blur-sm border border-purple-400/30 text-purple-400 px-6 py-3 rounded-full text-sm font-semibold mb-8">
+                    <i class="fas fa-trophy mr-2"></i>
+                    <span>TARC Build</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight tracking-wide">
+                    TARC Build
+                    <br>
+                    <span class="text-purple-400 bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Gallery</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    Building rockets for The American Rocketry Challenge competition
+                </p>
+            </div>
         </div>
-        <div class="photo">
-            <img src="/images/gallery/TARCBuild/RocketPhoto3.jpg" alt="Image 7003" loading="lazy">
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-16 lg:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Back to Gallery Button -->
+            <div class="mb-12">
+                <a href="gallery.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-lg font-medium">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Back to Gallery
+                </a>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Photo 1 -->
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/TARCBuild/RocketPhoto.jpg', 'TARC Rocket Build')">
+                        <img src="/images/gallery/TARCBuild/RocketPhoto.jpg" alt="TARC Build" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-expand-alt mr-1"></i>View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-2">TARC Rocket Build</p>
+                        <p class="text-gray-500 text-sm">Competition Preparation</p>
+                    </div>
+                </div>
+
+                <!-- Photo 2 -->
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/TARCBuild/RocketPhoto2.jpg', 'TARC Rocket Assembly')">
+                        <img src="/images/gallery/TARCBuild/RocketPhoto2.jpg" alt="TARC Build" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-expand-alt mr-1"></i>View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-2">TARC Rocket Assembly</p>
+                        <p class="text-gray-500 text-sm">Competition Preparation</p>
+                    </div>
+                </div>
+
+                <!-- Photo 3 -->
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/TARCBuild/RocketPhoto3.jpg', 'TARC Rocket Construction')">
+                        <img src="/images/gallery/TARCBuild/RocketPhoto3.jpg" alt="TARC Build" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-expand-alt mr-1"></i>View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-2">TARC Rocket Construction</p>
+                        <p class="text-gray-500 text-sm">Competition Preparation</p>
+                    </div>
+                </div>
+
+                <!-- Photo 4 -->
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/TARCBuild/RocketryPhoto4.jpg', 'TARC Rocket Work')">
+                        <img src="/images/gallery/TARCBuild/RocketryPhoto4.jpg" alt="TARC Build" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-expand-alt mr-1"></i>View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-2">TARC Rocket Work</p>
+                        <p class="text-gray-500 text-sm">Competition Preparation</p>
+                    </div>
+                </div>
+
+                <!-- Photo 5 -->
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/TARCBuild/RocketryPhoto5.jpg', 'TARC Rocket Process')">
+                        <img src="/images/gallery/TARCBuild/RocketryPhoto5.jpg" alt="TARC Build" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-expand-alt mr-1"></i>View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-2">TARC Rocket Process</p>
+                        <p class="text-gray-500 text-sm">Competition Preparation</p>
+                    </div>
+                </div>
+
+                <!-- Photo 6 -->
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                    <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/TARCBuild/RocketryPhoto6.jpg', 'Final TARC Rocket')">
+                        <img src="/images/gallery/TARCBuild/RocketryPhoto6.jpg" alt="TARC Build" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            <i class="fas fa-expand-alt mr-1"></i>View
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-300 mb-2">Final TARC Rocket</p>
+                        <p class="text-gray-500 text-sm">Competition Preparation</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="photo">
-            <img src="/images/gallery/TARCBuild/RocketryPhoto4.jpg" alt="Image 7004" loading="lazy">
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
         </div>
-        <div class="photo">
-            <img src="/images/gallery/TARCBuild/RocketryPhoto5.jpg" alt="Image 7005" loading="lazy">
-        </div>
-        <div class="photo">
-            <img src="/images/gallery/TARCBuild/RocketryPhoto6.jpg" alt="Image 7006" loading="lazy">
-        </div>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+        <div id="lightbox-caption" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white text-center bg-black/50 px-6 py-3 rounded-lg backdrop-blur-sm"></div>
     </div>
 
-    <script src="/assets/js/jquery.min.js" defer></script>
-    <script src="/assets/js/browser.min.js" defer></script>
-    <script src="/assets/js/breakpoints.min.js" defer></script>
-    <script src="/assets/js/util.js" defer></script>
-    <script src="/assets/js/main.js" defer></script>
-    <script src="/assets/js/cursor.js" defer></script>
-    <script src="/assets/js/mobile-nav.js" defer></script>
-    <script src="/assets/js/loadNav.js"></script>
-    <script src="/assets/js/lightbox.js"></script>
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">What's this about?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                        coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                        We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                        applying what we learn in projects. We are also active in our local community and like to 
+                        teach STEM topics at youth events.
+                    </p>
+                </div>
 
+                <!-- Contact Section -->
+                <div>
+                    <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <span class="text-gray-400">Follow us on Instagram</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <span class="text-gray-400">Join our Discord</span>
+                        </div>
+                        
+                        <div class="pt-4">
+                            <p class="text-gray-400">
+                                Questions? Contact us at 
+                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    bhsaeronauticsandavionics@gmail.com
+                                </a> 
+                                or 
+                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                    marshkj@pwcs.edu
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p class="text-gray-500">
+                    © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Page Transition Functions
+        function createPageTransition(url, effect = 'shutter') {
+            const overlay = document.querySelector('.page-transition-overlay');
+            const shutter = document.querySelector('.shutter');
+            const body = document.body;
+            
+            // Prevent multiple transitions
+            if (overlay.classList.contains('active')) return;
+            
+            // Choose transition effect
+            switch(effect) {
+                case 'shutter':
+                    shutter.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'slide':
+                    body.classList.add('slide-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 500);
+                    break;
+                    
+                case 'fade':
+                    body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300);
+                    break;
+                    
+                case 'overlay':
+                default:
+                    overlay.classList.add('active');
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 600);
+                    break;
+            }
+        }
+        
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Lightbox Functions
+        function openLightbox(imageSrc, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightboxImg.src = imageSrc;
+            lightboxCaption.textContent = caption;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle all anchor links with hash (same page)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Handle navigation links with page transitions
+            document.querySelectorAll('nav a[href^="/"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const url = this.getAttribute('href');
+                    
+                    // Use different effects for different links
+                    let effect = 'overlay'; // default
+                    
+                    // Special effects for specific pages
+                    if (url.includes('index.html')) {
+                        effect = 'shutter';
+                    } else if (url.includes('gallery')) {
+                        effect = 'slide';
+                    } else if (url.includes('blog')) {
+                        effect = 'fade';
+                    }
+                    
+                    createPageTransition(url, effect);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
