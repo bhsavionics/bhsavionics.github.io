@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>BAAP - Battlefield Aeronautics and Avionics Program</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9B5DE5',
+                        accent: '#7F5AF0',
+                        purple: {
+                            400: '#A770EF',
+                            500: '#9B5DE5',
+                            600: '#7F5AF0',
+                            700: '#6B46C1'
+                        },
+                        dark: {
+                            900: '#000000',
+                            800: '#101010',
+                            700: '#1A1A1A',
+                            600: '#2D2D2D'
+                        }
+                    },
+                    fontFamily: {
+                        'tech': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', system-ui, sans-serif; }
+    </style>
+</head>
+<body class="bg-dark-900 text-white font-tech" style="scroll-behavior: smooth;">
+    <!-- Page Transition Elements -->
+    <div class="page-transition-overlay"></div>
+    <div class="shutter"></div>
+    <!-- Navigation -->
+    <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <span class="text-xl font-bold text-purple-400">BAAP</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center justify-center flex-1">
+                    <div class="flex items-baseline space-x-6">
+                        <a href="/index.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-purple-400 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="space-y-2">
+                    <a href="/index.html" class="block px-3 py-2 text-purple-400 font-medium border-l-2 border-purple-400">Home</a>
+                    <a href="/blog/blog.html" class="block px-3 py-2 text-white hover:text-purple-400">Blog</a>
+                    <a href="/about.html" class="block px-3 py-2 text-white hover:text-purple-400">About Us</a>
+                    <a href="/gallery/gallery.html" class="block px-3 py-2 text-white hover:text-purple-400">Gallery</a>
+                    <a href="/resources.html" class="block px-3 py-2 text-white hover:text-purple-400">Resources</a>
+                    <a href="/timeline.html" class="block px-3 py-2 text-white hover:text-purple-400">Our Journey</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="max-w-5xl mx-auto px-4 py-12">
+        <h1 class="text-4xl font-bold text-purple-400 mb-2">Order BAAP Merch</h1>
+        <p class="text-lg text-gray-300 mb-10">Support the club and show your spirit! Select your merch, add to cart, and place your order below.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <!-- Shirt -->
+            <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <div class="w-32 h-32 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-gray-400">Image<br>Placeholder</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">BAAP Shirt</h3>
+                <p class="text-purple-400 font-bold text-lg mb-2">$15</p>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Shirt" data-price="15">Add to Cart</button>
+            </div>
+            <!-- Hoodie -->
+            <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <div class="w-32 h-32 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-gray-400">Image<br>Placeholder</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">BAAP Hoodie</h3>
+                <p class="text-purple-400 font-bold text-lg mb-2">$30</p>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Hoodie" data-price="30">Add to Cart</button>
+            </div>
+            <!-- Cap -->
+            <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <div class="w-32 h-32 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-gray-400">Image<br>Placeholder</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">BAAP Cap</h3>
+                <p class="text-purple-400 font-bold text-lg mb-2">$10</p>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Cap" data-price="10">Add to Cart</button>
+            </div>
+            <!-- Jersey -->
+            <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
+                <div class="w-32 h-32 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
+                    <span class="text-gray-400">Image<br>Placeholder</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">BAAP Jersey</h3>
+                <p class="text-purple-400 font-bold text-lg mb-2">$25</p>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Jersey" data-price="25">Add to Cart</button>
+            </div>
+        </div>
+        <!-- Cart Section -->
+        <div class="bg-gray-900 rounded-xl shadow-lg p-8 mb-12" id="cart-section">
+            <h3 class="text-2xl font-bold text-purple-400 mb-4">Your Cart</h3>
+            <div id="cart-items" class="mb-4 text-gray-300">
+                <p class="text-gray-500">Your cart is empty.</p>
+            </div>
+            <div class="flex justify-between items-center">
+                <span class="font-semibold text-lg">Total: <span id="cart-total" class="text-purple-400">$0</span></span>
+                <button id="checkout-btn" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all disabled:opacity-50" disabled>Checkout</button>
+            </div>
+        </div>
+        <!-- Checkout Modal -->
+        <div id="checkout-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+            <div class="bg-gray-900 rounded-xl shadow-2xl p-8 w-full max-w-lg relative">
+                <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-purple-400 text-2xl">&times;</button>
+                <h3 class="text-2xl font-bold text-purple-400 mb-6">Order Details</h3>
+                <form id="order-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-300 mb-2">Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-purple-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-300 mb-2">Email <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-purple-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label for="grade" class="block text-gray-300 mb-2">Grade (if student)</label>
+                        <input type="text" id="grade" name="grade" placeholder="e.g. 10" class="w-full px-4 py-2 rounded-lg bg-gray-800 border border-gray-700 text-white focus:border-purple-400 focus:outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-gray-300 mb-2">Order Summary</label>
+                        <div id="order-summary" class="bg-gray-800 rounded-lg p-4 text-gray-200 text-sm"></div>
+                    </div>
+                    <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Merch Cart Logic
+        const merchItems = [
+            { name: 'Shirt', price: 15 },
+            { name: 'Hoodie', price: 30 },
+            { name: 'Cap', price: 10 },
+            { name: 'Jersey', price: 25 }
+        ];
+        let cart = [];
+        function updateCartDisplay() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            const cartTotalSpan = document.getElementById('cart-total');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p class="text-gray-500">Your cart is empty.</p>';
+                cartTotalSpan.textContent = '$0';
+                checkoutBtn.disabled = true;
+                return;
+            }
+            let html = '<ul class="divide-y divide-gray-700">';
+            let total = 0;
+            cart.forEach((item, idx) => {
+                total += item.price * item.qty;
+                html += `<li class="flex items-center justify-between py-2">
+                    <span>${item.name} <span class="text-gray-400">x${item.qty}</span></span>
+                    <span class="text-purple-400">$${item.price * item.qty}</span>
+                    <div class="flex items-center ml-4">
+                        <button class="decrease-qty px-2 text-lg text-gray-400 hover:text-purple-400" data-idx="${idx}">-</button>
+                        <button class="increase-qty px-2 text-lg text-gray-400 hover:text-purple-400" data-idx="${idx}">+</button>
+                        <button class="remove-item ml-2 text-red-500 hover:text-red-400" data-idx="${idx}"><i class="fas fa-trash"></i></button>
+                    </div>
+                </li>`;
+            });
+            html += '</ul>';
+            cartItemsDiv.innerHTML = html;
+            cartTotalSpan.textContent = `$${total}`;
+            checkoutBtn.disabled = false;
+        }
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const name = this.getAttribute('data-item');
+                const price = parseInt(this.getAttribute('data-price'));
+                const existing = cart.find(item => item.name === name);
+                if (existing) {
+                    existing.qty += 1;
+                } else {
+                    cart.push({ name, price, qty: 1 });
+                }
+                updateCartDisplay();
+            });
+        });
+        document.getElementById('cart-section').addEventListener('click', function(e) {
+            if (e.target.classList.contains('increase-qty')) {
+                const idx = parseInt(e.target.getAttribute('data-idx'));
+                cart[idx].qty += 1;
+                updateCartDisplay();
+            } else if (e.target.classList.contains('decrease-qty')) {
+                const idx = parseInt(e.target.getAttribute('data-idx'));
+                if (cart[idx].qty > 1) {
+                    cart[idx].qty -= 1;
+                } else {
+                    cart.splice(idx, 1);
+                }
+                updateCartDisplay();
+            } else if (e.target.classList.contains('remove-item')) {
+                const idx = parseInt(e.target.getAttribute('data-idx'));
+                cart.splice(idx, 1);
+                updateCartDisplay();
+            }
+        });
+        // Checkout Modal Logic
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const checkoutModal = document.getElementById('checkout-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const orderSummaryDiv = document.getElementById('order-summary');
+        const orderForm = document.getElementById('order-form');
+        checkoutBtn.addEventListener('click', function() {
+            // Populate order summary
+            let summary = '<ul class="mb-2">';
+            let total = 0;
+            cart.forEach(item => {
+                summary += `<li>${item.name} x${item.qty} - $${item.price * item.qty}</li>`;
+                total += item.price * item.qty;
+            });
+            summary += `</ul><div class="font-semibold">Total: $${total}</div>`;
+            orderSummaryDiv.innerHTML = summary;
+            checkoutModal.classList.remove('hidden');
+        });
+        closeModalBtn.addEventListener('click', function() {
+            checkoutModal.classList.add('hidden');
+        });
+        checkoutModal.addEventListener('click', function(e) {
+            if (e.target === checkoutModal) {
+                checkoutModal.classList.add('hidden');
+            }
+        });
+        // Order Form Submission
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Gather form data
+            const name = orderForm.name.value.trim();
+            const email = orderForm.email.value.trim();
+            const grade = orderForm.grade.value.trim();
+            if (!name || !email) {
+                alert('Please fill in your name and email.');
+                return;
+            }
+            // Prepare order details
+            let orderText = `Order for BAAP Merch:%0D%0A`;
+            cart.forEach(item => {
+                orderText += `${item.name} x${item.qty} - $${item.price * item.qty}%0D%0A`;
+            });
+            let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            orderText += `Total: $${total}%0D%0A`;
+            orderText += `Name: ${name}%0D%0AEmail: ${email}%0D%0A`;
+            if (grade) orderText += `Grade: ${grade}%0D%0A`;
+            // Send via mailto
+            const mailto = `mailto:bhsaeronauticsandavionics@gmail.com?subject=BAAP Merch Order&body=${orderText}`;
+            window.location.href = mailto;
+            // Optionally, clear cart and close modal
+            cart = [];
+            updateCartDisplay();
+            checkoutModal.classList.add('hidden');
+            alert('Order form opened in your email client. Please review and send!');
+        });
+    </script>
+<footer class="bg-black text-white py-16 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- About Section -->
+            <div>
+                <h2 class="text-2xl font-bold text-purple-400 mb-6">What's this about?</h2>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    This is the <strong class="text-white">Battlefield Aeronautics and Avionics Program</strong>, 
+                    coming to you from <strong class="text-white">Battlefield High School</strong> in northern Virginia!
+                    We are a group of students extremely interested in Computer Science, Physics, Engineering, and more, 
+                    applying what we learn in projects. We are also active in our local community and like to 
+                    teach STEM topics at youth events.
+                </p>
+            </div>
+
+            <!-- Contact Section -->
+            <div>
+                <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <span class="text-gray-400">Follow us on Instagram</span>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <span class="text-gray-400">Join our Discord</span>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <p class="text-gray-400">
+                            Questions? Contact us at 
+                            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                bhsaeronauticsandavionics@gmail.com
+                            </a> 
+                            or 
+                            <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                marshkj@pwcs.edu
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+            <p class="text-gray-500">
+                © 2024 Battlefield Aeronautics and Avionics Program. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer> 
+</body>
+</html> 
