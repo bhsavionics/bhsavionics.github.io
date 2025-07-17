@@ -29,10 +29,6 @@
 </head>
 
 <body class="bg-dark-900 text-white font-tech">
-    <!-- Page Transition Elements -->
-    <div class="page-transition-overlay"></div>
-    <div class="shutter"></div>
-    
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,12 +42,12 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center justify-center flex-1">
                     <div class="flex items-baseline space-x-6">
-                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
-                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
-                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/index.html" class="text-white hover:text-purple-400">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400">About Us</a>
                         <a href="/gallery/gallery.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Gallery</a>
-                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
-                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400">Our Journey</a>
                     </div>
                 </div>
 
@@ -107,7 +103,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Back to Gallery Button -->
             <div class="mb-12">
-                <a href="gallery.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors text-lg font-medium">
+                <a href="gallery.html" class="inline-flex items-center text-purple-400 hover:text-purple-300 text-lg font-medium">
                     <i class="fas fa-arrow-left mr-2"></i>
                     Back to Gallery
                 </a>
@@ -116,7 +112,7 @@
             <!-- Gallery Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Photo 1 -->
-                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
                     <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/InterestMeeting/interestmeeting2.jpg', 'Love the amount of people who showed interest!! 🌄 - Burak')">
                         <img src="/images/gallery/InterestMeeting/interestmeeting2.jpg" alt="Interest Meeting" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -131,7 +127,7 @@
                 </div>
 
                 <!-- Photo 2 -->
-                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
                     <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/InterestMeeting/interestmeeting3.jpg', 'Really loved the collaboration! ✨ - Burak')">
                         <img src="/images/gallery/InterestMeeting/interestmeeting3.jpg" alt="Interest Meeting" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -146,7 +142,7 @@
         </div>
 
                 <!-- Photo 3 -->
-                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transition-all duration-300 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
+                <div class="group bg-dark-800 rounded-xl shadow-2xl overflow-hidden hover:shadow-purple-500/10 transform hover:-translate-y-2 border border-gray-700 hover:border-purple-500/50">
                     <div class="relative overflow-hidden cursor-pointer" onclick="openLightbox('/images/gallery/InterestMeeting/interestmeeting4.jpg', 'Congrats to our Presenters! ✨ - Burak')">
                         <img src="/images/gallery/InterestMeeting/interestmeeting4.jpg" alt="Interest Meeting" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -233,48 +229,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Page Transition Functions
-        function createPageTransition(url, effect = 'shutter') {
-            const overlay = document.querySelector('.page-transition-overlay');
-            const shutter = document.querySelector('.shutter');
-            const body = document.body;
-            
-            // Prevent multiple transitions
-            if (overlay.classList.contains('active')) return;
-            
-            // Choose transition effect
-            switch(effect) {
-                case 'shutter':
-                    shutter.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    break;
-                    
-                case 'slide':
-                    body.classList.add('slide-out');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    break;
-                    
-                case 'fade':
-                    body.classList.add('fade-out');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 300);
-                    break;
-                    
-                case 'overlay':
-                default:
-                    overlay.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 600);
-                    break;
-            }
-        }
-        
         // Mobile Menu Toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -350,7 +304,8 @@
                         effect = 'fade';
                     }
                     
-                    createPageTransition(url, effect);
+                    // This part of the logic is no longer needed as page transitions are removed
+                    // createPageTransition(url, effect); 
                 });
             });
         });

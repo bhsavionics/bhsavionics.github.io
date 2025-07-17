@@ -59,9 +59,6 @@
 </head>
 
 <body class="bg-dark-900 text-white font-tech">
-    <!-- Page Transition Elements -->
-    <div class="page-transition-overlay"></div>
-    <div class="shutter"></div>
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,13 +71,13 @@
                 <!-- Centered Nav Links -->
                 <div class="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div class="flex items-baseline space-x-6">
-                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
-                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
+                        <a href="/index.html" class="text-white hover:text-purple-400">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400">Blog</a>
                         <a href="/about.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">About Us</a>
-                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
-                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
-                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
-                        <a href="/merch.html" class="text-white hover:text-purple-400 transition-colors duration-200">Merch</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400">Our Journey</a>
+                        <a href="/merch.html" class="text-white hover:text-purple-400">Merch</a>
                     </div>
                 </div>
 
@@ -166,7 +163,7 @@
                             <p class="text-lg text-gray-300 mb-4">
                                 <strong class="text-purple-400">Contact us:</strong>
                             </p>
-                            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-2xl font-semibold text-purple-400 hover:text-purple-300 transition-colors">
+                            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-2xl font-semibold text-purple-400 hover:text-purple-300">
                                 bhsaeronauticsandavionics@gmail.com
                             </a>
                         </div>
@@ -416,14 +413,14 @@
                     <h2 class="text-2xl font-bold text-purple-400 mb-6">Get in touch</h2>
                     <div class="space-y-4">
                         <div class="flex items-center space-x-4">
-                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300 transition-colors">
+                            <a href="https://www.instagram.com/bhsaap/" class="text-2xl text-pink-400 hover:text-pink-300">
                                 <i class="fab fa-instagram"></i>
                             </a>
                             <span class="text-gray-400">Follow us on Instagram</span>
                         </div>
                         
                         <div class="flex items-center space-x-4">
-                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300 transition-colors">
+                            <a href="https://discord.gg/pfyX6FZBkV" class="text-2xl text-indigo-400 hover:text-indigo-300">
                                 <i class="fab fa-discord"></i>
                             </a>
                             <span class="text-gray-400">Join our Discord</span>
@@ -432,11 +429,11 @@
                         <div class="pt-4">
                             <p class="text-gray-400">
                                 Questions? Contact us at 
-                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="text-purple-400 hover:text-purple-300">
                                     bhsaeronauticsandavionics@gmail.com
                                 </a> 
                                 or 
-                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300 transition-colors">
+                                <a href="mailto:marshkj@pwcs.edu" class="text-purple-400 hover:text-purple-300">
                                     marshkj@pwcs.edu
                                 </a>
                             </p>
@@ -456,54 +453,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Page Transition Functions
-        function createPageTransition(url, effect = 'shutter') {
-            const overlay = document.querySelector('.page-transition-overlay');
-            const shutter = document.querySelector('.shutter');
-            const body = document.body;
-            
-            // Prevent multiple transitions
-            if (overlay.classList.contains('active')) return;
-            
-            // Choose transition effect
-            switch(effect) {
-                case 'shutter':
-                    shutter.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    break;
-                    
-                case 'slide':
-                    body.classList.add('slide-out');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    break;
-                    
-                case 'fade':
-                    body.classList.add('fade-out');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 300);
-                    break;
-                    
-                case 'overlay':
-                default:
-                    overlay.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 600);
-                    break;
-            }
-        }
-        
-        // Mobile Menu Toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-
         // Smooth Scrolling for Anchor Links
         document.addEventListener('DOMContentLoaded', function() {
             // Handle all anchor links with hash (same page)
@@ -520,28 +469,6 @@
                             block: 'start'
                         });
                     }
-                });
-            });
-            
-            // Handle navigation links with page transitions
-            document.querySelectorAll('nav a[href^="/"]').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const url = this.getAttribute('href');
-                    
-                    // Use different effects for different links
-                    let effect = 'overlay'; // default
-                    
-                    // Special effects for specific pages
-                    if (url.includes('index.html')) {
-                        effect = 'shutter';
-                    } else if (url.includes('gallery')) {
-                        effect = 'slide';
-                    } else if (url.includes('blog')) {
-                        effect = 'fade';
-                    }
-                    
-                    createPageTransition(url, effect);
                 });
             });
         });

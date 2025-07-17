@@ -60,7 +60,6 @@
 
 <body class="bg-dark-900 text-white font-tech">
     <!-- Page Transition Elements -->
-    <div class="page-transition-overlay"></div>
     <div class="shutter"></div>
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
@@ -74,13 +73,13 @@
                 <!-- Centered Nav Links -->
                 <div class="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div class="flex items-baseline space-x-6">
-                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
-                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
-                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
-                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
-                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
+                        <a href="/index.html" class="text-white hover:text-purple-400">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400">Resources</a>
                         <a href="/timeline.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Our Journey</a>
-                        <a href="/merch.html" class="text-white hover:text-purple-400 transition-colors duration-200">Merch</a>
+                        <a href="/merch.html" class="text-white hover:text-purple-400">Merch</a>
                     </div>
                 </div>
 
@@ -511,12 +510,11 @@
     <script>
         // Page Transition Functions
         function createPageTransition(url, effect = 'shutter') {
-            const overlay = document.querySelector('.page-transition-overlay');
             const shutter = document.querySelector('.shutter');
             const body = document.body;
             
             // Prevent multiple transitions
-            if (overlay.classList.contains('active')) return;
+            if (shutter.classList.contains('active')) return;
             
             // Choose transition effect
             switch(effect) {
@@ -543,10 +541,8 @@
                     
                 case 'overlay':
                 default:
-                    overlay.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 600);
+                    // No overlay transition, just navigate
+                    window.location.href = url;
                     break;
             }
         }
