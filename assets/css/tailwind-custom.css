@@ -10,7 +10,6 @@
     background: linear-gradient(45deg, #9B5DE5, #7F5AF0, #6B46C1);
     z-index: 9999;
     transform: translateY(-100%);
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .page-transition-overlay.active {
@@ -274,14 +273,6 @@
 .hover\:-translate-y-2:hover { transform: translateY(-0.5rem); }
 .hover\:scale-110:hover { transform: scale(1.1); }
 
-/* Transition Utilities */
-.transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.transition-opacity { transition-property: opacity; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-.duration-300 { transition-duration: 300ms; }
-.duration-200 { transition-duration: 200ms; }
-
 /* Opacity Utilities */
 .opacity-0 { opacity: 0; }
 .opacity-40 { opacity: 0.4; }
@@ -480,71 +471,6 @@
 
 /* Specific Object Fit */
 .object-cover { object-fit: cover; }
-
-/* Specific Transition */
-.group-hover\:scale-110 { transition: transform 0.3s ease; }
-.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
-
-.group-hover\:opacity-100 { transition: opacity 0.3s ease; }
-.group:hover .group-hover\:opacity-100 { opacity: 1; }
-
-.group-hover\:-translate-y-2 { transition: transform 0.3s ease; }
-.group:hover .group-hover\:-translate-y-2 { transform: translateY(-0.5rem); }
-
-.group-hover\:border-purple-500\/50 { transition: border-color 0.3s ease; }
-.group:hover .group-hover\:border-purple-500\/50 { border-color: rgba(155, 93, 229, 0.5); }
-
-.group-hover\:shadow-purple-500\/10 { transition: box-shadow 0.3s ease; }
-.group:hover .group-hover\:shadow-purple-500\/10 { box-shadow: 0 0 20px rgba(155, 93, 229, 0.1); }
-
-/* Group Hover Effects */
-.group:hover .group-hover\:scale-110 { transform: scale(1.1); }
-.group:hover .group-hover\:opacity-100 { opacity: 1; }
-.group:hover .group-hover\:-translate-y-2 { transform: translateY(-0.5rem); }
-.group:hover .group-hover\:border-purple-500\/50 { border-color: rgba(155, 93, 229, 0.5); }
-.group:hover .group-hover\:shadow-purple-500\/10 { box-shadow: 0 0 20px rgba(155, 93, 229, 0.1); }
-
-/* Responsive Utilities */
-@media (min-width: 640px) {
-    .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .sm\:px-8 { padding-left: 2rem; padding-right: 2rem; }
-    .sm\:flex-row { flex-direction: row; }
-    .sm\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
-}
-
-@media (min-width: 768px) {
-    .md\:text-7xl { font-size: 4.5rem; line-height: 1; }
-    .md\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-    .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
-    .md\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-    .md\:p-12 { padding: 3rem; }
-    .md\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .md\:px-8 { padding-left: 2rem; padding-right: 2rem; }
-    .md\:lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
-    .md\:hidden { display: none; }
-    .md\:flex { display: flex; }
-    .md\:block { display: block; }
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .md\:text-center { text-align: center; }
-    .md\:pb-4 { padding-bottom: 1rem; }
-}
-
-@media (min-width: 1024px) {
-    .lg\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-    .lg\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
-    .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
-    .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .lg\:text-7xl { font-size: 4.5rem; line-height: 1; }
-    .lg\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
-    .lg\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-}
-
-@media (min-width: 1280px) {
-    .xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
 
 /* Smooth Scroll Behavior */
 html {

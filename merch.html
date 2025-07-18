@@ -35,7 +35,8 @@
             }
         }
     </script>
-    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="preload" as="image" href="/images/logo.png" imagesrcset="/images/logo.png 1x">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -43,27 +44,24 @@
     </style>
 </head>
 <body class="bg-dark-900 text-white font-tech" style="scroll-behavior: smooth;">
-    <!-- Page Transition Elements -->
-    <div class="page-transition-overlay"></div>
-    <div class="shutter"></div>
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="relative flex items-center h-24">
                 <!-- Logo -->
                 <div class="flex items-center flex-shrink-0 z-10">
-                    <img src="images/logo.png" alt="BAAP Logo" class="h-24 w-24 mr-6">
+                    <img src="/images/logo.png" alt="BAAP Logo" class="h-24 w-24 mr-6">
                     <span class="text-2xl font-bold text-purple-400">BAAP</span>
                 </div>
                 <!-- Centered Nav Links -->
                 <div class="hidden md:flex absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div class="flex items-baseline space-x-6">
-                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
-                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
-                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
-                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400 transition-colors duration-200">Gallery</a>
-                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
-                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                        <a href="/index.html" class="text-white hover:text-purple-400">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400">About Us</a>
+                        <a href="/gallery/gallery.html" class="text-white hover:text-purple-400">Gallery</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400">Our Journey</a>
                         <a href="/merch.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Merch</a>
                     </div>
                 </div>
@@ -100,7 +98,7 @@
                 </div>
                 <h3 class="text-xl font-semibold mb-2">BAAP Shirt</h3>
                 <p class="text-purple-400 font-bold text-lg mb-2">$15</p>
-                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Shirt" data-price="15">Add to Cart</button>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg" data-item="Shirt" data-price="15">Add to Cart</button>
             </div>
             <!-- Hoodie -->
             <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
@@ -109,7 +107,7 @@
                 </div>
                 <h3 class="text-xl font-semibold mb-2">BAAP Hoodie</h3>
                 <p class="text-purple-400 font-bold text-lg mb-2">$30</p>
-                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Hoodie" data-price="30">Add to Cart</button>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg" data-item="Hoodie" data-price="30">Add to Cart</button>
             </div>
             <!-- Cap -->
             <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
@@ -118,7 +116,7 @@
                 </div>
                 <h3 class="text-xl font-semibold mb-2">BAAP Cap</h3>
                 <p class="text-purple-400 font-bold text-lg mb-2">$10</p>
-                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Cap" data-price="10">Add to Cart</button>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg" data-item="Cap" data-price="10">Add to Cart</button>
             </div>
             <!-- Jersey -->
             <div class="bg-gray-900 rounded-xl shadow-lg p-6 flex flex-col items-center">
@@ -127,7 +125,7 @@
                 </div>
                 <h3 class="text-xl font-semibold mb-2">BAAP Jersey</h3>
                 <p class="text-purple-400 font-bold text-lg mb-2">$25</p>
-                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all" data-item="Jersey" data-price="25">Add to Cart</button>
+                <button class="add-to-cart-btn bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg" data-item="Jersey" data-price="25">Add to Cart</button>
             </div>
         </div>
         <!-- Cart Section -->
@@ -138,7 +136,7 @@
             </div>
             <div class="flex justify-between items-center">
                 <span class="font-semibold text-lg">Total: <span id="cart-total" class="text-purple-400">$0</span></span>
-                <button id="checkout-btn" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg transition-all disabled:opacity-50" disabled>Checkout</button>
+                <button id="checkout-btn" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-6 py-2 rounded-lg disabled:opacity-50" disabled>Checkout</button>
             </div>
         </div>
         <!-- Checkout Modal -->
@@ -162,8 +160,9 @@
                     <div>
                         <label class="block text-gray-300 mb-2">Order Summary</label>
                         <div id="order-summary" class="bg-gray-800 rounded-lg p-4 text-gray-200 text-sm"></div>
+                        <label for="grade" class="block text-gray-300 mb-2 font-bold">ALL ORDERS CAN BE PAID VIA CHECK TO BATTLEFIELD HIGH SCHOOL</label>
                     </div>
-                    <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors">Submit Order</button>
+                    <button type="submit" class="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg">Submit Order</button>
                 </form>
             </div>
         </div>

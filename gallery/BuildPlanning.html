@@ -15,7 +15,8 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="preload" as="image" href="/images/logo.png" imagesrcset="/images/logo.png 1x">
 
     <!-- Google tag (gtag.js) -->
     <script async defer src="https://www.googletagmanager.com/gtag/js?id=G-VNC4DM2HT7"></script>
@@ -28,29 +29,25 @@
 </head>
 
 <body class="bg-dark-900 text-white font-tech">
-    <!-- Page Transition Elements -->
-    <div class="page-transition-overlay"></div>
-    <div class="shutter"></div>
-    
     <!-- Navigation -->
     <nav class="bg-black sticky top-0 z-50 border-b border-dark-600">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <img src="../images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
+                    <img src="/images/logo.png" alt="BAAP Logo" class="h-10 w-10 mr-3">
                     <span class="text-xl font-bold text-purple-400">BAAP</span>
                 </div>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center justify-center flex-1">
                     <div class="flex items-baseline space-x-6">
-                        <a href="/index.html" class="text-white hover:text-purple-400 transition-colors duration-200">Home</a>
-                        <a href="/blog/blog.html" class="text-white hover:text-purple-400 transition-colors duration-200">Blog</a>
-                        <a href="/about.html" class="text-white hover:text-purple-400 transition-colors duration-200">About Us</a>
+                        <a href="/index.html" class="text-white hover:text-purple-400">Home</a>
+                        <a href="/blog/blog.html" class="text-white hover:text-purple-400">Blog</a>
+                        <a href="/about.html" class="text-white hover:text-purple-400">About Us</a>
                         <a href="/gallery/gallery.html" class="text-purple-400 font-medium border-b-2 border-purple-400 pb-1">Gallery</a>
-                        <a href="/resources.html" class="text-white hover:text-purple-400 transition-colors duration-200">Resources</a>
-                        <a href="/timeline.html" class="text-white hover:text-purple-400 transition-colors duration-200">Our Journey</a>
+                        <a href="/resources.html" class="text-white hover:text-purple-400">Resources</a>
+                        <a href="/timeline.html" class="text-white hover:text-purple-400">Our Journey</a>
                     </div>
                 </div>
 
@@ -247,48 +244,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Page Transition Functions
-        function createPageTransition(url, effect = 'shutter') {
-            const overlay = document.querySelector('.page-transition-overlay');
-            const shutter = document.querySelector('.shutter');
-            const body = document.body;
-            
-            // Prevent multiple transitions
-            if (overlay.classList.contains('active')) return;
-            
-            // Choose transition effect
-            switch(effect) {
-                case 'shutter':
-                    shutter.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    break;
-                    
-                case 'slide':
-                    body.classList.add('slide-out');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 500);
-                    break;
-                    
-                case 'fade':
-                    body.classList.add('fade-out');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 300);
-                    break;
-                    
-                case 'overlay':
-                default:
-                    overlay.classList.add('active');
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 600);
-                    break;
-            }
-        }
-        
         // Mobile Menu Toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -364,7 +319,11 @@
                         effect = 'fade';
                     }
                     
-                    createPageTransition(url, effect);
+                    // This part of the logic is removed as per the edit hint.
+                    // The original code had a createPageTransition function that handled transitions.
+                    // Since transitions are removed, this block is effectively removed.
+                    // The navigation links will now just navigate directly.
+                    window.location.href = url;
                 });
             });
         });
