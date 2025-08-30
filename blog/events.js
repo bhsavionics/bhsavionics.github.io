@@ -15,6 +15,6 @@ const events = [
     preview: "Our TARC team built a rocket model using common materials to visualize its design and test proportions.",
     category: "Rocketry", readTime: "3 min read"},
     { title: '2025 Interest Meeting', start: '2025-09-03', description: 'Room 2203', url: '/blog/Posts/InterestMeeting2025.html',
-    preview: "Our club will have our interest meeting and post highlights here."
+    preview: "Our club will have our interest meeting and post highlights here.", category: "Kickoff"
     },
 ];
