@@ -1,0 +1,20 @@
+const events = [
+    { title: 'STEM Outreach Night', start: '2024-05-05', description: 'Local Library', url: '/blog/Posts/StemNight.html', 
+    preview: "BAAP participated in the school's STEM Night, showcasing our aerospace projects and inspiring future engineers.",
+    category: "Community", readTime: "2 min read"},
+    { title: '2024 Interest Meeting', start: '2024-09-12', description: 'unknown', url: '/blog/Posts/InterestMeeting2024.html', 
+    preview: "BAAP kicked off the new school year with an exciting interest meeting, introducing students to aerospace engineering.",
+    category: "Kickoff", readTime: "3 min read"},
+    { title: 'Rocket Model Building', start: '2024-09-26', description: 'Room 2203', url: '/blog/Posts/RocketryBuilding.html', 
+    preview: "Our members were split into groups and created simple rockets out of paper as an introduction.",
+    category: "Model Building", readTime: "3 min read"},
+    { title: 'Rocket Design Presentations', start: '2024-12-05', description: 'Room 2203', url: '/blog/Posts/DesignPresentations.html', 
+    preview: "Our team members conducted extensive research on rocketry to develop meticulously designed rockets.",
+    category: "Design",readTime: "4 min read"},
+    { title: 'Rocket Building Meeting', start: '2024-12-16', description: 'Room 2203', url: '/blog/Posts/RocketBuilding.html', 
+    preview: "Our TARC team built a rocket model using common materials to visualize its design and test proportions.",
+    category: "Rocketry", readTime: "3 min read"},
+    { title: '2025 Interest Meeting', start: '2025-09-03', description: 'Room 2203', url: '/blog/Posts/InterestMeeting2025.html',
+    preview: "Our club will have our interest meeting and post highlights here."
+    },
+];

@@ -204,101 +204,6 @@
         </div>
     </footer>
 
-    <!-- Blog Posts Script -->
-    <script>
-        // Blog post data with correct dates and information
-        const posts = [
-            {
-                title: "Rocket Building Meeting",
-                date: "2024-12-16",
-                link: "Posts/RocketBuilding.html",
-                preview: "Our TARC team built a rocket model using common materials to visualize its design and test proportions",
-                category: "Rocketry",
-                readTime: "3 min read"
-            },
-            {
-                title: "TARC Rocket Design Presentations",
-                date: "2024-12-06",
-                link: "Posts/DesignPresentations.html",
-                preview: "Our team members conducted extensive research on rocketry to develop meticulously designed rockets",
-                category: "Design",
-                readTime: "4 min read"
-            },
-            {
-                title: "Rocket Model Building",
-                date: "2024-09-26",
-                link: "Posts/ModelBuilding.html",
-                preview: "Our team worked together to create detailed rocket models that will help us visualize and refine our competition design",
-                category: "Model Building",
-                readTime: "3 min read"
-            },
-            {
-                title: "STEM Night",
-                date: "2024-09-12",
-                link: "Posts/StemNight.html",
-                preview: "BAAP participated in the school's STEM Night, showcasing our aerospace projects and inspiring future engineers",
-                category: "Community",
-                readTime: "2 min read"
-            },
-            {
-                title: "2024 Interest Meeting",
-                date: "2024-09-12",
-                link: "Posts/InterestMeeting.html",
-                preview: "BAAP kicked off the new school year with an exciting interest meeting, introducing students to aerospace engineering",
-                category: "Kickoff",
-                readTime: "3 min read"
-            }
-        ];
-
-        // Sort posts by date (newest first)
-        posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-        // Display posts in modern cards
-        const postContainer = document.getElementById('post-container');
-        posts.forEach(post => {
-            const postCard = document.createElement('div');
-            postCard.className = 'group bg-dark-800 rounded-2xl shadow-2xl border border-gray-700 overflow-hidden hover:border-purple-400 transition-all duration-300 hover:shadow-purple-500/20';
-            
-            postCard.innerHTML = `
-                <a href="${post.link}" class="block">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-400 border border-purple-400/30">
-                                ${post.category}
-                            </span>
-                            <span class="text-xs text-gray-400">${post.readTime}</span>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors">
-                            ${post.title}
-                        </h3>
-                        
-                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
-                            ${post.preview}
-                        </p>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center text-sm text-gray-400">
-                                <i class="fas fa-calendar mr-2"></i>
-                                <span>${new Date(post.date).toLocaleDateString('en-US', { 
-                                    year: 'numeric', 
-                                    month: 'long', 
-                                    day: 'numeric' 
-                                })}</span>
-                            </div>
-                            <div class="flex items-center text-purple-400 group-hover:text-purple-300 transition-colors">
-                                <span class="text-sm font-semibold">Read More</span>
-                                <i class="fas fa-arrow-right ml-2 text-xs"></i>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            `;
-            
-            postContainer.appendChild(postCard);
-        });
-    </script>
-
     <!-- Mobile Navigation Script -->
     <script>
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
@@ -306,6 +211,8 @@
             mobileMenu.classList.toggle('hidden');
         });
     </script>
+    <script src="/blog/events.js"></script>
+    <script src="/blog/allPosts.js"></script>
 </body>
 
 </html>
