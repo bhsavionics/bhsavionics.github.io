@@ -17,8 +17,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/main-D0VoOwy5.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-BnacK0Ma.css">
+  <!-- Critical CSS to prevent FOUC logo flash -->
+  <style>
+    img { max-width: 100%; }
+    .header-logo { width: 56px !important; height: 56px !important; object-fit: contain; }
+  </style>
+  <script type="module" crossorigin src="./assets/main-Coo2wU65.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-zBCO4zRV.css">
 </head>
 <body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
 
@@ -28,7 +33,7 @@
       
       <!-- Brand Logo -->
       <a href="./index.html#hero" class="flex items-center space-x-4 group py-2">
-        <img src="./assets/logo-CU5M7_ds.png" alt="BAAP Logo" class="h-14 w-14 object-contain drop-shadow-md transition-transform group-hover:scale-105" />
+        <img src="./assets/logo-CU5M7_ds.png" alt="BAAP Logo" width="56" height="56" style="width: 56px; height: 56px;" class="header-logo h-14 w-14 object-contain drop-shadow-md transition-transform group-hover:scale-105" />
         <span class="text-3xl sm:text-4xl font-black tracking-tight text-white font-heading">BAAP</span>
       </a>
 
@@ -61,14 +66,14 @@
     </div>
   </header>
 
-  <!-- Section 1: OUR ROOTS (Combining Mission & History) -->
-  <section id="roots" class="py-16 sm:py-24 bg-[#08080d] border-b border-[#222233]">
+  <!-- Section 1: OUR ROOTS (Elevated Placement) -->
+  <section id="roots" class="pt-8 sm:pt-12 pb-16 sm:pb-20 bg-[#08080d] border-b border-[#222233]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
       
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Column: Official Emblem -->
-        <div class="lg:col-span-5 flex justify-center">
+        <!-- Left Column: Official Emblem (Moved ~10% higher) -->
+        <div class="lg:col-span-5 flex justify-center -mt-6 sm:-mt-10 lg:-mt-14">
           <img src="./assets/latin-DttFfbWE.png" alt="BAAP Crest Emblem" class="w-full max-w-sm h-auto object-contain drop-shadow-[0_10px_30px_rgba(127,90,240,0.25)]" />
         </div>
 

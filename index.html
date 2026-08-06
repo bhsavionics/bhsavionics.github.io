@@ -17,6 +17,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <!-- Critical CSS to prevent FOUC logo flash -->
+  <style>
+    img { max-width: 100%; }
+    .header-logo { width: 56px !important; height: 56px !important; object-fit: contain; }
+  </style>
 </head>
 <body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
 
@@ -26,7 +31,7 @@
       
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center space-x-4 group py-2">
-        <img src="/images/logo.png" alt="BAAP Logo" class="h-14 w-14 object-contain drop-shadow-md transition-transform group-hover:scale-105" />
+        <img src="/images/logo.png" alt="BAAP Logo" width="56" height="56" style="width: 56px; height: 56px;" class="header-logo h-14 w-14 object-contain drop-shadow-md transition-transform group-hover:scale-105" />
         <span class="text-3xl sm:text-4xl font-black tracking-tight text-white font-heading">BAAP</span>
       </a>
 
