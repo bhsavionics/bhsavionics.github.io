@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth bg-[#050508]">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BAAP • Battlefield Aeronautics & Avionics Program</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Official website of the Battlefield Aeronautics and Avionics Program (BAAP) at Battlefield High School. High-power rocketry, custom flight computers, and aerospace engineering." />
+  <meta name="description"
+    content="Official website of the Battlefield Aeronautics and Avionics Program (BAAP) at Battlefield High School. High-power rocketry, custom flight computers, and aerospace engineering." />
 
   <link rel="icon" type="image/png" href="/images/logo.png" />
 
@@ -16,29 +18,36 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap"
+    rel="stylesheet" />
+
   <!-- Tailwind CSS CDN for 100% reliable static & GitHub Pages rendering -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom Styles & Font Definitions -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap');
-    
-    html, body {
+
+    html,
+    body {
       background-color: #050508 !important;
       color: #f3f4f6;
       font-family: 'Inter', system-ui, sans-serif;
     }
+
     .font-heading {
       font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
     }
+
     .brand-font {
       font-family: 'Permanent Marker', cursive, sans-serif;
     }
+
     .header-bg {
       background-color: #5B21B6 !important;
     }
+
     .nav-link {
       font-weight: 700;
       font-size: 0.85rem;
@@ -50,18 +59,23 @@
       align-items: center;
       transition: background-color 0.15s ease;
     }
-    .nav-link:hover, .nav-link.active {
+
+    .nav-link:hover,
+    .nav-link.active {
       background-color: #6B46C1;
     }
+
     .hero-split {
       display: grid;
       grid-template-columns: 1fr;
     }
+
     @media (min-width: 1024px) {
       .hero-split {
         grid-template-columns: 60% 40%;
       }
     }
+
     .hero-btn {
       background-color: #5B21B6;
       color: #ffffff;
@@ -75,15 +89,18 @@
       align-items: center;
       transition: background-color 0.2s ease;
     }
+
     .hero-btn:hover {
       background-color: #6B46C1;
     }
+
     .dark-card {
       background-color: #11111a;
       border: 1px solid #222233;
       border-radius: 0.75rem;
       transition: border-color 0.2s ease;
     }
+
     .polaroid-card {
       background-color: #FAFAFA;
       padding: 0.65rem;
@@ -92,9 +109,11 @@
       position: relative;
       transition: transform 0.3s ease;
     }
+
     .polaroid-card:hover {
       transform: scale(1.02) translateY(-4px) !important;
     }
+
     .polaroid-tape {
       position: absolute;
       top: -12px;
@@ -108,10 +127,12 @@
       z-index: 10;
       pointer-events: none;
     }
+
     .footer-bg {
       background-color: #0c0c12;
       color: #d1d5db;
     }
+
     .footer-heading {
       font-size: 0.8rem;
       font-weight: 800;
@@ -120,6 +141,7 @@
       color: #ffffff;
       margin-bottom: 1.25rem;
     }
+
     .footer-link {
       color: #9ca3af;
       font-weight: 700;
@@ -130,22 +152,33 @@
       align-items: center;
       gap: 0.5rem;
     }
+
     .footer-link:hover {
       color: #9B5DE5;
     }
-    img { max-width: 100%; }
-    .header-logo { width: 62px !important; height: 62px !important; object-fit: contain; }
+
+    img {
+      max-width: 100%;
+    }
+
+    .header-logo {
+      width: 62px !important;
+      height: 62px !important;
+      object-fit: contain;
+    }
   </style>
 </head>
+
 <body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
 
   <!-- Top Header Navigation Bar (Darker Purple #5B21B6) -->
   <header class="header-bg sticky top-0 z-50 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-      
+
       <!-- Brand Logo (Moved ~10% to the left) -->
       <a href="#hero" class="flex items-center space-x-4 group py-2 -ml-2 sm:-ml-4 lg:-ml-6">
-        <img src="/images/logo.png" alt="BAAP Logo" width="62" height="62" style="width: 62px; height: 62px;" class="header-logo h-[62px] w-[62px] object-contain drop-shadow-md transition-transform group-hover:scale-105" />
+        <img src="/images/logo.png" alt="BAAP Logo" width="62" height="62" style="width: 62px; height: 62px;"
+          class="header-logo h-[62px] w-[62px] object-contain drop-shadow-md transition-transform group-hover:scale-105" />
         <span class="text-3xl sm:text-4xl font-black tracking-tight text-white brand-font">BAAP</span>
       </a>
 
@@ -170,7 +203,8 @@
     </div>
 
     <!-- Mobile Drawer Nav -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-[#14141e] text-white border-t border-purple-500/30 px-4 py-4 space-y-2">
+    <div id="mobile-menu"
+      class="hidden lg:hidden bg-[#14141e] text-white border-t border-purple-500/30 px-4 py-4 space-y-2">
       <a href="./about.html" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">About BAAP</a>
       <a href="#sponsors" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Sponsors</a>
       <a href="#gallery" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Gallery</a>
@@ -181,7 +215,7 @@
   <!-- Hero Split Section (Classic Single Photo Layout) -->
   <section id="hero" class="bg-[#050508] border-b border-[#222233]">
     <div class="hero-split">
-      
+
       <!-- Left 60%: High-Res BAAP Photography Image -->
       <div class="relative min-h-[400px] lg:min-h-[540px] overflow-hidden bg-black flex items-center justify-center">
         <img src="/images/photography/photo1.jpg" alt="BAAP Flight Team" class="w-full h-full object-cover" />
@@ -190,12 +224,14 @@
 
       <!-- Right 40%: Deep Black Title Card & Action CTA -->
       <div class="flex flex-col justify-center p-8 sm:p-12 lg:p-16 bg-[#0c0c12] space-y-6 border-l border-[#222233]">
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight font-heading">
+        <h1
+          class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight font-heading">
           BAAP IS A HIGH-POWER ROCKETRY & AVIONICS PROGRAM FROM BATTLEFIELD HIGH SCHOOL
         </h1>
-        
+
         <p class="text-sm text-gray-400 leading-relaxed">
-          Pioneering student-led high-altitude flight computers, Semtech LoRa telemetry systems, composite fiberglass airframes, and atmospheric research payloads.
+          Pioneering student-led high-altitude flight computers, Semtech LoRa telemetry systems, composite fiberglass
+          airframes, and atmospheric research payloads.
         </p>
 
         <div>
@@ -211,23 +247,28 @@
   <!-- "What is BAAP?" Section -->
   <section id="about" class="py-16 sm:py-24 bg-[#08080d]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="grid lg:grid-cols-12 gap-12 items-center">
-        
+
         <!-- Left Column: High-Res BAAP Emblem (Raised ~10%) -->
         <div class="lg:col-span-5 flex justify-center -mt-6 sm:-mt-10 lg:-mt-14">
-          <img src="/images/latin.png" alt="BAAP Emblem" class="w-full max-w-sm h-auto object-contain drop-shadow-[0_10px_25px_rgba(127,90,240,0.3)]" />
+          <img src="/images/latin.png" alt="BAAP Emblem"
+            class="w-full max-w-sm h-auto object-contain drop-shadow-[0_10px_25px_rgba(127,90,240,0.3)]" />
         </div>
 
         <!-- Right Column: Black Card Box -->
         <div class="lg:col-span-7">
-          <div id="mission" class="bg-[#11111a] p-8 sm:p-12 rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.8)] border border-[#222233] space-y-6">
+          <div id="mission"
+            class="bg-[#11111a] p-8 sm:p-12 rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.8)] border border-[#222233] space-y-6">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase font-heading">
               WHAT IS <span class="text-[#9B5DE5]">BAAP?</span>
             </h2>
 
             <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
-              <span class="italic font-semibold text-purple-400">BAAP</span> was created to inspire young people to be science and technology leaders, by engaging them in exciting mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership.
+              <span class="italic font-semibold text-purple-400">BAAP</span> was created to inspire young people to be
+              science and technology leaders, by engaging them in exciting mentor-based programs that build science,
+              engineering, and technology skills, that inspire innovation, and that foster well-rounded life
+              capabilities including self-confidence, communication, and leadership.
             </p>
 
             <div class="pt-4 border-t border-[#222233] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
@@ -253,16 +294,9 @@
 
       </div>
 
-    </div>
-  </section>
+      <!-- Polaroid Cards Grid (Unified within What is BAAP Section) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-4">
 
-  <!-- Clean Polaroid Section (Elevated Placement) -->
-  <section class="pt-6 pb-12 bg-[#050508] border-t border-b border-[#222233] overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Polaroid Cards Grid (Clean Minimal Polaroid Frames) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        
         <!-- Polaroid 1 (-3deg tilt) -->
         <div class="polaroid-card polaroid-scroll-anim -rotate-3">
           <div class="polaroid-tape"></div>
@@ -303,42 +337,50 @@
   <!-- Sponsors & Partners Section (NAR, BHS, ARC Logos in exact order - No Boxes, No Gradients) -->
   <section id="sponsors" class="py-12 sm:py-16 bg-[#08080d] border-t border-b border-[#222233]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-      
+
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase font-heading tracking-tight">OUR SPONSORS & PARTNERS</h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white uppercase font-heading tracking-tight">OUR SPONSORS &
+          PARTNERS</h2>
       </div>
 
       <!-- Perfectly Centered Logo Display (NAR, BHS, ARC - 15% Larger Size) -->
-      <div class="w-full max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16 md:gap-24 py-8">
-        
+      <div
+        class="w-full max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-16 md:gap-24 py-8">
+
         <!-- 1. NAR Logo -->
         <div class="flex items-center justify-center h-36 sm:h-44 w-52 sm:w-64 group">
-          <img src="/images/partners/nar.png" alt="National Association of Rocketry (NAR)" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]" />
+          <img src="/images/partners/nar.png" alt="National Association of Rocketry (NAR)"
+            class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]" />
         </div>
 
         <!-- 2. Battlefield High School Crest -->
         <div class="flex items-center justify-center h-36 sm:h-44 w-52 sm:w-64 group">
-          <img src="/images/partners/bhs.png" alt="Battlefield High School" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]" />
+          <img src="/images/partners/bhs.png" alt="Battlefield High School"
+            class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]" />
         </div>
 
         <!-- 3. ARC (American Rocketry Challenge) Logo -->
         <div class="flex items-center justify-center h-36 sm:h-44 w-52 sm:w-64 group">
-          <img src="/images/partners/arc.png" alt="American Rocketry Challenge (ARC)" class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]" />
+          <img src="/images/partners/arc.png" alt="American Rocketry Challenge (ARC)"
+            class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.6)]" />
         </div>
 
       </div>
 
       <!-- Solid Sponsor CTA Box (NO Gradients!) -->
-      <div class="p-6 sm:p-8 bg-[#11111a] border border-[#222233] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div
+        class="p-6 sm:p-8 bg-[#11111a] border border-[#222233] rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div class="space-y-1.5 max-w-2xl text-center md:text-left">
           <h3 class="text-xl sm:text-2xl font-extrabold text-white font-heading">BECOME A SPONSOR & PARTNER</h3>
           <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
-            Support student aerospace engineers. Sponsorship funds high-power Cesaroni motors, custom 4-layer PCB manufacturing, and national flight competition trips.
+            Support student aerospace engineers. Sponsorship funds high-power Cesaroni motors, custom 4-layer PCB
+            manufacturing, and national flight competition trips.
           </p>
         </div>
 
-        <button id="sponsor-modal-btn" class="px-6 py-3 text-xs font-extrabold text-white bg-[#5B21B6] hover:bg-[#6B46C1] rounded uppercase tracking-wider transition shadow-md whitespace-nowrap">
+        <button id="sponsor-modal-btn"
+          class="px-6 py-3 text-xs font-extrabold text-white bg-[#5B21B6] hover:bg-[#6B46C1] rounded uppercase tracking-wider transition shadow-md whitespace-nowrap">
           Become A Sponsor ➔
         </button>
       </div>
@@ -349,7 +391,7 @@
   <!-- Photo Gallery Showcase -->
   <section id="gallery" class="py-16 bg-[#050508] border-t border-[#222233]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      
+
       <div class="flex items-center justify-between border-b border-[#222233] pb-4">
         <h2 class="text-2xl font-extrabold text-white uppercase font-heading">MISSION PHOTO GALLERY</h2>
         <span class="text-xs font-bold text-[#9B5DE5] uppercase font-mono">BAAP PHOTOGRAPHY SUITE</span>
@@ -359,24 +401,31 @@
         <!-- Event Image 1: STEM Night Showcase (stemnight12.JPG) -->
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="/images/gallery/StemNights/stemnight12.JPG" alt="STEM Night Aerospace Showcase" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+            <img src="/images/gallery/StemNights/stemnight12.JPG" alt="STEM Night Aerospace Showcase"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80">
+            </div>
           </div>
           <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">STEM NIGHT EXPO</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">STEM NIGHT
+              EXPO</span>
             <h4 class="text-sm font-bold text-white truncate mt-0.5">Avionics & Telemetry Demonstration</h4>
-            <p class="text-xs text-gray-400 mt-1">Demonstrating custom flight computers to Battlefield High School students.</p>
+            <p class="text-xs text-gray-400 mt-1">Demonstrating custom flight computers to Battlefield High School
+              students.</p>
           </div>
         </div>
 
         <!-- Event Image 3: Rocket Building Workshop (IMG_6826.jpg) -->
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="/images/gallery/RocketBuildingMeeting/IMG_6826.jpg" alt="Rocket Assembly Workshop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+            <img src="/images/gallery/RocketBuildingMeeting/IMG_6826.jpg" alt="Rocket Assembly Workshop"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80">
+            </div>
           </div>
           <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">ROCKET BUILDING WORKSHOP</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">ROCKET BUILDING
+              WORKSHOP</span>
             <h4 class="text-sm font-bold text-white truncate mt-0.5">Fiberglass Airframe & Fin Alignment</h4>
             <p class="text-xs text-gray-400 mt-1">Epoxy layup and fin flutter margin calculations in Room 120.</p>
           </div>
@@ -385,11 +434,14 @@
         <!-- Event Image 6: Flight Dynamics STEM Station (stemnight23.JPG) -->
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="/images/gallery/StemNights/stemnight23.JPG" alt="Flight Dynamics Station" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+            <img src="/images/gallery/StemNights/stemnight23.JPG" alt="Flight Dynamics Station"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80">
+            </div>
           </div>
           <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">FLIGHT SIMULATION LAB</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">FLIGHT SIMULATION
+              LAB</span>
             <h4 class="text-sm font-bold text-white truncate mt-0.5">OpenRocket Aerodynamic Tuning</h4>
             <p class="text-xs text-gray-400 mt-1">Simulating motor thrust curves and apogee predictions.</p>
           </div>
@@ -402,13 +454,14 @@
   <!-- Contact Us / Membership Section -->
   <section id="contact" class="py-16 bg-[#08080d] border-t border-[#222233]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="grid lg:grid-cols-12 gap-12 items-center">
-        
+
         <div class="lg:col-span-6 space-y-4">
           <h2 class="text-3xl font-extrabold text-white uppercase font-heading">JOIN THE BAAP FLIGHT CREW</h2>
           <p class="text-sm text-gray-300 leading-relaxed">
-            Interested in rocketry, C++ microcontrollers, 3D CAD design, or launch operations? Battlefield High School students of all experience levels are welcome to join!
+            Interested in rocketry, C++ microcontrollers, 3D CAD design, or launch operations? Battlefield High School
+            students of all experience levels are welcome to join!
           </p>
 
           <div class="space-y-3 pt-2 text-xs font-semibold text-gray-300">
@@ -430,20 +483,24 @@
         <div class="lg:col-span-6">
           <form id="contact-form" class="p-6 bg-[#11111a] rounded-xl border border-[#222233] space-y-4 shadow-xl">
             <h3 class="text-base font-extrabold text-white uppercase font-heading">STUDENT APPLICATION FORM</h3>
-            
+
             <div class="grid sm:grid-cols-2 gap-3">
-              <input type="text" required placeholder="FULL NAME" class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500" />
-              <input type="email" required placeholder="SCHOOL EMAIL" class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500" />
+              <input type="text" required placeholder="FULL NAME"
+                class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500" />
+              <input type="email" required placeholder="SCHOOL EMAIL"
+                class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500" />
             </div>
 
             <div class="grid sm:grid-cols-2 gap-3">
-              <select class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500">
+              <select
+                class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500">
                 <option>FRESHMAN (9TH)</option>
                 <option>SOPHOMORE (10TH)</option>
                 <option>JUNIOR (11TH)</option>
                 <option>SENIOR (12TH)</option>
               </select>
-              <select class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500">
+              <select
+                class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500">
                 <option>AVIONICS & TELEMETRY</option>
                 <option>FLIGHT DYNAMICS & CAD</option>
                 <option>PAYLOAD & RESEARCH</option>
@@ -451,9 +508,11 @@
               </select>
             </div>
 
-            <textarea rows="3" placeholder="TELL US ABOUT YOUR INTEREST IN AEROSPACE..." class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500"></textarea>
+            <textarea rows="3" placeholder="TELL US ABOUT YOUR INTEREST IN AEROSPACE..."
+              class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500"></textarea>
 
-            <button type="submit" class="w-full py-3 text-xs font-extrabold text-white bg-[#5B21B6] hover:bg-[#6B46C1] rounded uppercase tracking-wider transition shadow-lg">
+            <button type="submit"
+              class="w-full py-3 text-xs font-extrabold text-white bg-[#5B21B6] hover:bg-[#6B46C1] rounded uppercase tracking-wider transition shadow-lg">
               SUBMIT APPLICATION ➔
             </button>
           </form>
@@ -467,13 +526,13 @@
   <!-- Footer matching Screenshot 2 -->
   <footer class="footer-bg py-12 border-t border-[#222233]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="grid md:grid-cols-12 gap-12 pb-8 border-b border-[#222233]">
-        
+
         <!-- Left Column: SOCIAL -->
         <div class="md:col-span-5 space-y-4">
           <h4 class="footer-heading">SOCIAL</h4>
-          
+
           <div class="space-y-2.5">
             <a href="https://www.instagram.com/bhsaap/" target="_blank" class="footer-link">
               <i class="fab fa-instagram text-base w-5"></i> INSTAGRAM
@@ -496,7 +555,7 @@
         <!-- Middle Column: RECENT NEWS -->
         <div class="md:col-span-7 space-y-4">
           <h4 class="footer-heading">RECENT NEWS</h4>
-          
+
           <div class="space-y-4 text-xs font-mono">
             <div>
               <a href="#gallery" class="font-bold text-white uppercase hover:text-purple-400 transition block">
@@ -533,4 +592,5 @@
 
   <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

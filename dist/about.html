@@ -87,8 +87,8 @@
     img { max-width: 100%; }
     .header-logo { width: 62px !important; height: 62px !important; object-fit: contain; }
   </style>
-  <script type="module" crossorigin src="./assets/main-DpGTDkKn.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-DkTpAcKm.css">
+  <script type="module" crossorigin src="./assets/main-C3Myq8wA.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DeG9vk74.css">
 </head>
 <body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
 
@@ -97,7 +97,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
       
       <!-- Brand Logo (Moved ~10% to the left) -->
-      <a href="./index.html#hero" class="flex items-center space-x-4 group py-2 -ml-2 sm:-ml-4 lg:-ml-6">
+      <a href="./index.html#hero" class="flex items-center space-x-2.5 group py-2 -ml-2 sm:-ml-4 lg:-ml-6">
         <img src="./assets/logo-CU5M7_ds.png" alt="BAAP Logo" width="62" height="62" style="width: 62px; height: 62px;" class="header-logo h-[62px] w-[62px] object-contain drop-shadow-md transition-transform group-hover:scale-105" />
         <span class="text-3xl sm:text-4xl font-black tracking-tight text-white brand-font">BAAP</span>
       </a>
@@ -508,5 +508,53 @@
     </div>
   </footer>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile Nav Drawer Toggle
+      const toggleBtn = document.querySelector('#mobile-toggle');
+      const mobileMenu = document.querySelector('#mobile-menu');
+      if (toggleBtn && mobileMenu) {
+        toggleBtn.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Interactive Sticky Scroll Timeline Handler
+      const timelineSection = document.getElementById('timeline');
+      const timelineTrack = document.getElementById('timeline-track');
+      const timelineProgress = document.getElementById('timeline-progress');
+      const timelineStep = document.getElementById('timeline-step');
+
+      if (timelineSection && timelineTrack) {
+        function handleTimelineScroll() {
+          const rect = timelineSection.getBoundingClientRect();
+          const sectionHeight = timelineSection.offsetHeight - window.innerHeight;
+          if (sectionHeight <= 0) return;
+
+          const currentScroll = -rect.top;
+          let progress = currentScroll / sectionHeight;
+          progress = Math.max(0, Math.min(1, progress));
+
+          if (timelineProgress) {
+            timelineProgress.style.width = (progress * 100) + '%';
+          }
+
+          const totalShift = timelineTrack.scrollWidth - timelineTrack.clientWidth;
+          if (totalShift > 0) {
+            timelineTrack.style.transform = 'translateX(-' + (progress * totalShift) + 'px)';
+          }
+
+          if (timelineStep) {
+            const activeIndex = Math.min(6, Math.max(1, Math.floor(progress * 6) + 1));
+            timelineStep.textContent = 'MILESTONE ' + activeIndex + ' OF 6';
+          }
+        }
+
+        window.addEventListener('scroll', handleTimelineScroll, { passive: true });
+        window.addEventListener('resize', handleTimelineScroll, { passive: true });
+        handleTimelineScroll();
+      }
+    });
+  </script>
 </body>
 </html>
