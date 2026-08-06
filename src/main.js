@@ -10,6 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Polaroid Scroll Entrance Animation
+  const polaroidCards = document.querySelectorAll('.polaroid-scroll-anim');
+  if (polaroidCards.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, idx * 120);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    polaroidCards.forEach(card => observer.observe(card));
+  }
+
   // Contact / Application Form Submission
   const contactForm = document.querySelector('#contact-form');
   if (contactForm) {

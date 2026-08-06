@@ -25,7 +25,7 @@ h1, h2, h3, h4, nav, button, .font-heading {
   font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 }
 
-/* Header & Nav styles - Slightly Darker Purple */
+/* Header & Nav styles */
 .header-bg {
   background-color: #5B21B6;
 }
@@ -116,20 +116,30 @@ h1, h2, h3, h4, nav, button, .font-heading {
   transform: translateY(-2px);
 }
 
-/* Clean Minimal Polaroid Card (No text caption, thick white margin bottom) */
+/* Clean Minimal Polaroid Card */
 .polaroid-card {
   background-color: #FAFAFA;
-  padding: 0.75rem;
-  padding-bottom: 3.25rem;
+  padding: 0.65rem;
+  padding-bottom: 2.25rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
 .polaroid-card:hover {
-  transform: scale(1.05) rotate(0deg) translateY(-8px) !important;
+  transform: scale(1.06) rotate(0deg) translateY(-12px) !important;
   z-index: 30;
   box-shadow: 0 30px 60px rgba(127, 90, 240, 0.4), 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Scroll Animation Initial State */
+.polaroid-scroll-anim {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+}
+
+.polaroid-scroll-anim.visible {
+  opacity: 1;
 }
 
 /* Polaroid Tape effect on top */

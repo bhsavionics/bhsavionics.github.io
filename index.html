@@ -158,15 +158,15 @@
     </div>
   </section>
 
-  <!-- Clean Polaroid Section (No Section Header, No Text Captions on Polaroids) -->
-  <section class="py-16 bg-[#050508] border-t border-b border-[#222233] overflow-hidden">
+  <!-- Clean Polaroid Section (Elevated Placement) -->
+  <section class="pt-6 pb-12 bg-[#050508] border-t border-b border-[#222233] overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Polaroid Cards Grid (Clean Minimal Polaroid Frames) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
         <!-- Polaroid 1 (-3deg tilt) -->
-        <div class="polaroid-card -rotate-3">
+        <div class="polaroid-card polaroid-scroll-anim -rotate-3">
           <div class="polaroid-tape"></div>
           <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
             <img src="/images/photography/photo4.jpg" alt="BAAP Photo 4" class="w-full h-full object-cover" />
@@ -174,7 +174,7 @@
         </div>
 
         <!-- Polaroid 2 (+2deg tilt) -->
-        <div class="polaroid-card rotate-2">
+        <div class="polaroid-card polaroid-scroll-anim rotate-2">
           <div class="polaroid-tape"></div>
           <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
             <img src="/images/photography/photo5.jpg" alt="BAAP Photo 5" class="w-full h-full object-cover" />
@@ -182,7 +182,7 @@
         </div>
 
         <!-- Polaroid 3 (-2deg tilt) -->
-        <div class="polaroid-card -rotate-2">
+        <div class="polaroid-card polaroid-scroll-anim -rotate-2">
           <div class="polaroid-tape"></div>
           <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
             <img src="/images/photography/photo6.jpg" alt="BAAP Photo 6" class="w-full h-full object-cover" />
@@ -190,7 +190,7 @@
         </div>
 
         <!-- Polaroid 4 (+3deg tilt) -->
-        <div class="polaroid-card rotate-3">
+        <div class="polaroid-card polaroid-scroll-anim rotate-3">
           <div class="polaroid-tape"></div>
           <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
             <img src="/images/photography/photo7.jpg" alt="BAAP Photo 7" class="w-full h-full object-cover" />
@@ -268,39 +268,42 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Event Image 1: STEM Night Showcase (stemnight12.JPG) -->
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="/images/photography/photo8.jpg" alt="BAAP Photography 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="/images/gallery/StemNights/stemnight12.JPG" alt="STEM Night Aerospace Showcase" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">HIGH-POWER LAUNCH OPS</span>
-            <h4 class="text-sm font-bold text-white truncate mt-0.5">Project Aether Pre-Flight Check</h4>
-            <p class="text-xs text-gray-400 mt-1">Pre-ignition telemetry verification and ignition arming.</p>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">STEM NIGHT EXPO</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">Avionics & Telemetry Demonstration</h4>
+            <p class="text-xs text-gray-400 mt-1">Demonstrating custom flight computers to Battlefield High School students.</p>
           </div>
         </div>
 
+        <!-- Event Image 3: Rocket Building Workshop (IMG_6826.jpg) -->
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="/images/photography/photo2.jpg" alt="BAAP Photography 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="/images/gallery/RocketBuildingMeeting/IMG_6826.jpg" alt="Rocket Assembly Workshop" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">AVIONICS HARDWARE LAB</span>
-            <h4 class="text-sm font-bold text-white truncate mt-0.5">Teensy 4.1 Circuit Routing</h4>
-            <p class="text-xs text-gray-400 mt-1">Debugging 915MHz Semtech LoRa transceivers.</p>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">ROCKET BUILDING WORKSHOP</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">Fiberglass Airframe & Fin Alignment</h4>
+            <p class="text-xs text-gray-400 mt-1">Epoxy layup and fin flutter margin calculations in Room 120.</p>
           </div>
         </div>
 
+        <!-- Event Image 6: Flight Dynamics STEM Station (stemnight23.JPG) -->
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="/images/photography/photo3.jpg" alt="BAAP Photography 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="/images/gallery/StemNights/stemnight23.JPG" alt="Flight Dynamics Station" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">BUILD WORKSHOP</span>
-            <h4 class="text-sm font-bold text-white truncate mt-0.5">High-Power Rocket Construction</h4>
-            <p class="text-xs text-gray-400 mt-1">Fiberglass motor tube alignment and epoxy reinforcement.</p>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">FLIGHT SIMULATION LAB</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">OpenRocket Aerodynamic Tuning</h4>
+            <p class="text-xs text-gray-400 mt-1">Simulating motor thrust curves and apogee predictions.</p>
           </div>
         </div>
       </div>
