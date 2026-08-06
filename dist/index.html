@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#050508]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BAAP • Battlefield Aeronautics & Avionics Program</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Official website of the Battlefield Aeronautics and Avionics Program (BAAP) at Battlefield High School. High-power rocketry, custom flight computers, and aerospace engineering." />
+
+  <link rel="icon" type="image/png" href="./assets/logo-CU5M7_ds.png" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/index-ox4y0-LI.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B7DgiAsn.css">
+</head>
+<body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Top Header Navigation Bar -->
+  <header class="header-bg sticky top-0 z-50 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center space-x-4 group py-2">
+        <img src="./assets/logo-CU5M7_ds.png" alt="BAAP Logo" class="h-14 w-14 object-contain drop-shadow-md transition-transform group-hover:scale-105" />
+        <span class="text-3xl sm:text-4xl font-black tracking-tight text-white font-heading">BAAP</span>
+      </a>
+
+      <!-- Desktop Nav Items -->
+      <nav class="hidden lg:flex items-center space-x-0">
+        
+        <!-- ABOUT Nav Item with Dropdown -->
+        <div class="relative group">
+          <a href="#about" class="nav-link active flex items-center gap-1">
+            ABOUT <i class="fas fa-chevron-down text-[10px] ml-1 opacity-70"></i>
+          </a>
+          
+          <!-- Submenu Dropdown Box -->
+          <div class="dropdown-menu absolute left-0 top-full hidden group-hover:block w-56 py-1 z-50">
+            <a href="#mission" class="dropdown-item">MISSION</a>
+            <a href="#history" class="dropdown-item">HISTORY</a>
+            <a href="#teams" class="dropdown-item">SUB-TEAMS</a>
+            <a href="#impact" class="dropdown-item">IMPACT</a>
+            <a href="#leadership" class="dropdown-item">LEADERSHIP</a>
+          </div>
+        </div>
+
+        <a href="#sponsors" class="nav-link">SPONSORS</a>
+        <a href="#community" class="nav-link">COMMUNITY</a>
+        <a href="#resources" class="nav-link">RESOURCES</a>
+        <a href="#blog" class="nav-link">NEWS</a>
+        <a href="#contact" class="nav-link">CONTACT US</a>
+        <a href="#contact" class="nav-link">MEMBERS</a>
+
+        <!-- Search Icon Button -->
+        <button id="search-btn" class="nav-link px-3 text-white hover:text-purple-200">
+          <i class="fas fa-search"></i>
+        </button>
+      </nav>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobile-toggle" class="lg:hidden p-2 text-white hover:text-purple-200 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Drawer Nav -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-[#14141e] text-white border-t border-purple-500/30 px-4 py-4 space-y-2">
+      <a href="#about" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">About BAAP</a>
+      <a href="#mission" class="block pl-4 py-1 text-xs font-semibold text-gray-300 uppercase hover:text-white">• Mission</a>
+      <a href="#history" class="block pl-4 py-1 text-xs font-semibold text-gray-300 uppercase hover:text-white">• History</a>
+      <a href="#teams" class="block pl-4 py-1 text-xs font-semibold text-gray-300 uppercase hover:text-white">• Sub-Teams</a>
+      <a href="#sponsors" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Sponsors</a>
+      <a href="#community" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Community</a>
+      <a href="#resources" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Resources</a>
+      <a href="#blog" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">News</a>
+      <a href="#contact" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- Hero Split Section (Black Theme & High-Res Image vol3.jpg) -->
+  <section id="hero" class="bg-[#050508] border-b border-[#222233]">
+    <div class="hero-split">
+      
+      <!-- Left 60%: High-Resolution Team Photo -->
+      <div class="relative min-h-[400px] lg:min-h-[540px] overflow-hidden bg-black flex items-center justify-center">
+        <img src="./assets/stemnight12-BR6rW-T_.JPG" alt="BAAP High-Res Team Showcase" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-40"></div>
+      </div>
+
+      <!-- Right 40%: Deep Black Title Card & Action CTA -->
+      <div class="flex flex-col justify-center p-8 sm:p-12 lg:p-16 bg-[#0c0c12] space-y-6 border-l border-[#222233]">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight uppercase leading-tight font-heading">
+          BAAP IS A HIGH-POWER ROCKETRY & AVIONICS PROGRAM FROM BATTLEFIELD HIGH SCHOOL
+        </h1>
+        
+        <p class="text-sm text-gray-400 leading-relaxed">
+          Pioneering student-led high-altitude flight computers, telemetry systems, carbon-fiber rocketry airframes, and atmospheric research payloads.
+        </p>
+
+        <div>
+          <a href="#about" class="hero-btn shadow-lg">
+            ➔ LEARN MORE
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- "What is BAAP?" Section (Black Theme & High-Res latin.png Emblem) -->
+  <section id="about" class="py-16 sm:py-24 bg-[#08080d]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: High-Res Official BAAP Emblem Graphic (latin.png - 1.67MB) -->
+        <div class="lg:col-span-5 flex justify-center">
+          <img src="./assets/latin-DttFfbWE.png" alt="BAAP High-Res Emblem" class="w-full max-w-sm h-auto object-contain drop-shadow-[0_10px_25px_rgba(127,90,240,0.3)]" />
+        </div>
+
+        <!-- Right Column: Black Card Box with Glowing Purple Shadow -->
+        <div class="lg:col-span-7">
+          <div id="mission" class="bg-[#11111a] p-8 sm:p-12 rounded-xl shadow-[0_15px_40px_rgba(0,0,0,0.8)] border border-[#222233] space-y-6">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight uppercase font-heading">
+              WHAT IS <span class="text-[#9B5DE5]">BAAP?</span>
+            </h2>
+
+            <p class="text-base sm:text-lg text-gray-300 leading-relaxed font-normal">
+              <span class="italic font-semibold text-purple-400">BAAP</span> was created to inspire young people to be science and technology leaders, by engaging them in exciting mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership.
+            </p>
+
+            <div class="pt-4 border-t border-[#222233] grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div class="p-3 bg-[#181826] border border-[#2c2c40] rounded-lg">
+                <div class="text-xl font-black text-[#9B5DE5] font-heading">10,500 FT</div>
+                <div class="text-[10px] font-bold uppercase text-gray-400 mt-1">Max Altitude</div>
+              </div>
+              <div class="p-3 bg-[#181826] border border-[#2c2c40] rounded-lg">
+                <div class="text-xl font-black text-[#9B5DE5] font-heading">48+</div>
+                <div class="text-[10px] font-bold uppercase text-gray-400 mt-1">Launches</div>
+              </div>
+              <div class="p-3 bg-[#181826] border border-[#2c2c40] rounded-lg">
+                <div class="text-xl font-black text-[#9B5DE5] font-heading">35+</div>
+                <div class="text-[10px] font-bold uppercase text-gray-400 mt-1">Engineers</div>
+              </div>
+              <div class="p-3 bg-[#181826] border border-[#2c2c40] rounded-lg">
+                <div class="text-xl font-black text-[#9B5DE5] font-heading">12</div>
+                <div class="text-[10px] font-bold uppercase text-gray-400 mt-1">Custom PCBs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sub-Teams Section (Black Cards) -->
+  <section id="teams" class="py-16 sm:py-24 bg-[#050508] border-t border-b border-[#222233]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <h2 class="text-3xl font-extrabold text-white uppercase font-heading">OUR ENGINEERING SUB-TEAMS</h2>
+        <p class="text-gray-400 text-sm">Four specialized divisions engineering high-altitude rocketry and autonomous payload flight systems.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="dark-card p-6 space-y-3">
+          <div class="w-12 h-12 rounded-lg bg-purple-950/80 border border-purple-600/40 text-[#9B5DE5] flex items-center justify-center text-xl font-bold">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-white uppercase font-heading">AVIONICS & TELEMETRY</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Designs custom 4-layer flight computer PCBs with Teensy 4.1, dual BMP388 altimeters, 9-DOF IMUs, and 915MHz LoRa telemetry radio links.
+          </p>
+        </div>
+
+        <div class="dark-card p-6 space-y-3">
+          <div class="w-12 h-12 rounded-lg bg-purple-950/80 border border-purple-600/40 text-[#9B5DE5] flex items-center justify-center text-xl font-bold">
+            <i class="fas fa-drafting-compass"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-white uppercase font-heading">FLIGHT DYNAMICS & CAD</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Utilizes OpenRocket, RasAero, and SolidWorks to engineer aerodynamic stability, tune fin flutter margins, and layup carbon fiber airframes.
+          </p>
+        </div>
+
+        <div class="dark-card p-6 space-y-3">
+          <div class="w-12 h-12 rounded-lg bg-purple-950/80 border border-purple-600/40 text-[#9B5DE5] flex items-center justify-center text-xl font-bold">
+            <i class="fas fa-flask"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-white uppercase font-heading">PAYLOAD & RESEARCH</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Engineers scientific payloads including atmospheric radiation sensors, high-altitude gas sampling canisters, and camera stabilization gimbals.
+          </p>
+        </div>
+
+        <div class="dark-card p-6 space-y-3">
+          <div class="w-12 h-12 rounded-lg bg-purple-950/80 border border-purple-600/40 text-[#9B5DE5] flex items-center justify-center text-xl font-bold">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3 class="text-lg font-extrabold text-white uppercase font-heading">RECOVERY & OPERATIONS</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Constructs dual-deployment main/drogue parachute recovery systems, electronic black-box tracking beacons, and directional Yagi antenna arrays.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- High-Res Photo Gallery Showcase -->
+  <section id="gallery" class="py-16 bg-[#08080d]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div class="flex items-center justify-between border-b border-[#222233] pb-4">
+        <h2 class="text-2xl font-extrabold text-white uppercase font-heading">MISSION PHOTO GALLERY</h2>
+        <span class="text-xs font-bold text-[#9B5DE5] uppercase">HIGH-RES VISUAL REPOSITORY</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- High-Res Image 1: vol1.jpg (2.0 MB) -->
+        <div class="dark-card overflow-hidden group">
+          <div class="h-56 overflow-hidden relative">
+            <img src="./assets/vol1-_YX_EywN.jpg" alt="High-Res Fiberglass Rocket Build" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-4 bg-[#11111a]">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">HIGH-POWER BUILD WORKSHOP</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">Fiberglass Airframe & Fin Alignment</h4>
+            <p class="text-xs text-gray-400 mt-1">High-resolution capture of motor mount and fin bevel alignment.</p>
+          </div>
+        </div>
+
+        <!-- High-Res Image 2: vol2.jpg (1.57 MB) -->
+        <div class="dark-card overflow-hidden group">
+          <div class="h-56 overflow-hidden relative">
+            <img src="./assets/vol2-DKh8jJsJ.jpg" alt="High-Res Soldering Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-4 bg-[#11111a]">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">AVIONICS ELECTRONICS LAB</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">Surface-Mount Altimeter Soldering</h4>
+            <p class="text-xs text-gray-400 mt-1">Precision SMD soldering on 4-layer flight computer PCBs.</p>
+          </div>
+        </div>
+
+        <!-- High-Res Image 3: spacex2.jpg (1.19 MB) -->
+        <div class="dark-card overflow-hidden group">
+          <div class="h-56 overflow-hidden relative">
+            <img src="./assets/spacex2-DBUZXI9A.jpg" alt="High-Res Ground Station Array" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-4 bg-[#11111a]">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">GROUND TRACKING STATION</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">915MHz Yagi Antenna Telemetry Array</h4>
+            <p class="text-xs text-gray-400 mt-1">Real-time long range wireless RF rocket telemetry tracking.</p>
+          </div>
+        </div>
+
+        <!-- High-Res Image 4: spacex1.jpg (491 KB) -->
+        <div class="dark-card overflow-hidden group">
+          <div class="h-56 overflow-hidden relative">
+            <img src="./assets/spacex1-DoFOq-bT.jpg" alt="High-Res Aerospace Research Trip" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-4 bg-[#11111a]">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">AEROSPACE RESEARCH FIELD TRIP</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">Engine Architecture Analysis</h4>
+            <p class="text-xs text-gray-400 mt-1">BAAP team studying high-thrust rocket engine bells.</p>
+          </div>
+        </div>
+
+        <!-- High-Res Image 5: balloon1.jpeg (318 KB) -->
+        <div class="dark-card overflow-hidden group">
+          <div class="h-56 overflow-hidden relative">
+            <img src="./assets/balloon1-CI1Sw7QS.jpeg" alt="Weather Balloon Launch Prep" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-4 bg-[#11111a]">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">ATMOSPHERIC RESEARCH</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">95,000 FT Weather Balloon Inflation</h4>
+            <p class="text-xs text-gray-400 mt-1">Helium payload prep for stratospheric camera drop.</p>
+          </div>
+        </div>
+
+        <!-- High-Res Image 6: rocket1.jpg (238 KB) -->
+        <div class="dark-card overflow-hidden group">
+          <div class="h-56 overflow-hidden relative">
+            <img src="./assets/rocket1-C4aFfanp.jpg" alt="High-Power Rocket Ignition" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
+          </div>
+          <div class="p-4 bg-[#11111a]">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">PROJECT AETHER LAUNCH</span>
+            <h4 class="text-sm font-bold text-white truncate mt-0.5">Cesaroni L1050 Motor Ignition</h4>
+            <p class="text-xs text-gray-400 mt-1">10,240ft apogee flight execution on launch pad 3.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Us / Membership Section (Black Form) -->
+  <section id="contact" class="py-16 bg-[#050508] border-t border-[#222233]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-4">
+          <h2 class="text-3xl font-extrabold text-white uppercase font-heading">JOIN THE BAAP FLIGHT CREW</h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Interested in rocketry, C++ microcontrollers, 3D CAD design, or launch operations? Battlefield High School students of all experience levels are welcome to join!
+          </p>
+
+          <div class="space-y-3 pt-2 text-xs font-semibold text-gray-300">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-map-marker-alt text-[#9B5DE5] text-base"></i>
+              <span>Battlefield High School • Room 120 (Engineering Lab)</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-clock text-[#9B5DE5] text-base"></i>
+              <span>Tuesdays & Thursdays • 3:00 PM – 4:30 PM</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-envelope text-[#9B5DE5] text-base"></i>
+              <span>bhsaeronauticsandavionics@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <form id="contact-form" class="p-6 bg-[#11111a] rounded-xl border border-[#222233] space-y-4 shadow-xl">
+            <h3 class="text-base font-extrabold text-white uppercase font-heading">STUDENT APPLICATION FORM</h3>
+            
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input type="text" required placeholder="FULL NAME" class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500" />
+              <input type="email" required placeholder="SCHOOL EMAIL" class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500" />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <select class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500">
+                <option>FRESHMAN (9TH)</option>
+                <option>SOPHOMORE (10TH)</option>
+                <option>JUNIOR (11TH)</option>
+                <option>SENIOR (12TH)</option>
+              </select>
+              <select class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500">
+                <option>AVIONICS & TELEMETRY</option>
+                <option>FLIGHT DYNAMICS & CAD</option>
+                <option>PAYLOAD & RESEARCH</option>
+                <option>RECOVERY & OPERATIONS</option>
+              </select>
+            </div>
+
+            <textarea rows="3" placeholder="TELL US ABOUT YOUR INTEREST IN AEROSPACE..." class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500"></textarea>
+
+            <button type="submit" class="w-full py-3 text-xs font-extrabold text-white bg-[#7F5AF0] hover:bg-[#9B5DE5] rounded uppercase tracking-wider transition shadow-lg">
+              SUBMIT APPLICATION ➔
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer matching Screenshot 2 -->
+  <footer class="footer-bg py-12 border-t border-[#222233]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid md:grid-cols-12 gap-12 pb-8 border-b border-[#222233]">
+        
+        <!-- Left Column: SOCIAL (Screenshot 2) -->
+        <div class="md:col-span-5 space-y-4">
+          <h4 class="footer-heading">SOCIAL</h4>
+          
+          <div class="space-y-2.5">
+            <a href="https://www.instagram.com/bhsaap/" target="_blank" class="footer-link">
+              <i class="fab fa-instagram text-base w-5"></i> INSTAGRAM
+            </a>
+            <a href="https://discord.gg/pfyX6FZBkV" target="_blank" class="footer-link">
+              <i class="fab fa-discord text-base w-5"></i> DISCORD
+            </a>
+            <a href="mailto:bhsaeronauticsandavionics@gmail.com" class="footer-link">
+              <i class="fas fa-envelope text-base w-5"></i> EMAIL US
+            </a>
+            <a href="https://github.com/bhsavionics" target="_blank" class="footer-link">
+              <i class="fab fa-github text-base w-5"></i> GITHUB
+            </a>
+            <a href="https://youtube.com" target="_blank" class="footer-link">
+              <i class="fab fa-youtube text-base w-5"></i> YOUTUBE
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle Column: RECENT NEWS (Screenshot 2) -->
+        <div class="md:col-span-7 space-y-4">
+          <h4 class="footer-heading">RECENT NEWS</h4>
+          
+          <div class="space-y-4 text-xs font-mono">
+            <div>
+              <a href="#gallery" class="font-bold text-white uppercase hover:text-purple-400 transition block">
+                PROJECT AETHER REACHES 10,240 FT APOGEE AT MACH 1.1
+              </a>
+              <div class="text-gray-400 text-[10px] uppercase mt-0.5">APRIL 4, 2026</div>
+            </div>
+
+            <div>
+              <a href="#gallery" class="font-bold text-white uppercase hover:text-purple-400 transition block">
+                STRATOSPHERIC WEATHER BALLOON PAYLOAD LAUNCH SUCCESSFUL
+              </a>
+              <div class="text-gray-400 text-[10px] uppercase mt-0.5">APRIL 25, 2025</div>
+            </div>
+
+            <div>
+              <a href="#gallery" class="font-bold text-white uppercase hover:text-purple-400 transition block">
+                BAAP QUALIFIES FOR TARC NATIONAL ROCKETRY FINALS
+              </a>
+              <div class="text-gray-400 text-[10px] uppercase mt-0.5">APRIL 21, 2024</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-6 text-center text-xs font-semibold text-gray-400 uppercase tracking-wider">
+        © 2026 BATTLEFIELD AERONAUTICS AND AVIONICS PROGRAM. ALL RIGHTS RESERVED.
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

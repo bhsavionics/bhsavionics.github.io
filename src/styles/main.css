@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+:root {
+  --purple-main: #7F5AF0;
+  --purple-dark: #5B21B6;
+  --purple-light: #9B5DE5;
+  --black-bg: #050508;
+  --card-bg: #11111a;
+  --card-border: #222233;
+  --header-purple: #7F5AF0;
+  --dropdown-bg: #14141e;
+  --footer-bg: #0c0c12;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--black-bg);
+  color: #f3f4f6;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, nav, button, .font-heading {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+}
+
+/* Header & Nav styles */
+.header-bg {
+  background-color: #7F5AF0;
+}
+
+.nav-link {
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 1.25rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.15s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: #9B5DE5;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  background-color: #14141e;
+  border-top: 3px solid #9B5DE5;
+  border-left: 1px solid #222233;
+  border-right: 1px solid #222233;
+  border-bottom: 1px solid #222233;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+}
+
+.dropdown-item {
+  color: #e5e7eb;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  display: block;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #7F5AF0;
+  color: #ffffff;
+}
+
+/* Hero Section Split */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .hero-split {
+    grid-template-columns: 60% 40%;
+  }
+}
+
+.hero-btn {
+  background-color: #7F5AF0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-btn:hover {
+  background-color: #9B5DE5;
+  transform: translateY(-1px);
+}
+
+/* Dark Card System */
+.dark-card {
+  background-color: #11111a;
+  border: 1px solid #222233;
+  border-radius: 0.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.dark-card:hover {
+  border-color: #7F5AF0;
+  transform: translateY(-2px);
+}
+
+/* Footer matching Screenshot 2 */
+.footer-bg {
+  background-color: #0c0c12;
+  color: #d1d5db;
+}
+
+.footer-heading {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+}
+
+.footer-link {
+  color: #9ca3af;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.15s ease;
+}
+
+.footer-link:hover {
+  color: #9B5DE5;
+}
+
+/* Clean Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #7F5AF0;
+}
