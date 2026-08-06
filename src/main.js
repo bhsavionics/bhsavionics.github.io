@@ -37,6 +37,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Interactive Sticky Scroll Timeline Handler
+  const timelineSection = document.getElementById('timeline');
+  const timelineTrack = document.getElementById('timeline-track');
+  const timelineProgress = document.getElementById('timeline-progress');
+  const timelineStep = document.getElementById('timeline-step');
+
+  if (timelineSection && timelineTrack) {
+    const handleTimelineScroll = () => {
+      const rect = timelineSection.getBoundingClientRect();
+      const sectionHeight = timelineSection.offsetHeight - window.innerHeight;
+      if (sectionHeight <= 0) return;
+
+      const currentScroll = -rect.top;
+      let progress = currentScroll / sectionHeight;
+      progress = Math.max(0, Math.min(1, progress));
+
+      if (timelineProgress) {
+        timelineProgress.style.width = `${progress * 100}%`;
+      }
+
+      const totalShift = timelineTrack.scrollWidth - timelineTrack.clientWidth;
+      if (totalShift > 0) {
+        timelineTrack.style.transform = `translateX(-${progress * totalShift}px)`;
+      }
+
+      if (timelineStep) {
+        const activeIndex = Math.min(6, Math.max(1, Math.floor(progress * 6) + 1));
+        timelineStep.textContent = `MILESTONE ${activeIndex} OF 6`;
+      }
+    };
+
+    window.addEventListener('scroll', handleTimelineScroll, { passive: true });
+    window.addEventListener('resize', handleTimelineScroll, { passive: true });
+    handleTimelineScroll();
+  }
+
   // Smooth Scroll for Nav Links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
