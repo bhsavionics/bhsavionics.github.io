@@ -18,17 +18,77 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
   
-  <!-- Main CSS Stylesheet (Direct Link in Head to Eliminate FOUC) -->
+  <!-- Tailwind CSS CDN for 100% reliable static & GitHub Pages rendering -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Critical CSS to prevent FOUC & FOUC flash on transition -->
+  <!-- Custom Styles & Font Definitions -->
   <style>
-    html, body { background-color: #050508 !important; color: #f3f4f6; }
-    .header-bg { background-color: #5B21B6 !important; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap');
+    
+    html, body {
+      background-color: #050508 !important;
+      color: #f3f4f6;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .font-heading {
+      font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    }
+    .brand-font {
+      font-family: 'Permanent Marker', cursive, sans-serif;
+    }
+    .header-bg {
+      background-color: #5B21B6 !important;
+    }
+    .nav-link {
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding: 1.25rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      transition: background-color 0.15s ease;
+    }
+    .nav-link:hover, .nav-link.active {
+      background-color: #6B46C1;
+    }
+    .dark-card {
+      background-color: #11111a;
+      border: 1px solid #222233;
+      border-radius: 0.75rem;
+      transition: border-color 0.2s ease;
+    }
+    .footer-bg {
+      background-color: #0c0c12;
+      color: #d1d5db;
+    }
+    .footer-heading {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+    .footer-link {
+      color: #9ca3af;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .footer-link:hover {
+      color: #9B5DE5;
+    }
     img { max-width: 100%; }
     .header-logo { width: 62px !important; height: 62px !important; object-fit: contain; }
   </style>
-  <script type="module" crossorigin src="./assets/main-BlGnXMRR.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/main-BcGeRpcq.css">
+  <script type="module" crossorigin src="./assets/main-DpGTDkKn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-DkTpAcKm.css">
 </head>
 <body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
 
