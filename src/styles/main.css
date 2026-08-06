@@ -25,6 +25,11 @@ h1, h2, h3, h4, nav, button, .font-heading {
   font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 }
 
+/* Permanent Marker for Header BAAP Brand Logo Title */
+.brand-font {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+}
+
 /* Header & Nav styles */
 .header-bg {
   background-color: #5B21B6;

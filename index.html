@@ -16,9 +16,15 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
-  <!-- Critical CSS to prevent FOUC logo flash -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
+  
+  <!-- Main CSS Stylesheet (Direct Link in Head to Eliminate FOUC) -->
+  <link rel="stylesheet" href="/src/styles/main.css" />
+
+  <!-- Critical CSS to prevent FOUC & FOUC flash on transition -->
   <style>
+    html, body { background-color: #050508 !important; color: #f3f4f6; }
+    .header-bg { background-color: #5B21B6 !important; }
     img { max-width: 100%; }
     .header-logo { width: 56px !important; height: 56px !important; object-fit: contain; }
   </style>
@@ -32,7 +38,7 @@
       <!-- Brand Logo -->
       <a href="#hero" class="flex items-center space-x-4 group py-2">
         <img src="/images/logo.png" alt="BAAP Logo" width="56" height="56" style="width: 56px; height: 56px;" class="header-logo h-14 w-14 object-contain drop-shadow-md transition-transform group-hover:scale-105" />
-        <span class="text-3xl sm:text-4xl font-black tracking-tight text-white font-heading">BAAP</span>
+        <span class="text-3xl sm:text-4xl font-black tracking-tight text-white brand-font">BAAP</span>
       </a>
 
       <!-- Desktop Nav Items -->
