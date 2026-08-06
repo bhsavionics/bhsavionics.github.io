@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --purple-main: #7F5AF0;
-  --purple-dark: #5B21B6;
-  --purple-light: #9B5DE5;
+  --purple-main: #5B21B6;
+  --purple-dark: #3B0764;
+  --purple-light: #7F5AF0;
   --black-bg: #050508;
   --card-bg: #11111a;
   --card-border: #222233;
-  --header-purple: #7F5AF0;
+  --header-purple: #5B21B6;
   --dropdown-bg: #14141e;
   --footer-bg: #0c0c12;
 }
@@ -25,9 +25,9 @@ h1, h2, h3, h4, nav, button, .font-heading {
   font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
 }
 
-/* Header & Nav styles */
+/* Header & Nav styles - Slightly Darker Purple */
 .header-bg {
-  background-color: #7F5AF0;
+  background-color: #5B21B6;
 }
 
 .nav-link {
@@ -43,13 +43,13 @@ h1, h2, h3, h4, nav, button, .font-heading {
 }
 
 .nav-link:hover, .nav-link.active {
-  background-color: #9B5DE5;
+  background-color: #6B46C1;
 }
 
 /* Dropdown Menu */
 .dropdown-menu {
   background-color: #14141e;
-  border-top: 3px solid #9B5DE5;
+  border-top: 3px solid #7F5AF0;
   border-left: 1px solid #222233;
   border-right: 1px solid #222233;
   border-bottom: 1px solid #222233;
@@ -68,7 +68,7 @@ h1, h2, h3, h4, nav, button, .font-heading {
 }
 
 .dropdown-item:hover {
-  background-color: #7F5AF0;
+  background-color: #5B21B6;
   color: #ffffff;
 }
 
@@ -85,7 +85,7 @@ h1, h2, h3, h4, nav, button, .font-heading {
 }
 
 .hero-btn {
-  background-color: #7F5AF0;
+  background-color: #5B21B6;
   color: #ffffff;
   font-weight: 700;
   font-size: 0.85rem;
@@ -99,7 +99,7 @@ h1, h2, h3, h4, nav, button, .font-heading {
 }
 
 .hero-btn:hover {
-  background-color: #9B5DE5;
+  background-color: #6B46C1;
   transform: translateY(-1px);
 }
 
@@ -116,13 +116,13 @@ h1, h2, h3, h4, nav, button, .font-heading {
   transform: translateY(-2px);
 }
 
-/* Cool Polaroid Card Styling */
+/* Clean Minimal Polaroid Card (No text caption, thick white margin bottom) */
 .polaroid-card {
   background-color: #FAFAFA;
   padding: 0.75rem;
-  padding-bottom: 2.25rem;
+  padding-bottom: 3.25rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   position: relative;
 }
 
@@ -138,16 +138,16 @@ h1, h2, h3, h4, nav, button, .font-heading {
   top: -12px;
   left: 50%;
   transform: translateX(-50%) rotate(-2deg);
-  width: 90px;
-  height: 26px;
-  background-color: rgba(255, 255, 255, 0.4);
+  width: 85px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.6);
   z-index: 10;
   pointer-events: none;
 }
 
-/* Footer matching Screenshot 2 */
+/* Footer */
 .footer-bg {
   background-color: #0c0c12;
   color: #d1d5db;

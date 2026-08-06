@@ -16,13 +16,13 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/index-CD4NU80z.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BjRNCCl0.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script type="module" crossorigin src="./assets/index-DynBCslb.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D8OzJxqx.css">
 </head>
 <body class="bg-[#050508] text-[#f3f4f6] font-sans antialiased min-h-screen flex flex-col">
 
-  <!-- Top Header Navigation Bar -->
+  <!-- Top Header Navigation Bar (Darker Purple #5B21B6) -->
   <header class="header-bg sticky top-0 z-50 shadow-lg">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
       
@@ -82,56 +82,14 @@
     </div>
   </header>
 
-  <!-- Hero Split Section with Stacked Polaroid Display -->
+  <!-- Hero Split Section (Classic Single Photo Layout) -->
   <section id="hero" class="bg-[#050508] border-b border-[#222233]">
     <div class="hero-split">
       
-      <!-- Left 60%: Stacked Cool Polaroids Display -->
-      <div class="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] bg-[#07070b] overflow-hidden flex items-center justify-center p-6 lg:p-12">
-        
-        <!-- Background Ambient Glow -->
-        <div class="absolute w-80 h-80 rounded-full bg-purple-600/10 blur-3xl pointer-events-none"></div>
-
-        <div class="relative w-full max-w-lg h-[400px] sm:h-[460px] flex items-center justify-center">
-          
-          <!-- Polaroid 1 (Top-Left, -6 deg) -->
-          <div class="polaroid-card absolute top-2 left-2 sm:left-6 w-52 sm:w-64 -rotate-6 z-10 hover:z-40 transition-all duration-300">
-            <div class="polaroid-tape"></div>
-            <div class="w-full h-44 sm:h-52 overflow-hidden rounded bg-gray-900 border border-gray-200">
-              <img src="./assets/photo1-CtuoFoB9.jpg" alt="BAAP Launch" class="w-full h-full object-cover" />
-            </div>
-            <div class="pt-3 text-center">
-              <div class="text-xs sm:text-sm font-extrabold text-gray-900 font-mono tracking-tight">PROJECT AETHER • LAUNCH 🚀</div>
-              <div class="text-[9px] font-bold text-purple-700 uppercase tracking-widest mt-0.5">PAD 3 • 10,240 FT</div>
-            </div>
-          </div>
-
-          <!-- Polaroid 2 (Top-Right, +6 deg) -->
-          <div class="polaroid-card absolute top-6 right-2 sm:right-6 w-52 sm:w-64 rotate-6 z-20 hover:z-40 transition-all duration-300">
-            <div class="polaroid-tape"></div>
-            <div class="w-full h-44 sm:h-52 overflow-hidden rounded bg-gray-900 border border-gray-200">
-              <img src="./assets/photo2-K7QoChpt.jpg" alt="AVIONICS LAB" class="w-full h-full object-cover" />
-            </div>
-            <div class="pt-3 text-center">
-              <div class="text-xs sm:text-sm font-extrabold text-gray-900 font-mono tracking-tight">PCB AVIONICS SOLDERING ⚡</div>
-              <div class="text-[9px] font-bold text-purple-700 uppercase tracking-widest mt-0.5">HARDWARE LAB • ROOM 120</div>
-            </div>
-          </div>
-
-          <!-- Polaroid 3 (Bottom-Center, -2 deg) -->
-          <div class="polaroid-card absolute bottom-2 left-1/2 -translate-x-1/2 w-56 sm:w-68 -rotate-2 z-30 hover:z-40 transition-all duration-300">
-            <div class="polaroid-tape"></div>
-            <div class="w-full h-48 sm:h-56 overflow-hidden rounded bg-gray-900 border border-gray-200">
-              <img src="./assets/photo3-Bdabyoys.jpg" alt="ROCKET BUILD" class="w-full h-full object-cover" />
-            </div>
-            <div class="pt-3 text-center">
-              <div class="text-xs sm:text-sm font-extrabold text-gray-900 font-mono tracking-tight">HIGH-POWER ROCKET BUILD 🛠️</div>
-              <div class="text-[9px] font-bold text-purple-700 uppercase tracking-widest mt-0.5">FIBERGLASS LAYUP</div>
-            </div>
-          </div>
-
-        </div>
-
+      <!-- Left 60%: High-Res BAAP Photography Image -->
+      <div class="relative min-h-[400px] lg:min-h-[540px] overflow-hidden bg-black flex items-center justify-center">
+        <img src="./assets/photo1-CtuoFoB9.jpg" alt="BAAP Flight Team" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-30"></div>
       </div>
 
       <!-- Right 40%: Deep Black Title Card & Action CTA -->
@@ -202,66 +160,42 @@
     </div>
   </section>
 
-  <!-- Cool Polaroid Snapshot Section -->
-  <section id="polaroids" class="py-20 bg-[#050508] border-t border-b border-[#222233] overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+  <!-- Clean Polaroid Section (No Section Header, No Text Captions on Polaroids) -->
+  <section class="py-16 bg-[#050508] border-t border-b border-[#222233] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <div class="inline-block px-3 py-1 bg-purple-950/80 border border-purple-600/40 text-xs font-semibold text-purple-300 rounded-full font-mono">
-          FLIGHT SNAPSHOTS
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white uppercase font-heading">BAAP POLAROID COLLECTION</h2>
-        <p class="text-gray-400 text-sm">Authentic moments from our flight lab, launch pad operations, and engineering sessions.</p>
-      </div>
-
-      <!-- Polaroid Cards Grid with Tape & Rotations -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-6">
+      <!-- Polaroid Cards Grid (Clean Minimal Polaroid Frames) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
-        <!-- Polaroid Card 1 (-3deg tilt) -->
+        <!-- Polaroid 1 (-3deg tilt) -->
         <div class="polaroid-card -rotate-3">
           <div class="polaroid-tape"></div>
-          <div class="w-full h-64 overflow-hidden rounded bg-gray-900 border border-gray-200">
-            <img src="./assets/photo1-CtuoFoB9.jpg" alt="BAAP Polaroid 1" class="w-full h-full object-cover" />
-          </div>
-          <div class="pt-4 text-center">
-            <div class="text-sm font-extrabold text-gray-900 font-mono tracking-tight">PROJECT AETHER • LAUNCH DAY 🚀</div>
-            <div class="text-[10px] font-bold text-purple-700 uppercase tracking-widest mt-1">PAD 3 • 10,240 FT</div>
+          <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
+            <img src="./assets/photo4-Dwv9htXr.jpg" alt="BAAP Photo 4" class="w-full h-full object-cover" />
           </div>
         </div>
 
-        <!-- Polaroid Card 2 (+2deg tilt) -->
+        <!-- Polaroid 2 (+2deg tilt) -->
         <div class="polaroid-card rotate-2">
           <div class="polaroid-tape"></div>
-          <div class="w-full h-64 overflow-hidden rounded bg-gray-900 border border-gray-200">
-            <img src="./assets/photo2-K7QoChpt.jpg" alt="BAAP Polaroid 2" class="w-full h-full object-cover" />
-          </div>
-          <div class="pt-4 text-center">
-            <div class="text-sm font-extrabold text-gray-900 font-mono tracking-tight">PCB AVIONICS SOLDERING ⚡</div>
-            <div class="text-[10px] font-bold text-purple-700 uppercase tracking-widest mt-1">HARDWARE LAB • ROOM 120</div>
+          <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
+            <img src="./assets/photo5-BS7MRCGJ.jpg" alt="BAAP Photo 5" class="w-full h-full object-cover" />
           </div>
         </div>
 
-        <!-- Polaroid Card 3 (-2deg tilt) -->
+        <!-- Polaroid 3 (-2deg tilt) -->
         <div class="polaroid-card -rotate-2">
           <div class="polaroid-tape"></div>
-          <div class="w-full h-64 overflow-hidden rounded bg-gray-900 border border-gray-200">
-            <img src="./assets/photo3-Bdabyoys.jpg" alt="BAAP Polaroid 3" class="w-full h-full object-cover" />
-          </div>
-          <div class="pt-4 text-center">
-            <div class="text-sm font-extrabold text-gray-900 font-mono tracking-tight">ROCKET AIRFRAME ASSEMBLY 🛠️</div>
-            <div class="text-[10px] font-bold text-purple-700 uppercase tracking-widest mt-1">FIBERGLASS LAYUP</div>
+          <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
+            <img src="./assets/photo6-lRfLRkkL.jpg" alt="BAAP Photo 6" class="w-full h-full object-cover" />
           </div>
         </div>
 
-        <!-- Polaroid Card 4 (+3deg tilt) -->
+        <!-- Polaroid 4 (+3deg tilt) -->
         <div class="polaroid-card rotate-3">
           <div class="polaroid-tape"></div>
-          <div class="w-full h-64 overflow-hidden rounded bg-gray-900 border border-gray-200">
-            <img src="./assets/photo4-Dwv9htXr.jpg" alt="BAAP Polaroid 4" class="w-full h-full object-cover" />
-          </div>
-          <div class="pt-4 text-center">
-            <div class="text-sm font-extrabold text-gray-900 font-mono tracking-tight">TELEMETRY RANGE TRACKING 📡</div>
-            <div class="text-[10px] font-bold text-purple-700 uppercase tracking-widest mt-1">915MHZ LORA LINK</div>
+          <div class="w-full h-72 overflow-hidden rounded bg-gray-900 border border-gray-200">
+            <img src="./assets/photo7-BYmCbJpk.jpg" alt="BAAP Photo 7" class="w-full h-full object-cover" />
           </div>
         </div>
 
@@ -326,7 +260,7 @@
     </div>
   </section>
 
-  <!-- Photo Gallery Showcase using BAAP PHOTOGRAPHY -->
+  <!-- Photo Gallery Showcase -->
   <section id="gallery" class="py-16 bg-[#050508] border-t border-[#222233]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       
@@ -338,7 +272,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="./assets/photo5-BS7MRCGJ.jpg" alt="BAAP Photography 5" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="./assets/photo8-Bsh-n1_-.jpg" alt="BAAP Photography 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-4 bg-[#11111a]">
@@ -350,49 +284,13 @@
 
         <div class="dark-card overflow-hidden group">
           <div class="h-56 overflow-hidden relative">
-            <img src="./assets/photo6-lRfLRkkL.jpg" alt="BAAP Photography 6" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+            <img src="./assets/photo2-K7QoChpt.jpg" alt="BAAP Photography 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
           </div>
           <div class="p-4 bg-[#11111a]">
             <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">AVIONICS HARDWARE LAB</span>
             <h4 class="text-sm font-bold text-white truncate mt-0.5">Teensy 4.1 Circuit Routing</h4>
             <p class="text-xs text-gray-400 mt-1">Debugging 915MHz Semtech LoRa transceivers.</p>
-          </div>
-        </div>
-
-        <div class="dark-card overflow-hidden group">
-          <div class="h-56 overflow-hidden relative">
-            <img src="./assets/photo7-BYmCbJpk.jpg" alt="BAAP Photography 7" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
-          </div>
-          <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">GROUND CONTROL</span>
-            <h4 class="text-sm font-bold text-white truncate mt-0.5">Ground Station RF Tracking</h4>
-            <p class="text-xs text-gray-400 mt-1">Live telemetry plot of altitude vs barometric pressure.</p>
-          </div>
-        </div>
-
-        <div class="dark-card overflow-hidden group">
-          <div class="h-56 overflow-hidden relative">
-            <img src="./assets/photo8-Bsh-n1_-.jpg" alt="BAAP Photography 8" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
-          </div>
-          <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">FLIGHT DYNAMICS</span>
-            <h4 class="text-sm font-bold text-white truncate mt-0.5">OpenRocket Aerodynamic Tuning</h4>
-            <p class="text-xs text-gray-400 mt-1">Optimizing fin thickness and center of pressure.</p>
-          </div>
-        </div>
-
-        <div class="dark-card overflow-hidden group">
-          <div class="h-56 overflow-hidden relative">
-            <img src="./assets/photo1-CtuoFoB9.jpg" alt="BAAP Photography 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
-            <div class="absolute inset-0 bg-gradient-to-t from-[#11111a] via-transparent to-transparent opacity-80"></div>
-          </div>
-          <div class="p-4 bg-[#11111a]">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-400 font-mono">RECOVERY & SAFETY</span>
-            <h4 class="text-sm font-bold text-white truncate mt-0.5">Dual-Deployment Parachute Prep</h4>
-            <p class="text-xs text-gray-400 mt-1">Black powder charge calculation and shear pin installation.</p>
           </div>
         </div>
 
@@ -466,7 +364,7 @@
 
             <textarea rows="3" placeholder="TELL US ABOUT YOUR INTEREST IN AEROSPACE..." class="w-full px-4 py-2.5 bg-[#08080d] border border-[#222233] rounded text-xs font-bold text-white focus:outline-none focus:border-purple-500"></textarea>
 
-            <button type="submit" class="w-full py-3 text-xs font-extrabold text-white bg-[#7F5AF0] hover:bg-[#9B5DE5] rounded uppercase tracking-wider transition shadow-lg">
+            <button type="submit" class="w-full py-3 text-xs font-extrabold text-white bg-[#5B21B6] hover:bg-[#6B46C1] rounded uppercase tracking-wider transition shadow-lg">
               SUBMIT APPLICATION ➔
             </button>
           </form>
