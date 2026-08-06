@@ -42,14 +42,12 @@
           <!-- Submenu Dropdown Box -->
           <div class="dropdown-menu absolute left-0 top-full hidden group-hover:block w-56 py-1 z-50">
             <a href="#mission" class="dropdown-item">MISSION</a>
-            <a href="#polaroids" class="dropdown-item">POLAROIDS</a>
             <a href="#teams" class="dropdown-item">SUB-TEAMS</a>
             <a href="#history" class="dropdown-item">HISTORY</a>
             <a href="#leadership" class="dropdown-item">LEADERSHIP</a>
           </div>
         </div>
 
-        <a href="#polaroids" class="nav-link">POLAROIDS</a>
         <a href="#sponsors" class="nav-link">SPONSORS</a>
         <a href="#community" class="nav-link">COMMUNITY</a>
         <a href="#resources" class="nav-link">RESOURCES</a>
@@ -73,7 +71,6 @@
     <div id="mobile-menu" class="hidden lg:hidden bg-[#14141e] text-white border-t border-purple-500/30 px-4 py-4 space-y-2">
       <a href="#about" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">About BAAP</a>
       <a href="#mission" class="block pl-4 py-1 text-xs font-semibold text-gray-300 uppercase hover:text-white">• Mission</a>
-      <a href="#polaroids" class="block pl-4 py-1 text-xs font-semibold text-gray-300 uppercase hover:text-white">• Polaroids</a>
       <a href="#teams" class="block pl-4 py-1 text-xs font-semibold text-gray-300 uppercase hover:text-white">• Sub-Teams</a>
       <a href="#sponsors" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Sponsors</a>
       <a href="#community" class="block py-2 text-sm font-bold uppercase hover:text-purple-400">Community</a>
@@ -83,14 +80,56 @@
     </div>
   </header>
 
-  <!-- Hero Split Section (Using BAAP PHOTOGRAPHY photo1.jpg) -->
+  <!-- Hero Split Section with Stacked Polaroid Display -->
   <section id="hero" class="bg-[#050508] border-b border-[#222233]">
     <div class="hero-split">
       
-      <!-- Left 60%: Authentic BAAP Photography Photo -->
-      <div class="relative min-h-[400px] lg:min-h-[540px] overflow-hidden bg-black flex items-center justify-center">
-        <img src="/images/photography/photo1.jpg" alt="BAAP Photography Flight Team" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#050508] via-transparent to-transparent opacity-40"></div>
+      <!-- Left 60%: Stacked Cool Polaroids Display -->
+      <div class="relative min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] bg-[#07070b] overflow-hidden flex items-center justify-center p-6 lg:p-12">
+        
+        <!-- Background Ambient Glow -->
+        <div class="absolute w-80 h-80 rounded-full bg-purple-600/10 blur-3xl pointer-events-none"></div>
+
+        <div class="relative w-full max-w-lg h-[400px] sm:h-[460px] flex items-center justify-center">
+          
+          <!-- Polaroid 1 (Top-Left, -6 deg) -->
+          <div class="polaroid-card absolute top-2 left-2 sm:left-6 w-52 sm:w-64 -rotate-6 z-10 hover:z-40 transition-all duration-300">
+            <div class="polaroid-tape"></div>
+            <div class="w-full h-44 sm:h-52 overflow-hidden rounded bg-gray-900 border border-gray-200">
+              <img src="/images/photography/photo1.jpg" alt="BAAP Launch" class="w-full h-full object-cover" />
+            </div>
+            <div class="pt-3 text-center">
+              <div class="text-xs sm:text-sm font-extrabold text-gray-900 font-mono tracking-tight">PROJECT AETHER • LAUNCH 🚀</div>
+              <div class="text-[9px] font-bold text-purple-700 uppercase tracking-widest mt-0.5">PAD 3 • 10,240 FT</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 2 (Top-Right, +6 deg) -->
+          <div class="polaroid-card absolute top-6 right-2 sm:right-6 w-52 sm:w-64 rotate-6 z-20 hover:z-40 transition-all duration-300">
+            <div class="polaroid-tape"></div>
+            <div class="w-full h-44 sm:h-52 overflow-hidden rounded bg-gray-900 border border-gray-200">
+              <img src="/images/photography/photo2.jpg" alt="AVIONICS LAB" class="w-full h-full object-cover" />
+            </div>
+            <div class="pt-3 text-center">
+              <div class="text-xs sm:text-sm font-extrabold text-gray-900 font-mono tracking-tight">PCB AVIONICS SOLDERING ⚡</div>
+              <div class="text-[9px] font-bold text-purple-700 uppercase tracking-widest mt-0.5">HARDWARE LAB • ROOM 120</div>
+            </div>
+          </div>
+
+          <!-- Polaroid 3 (Bottom-Center, -2 deg) -->
+          <div class="polaroid-card absolute bottom-2 left-1/2 -translate-x-1/2 w-56 sm:w-68 -rotate-2 z-30 hover:z-40 transition-all duration-300">
+            <div class="polaroid-tape"></div>
+            <div class="w-full h-48 sm:h-56 overflow-hidden rounded bg-gray-900 border border-gray-200">
+              <img src="/images/photography/photo3.jpg" alt="ROCKET BUILD" class="w-full h-full object-cover" />
+            </div>
+            <div class="pt-3 text-center">
+              <div class="text-xs sm:text-sm font-extrabold text-gray-900 font-mono tracking-tight">HIGH-POWER ROCKET BUILD 🛠️</div>
+              <div class="text-[9px] font-bold text-purple-700 uppercase tracking-widest mt-0.5">FIBERGLASS LAYUP</div>
+            </div>
+          </div>
+
+        </div>
+
       </div>
 
       <!-- Right 40%: Deep Black Title Card & Action CTA -->
